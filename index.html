@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesham Malik | Oficiální Web</title>
+    <style>
+        :root {
+            --bg-color: #0d0d0d;
+            --text-color: #e0e0e0;
+            --accent-color: #ffffff;
+            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #222;
+        }
+        .logo {
+            font-size: 1.5rem;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 300;
+        }
+        nav a {
+            color: #888;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.1rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+        .hero {
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 2rem;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 0.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        .hero p {
+            max-width: 600px;
+            color: #aaa;
+            font-size: 1.1rem;
+        }
+        footer {
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #555;
+            border-top: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Hesham Malik</a>
+        <nav>
+            <a href="index.html" class="active">Domů</a>
+            <a href="umelec.html">Umělec</a>
+            <a href="umeni.html">Umění</a>
+            <a href="vystavy.html">Výstavy</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>HESHAM MALIK</h1>
+        <p>Současné výtvarné umění, neuraestetika a konceptuální tvorba.</p>
+    </section>
+
+    <footer>
+        <p>&copy; Hesham Malik. Všechna práva vyhrazena.</p>
+    </footer>
+
+</body>
+</html>
