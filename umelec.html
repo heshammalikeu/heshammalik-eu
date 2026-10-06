@@ -92,7 +92,7 @@
         .content-container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 4rem 2rem 6rem;
+            padding: 4rem 2rem 2rem;
         }
 
         .highlights-grid {
@@ -212,6 +212,83 @@
             line-height: 1.8;
         }
 
+        /* Curatorial & Academic Endorsements Section */
+        .endorsements-container {
+            max-width: 900px;
+            margin: 4rem auto 6rem;
+            padding: 0 2rem;
+        }
+
+        .section-header-clean {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.75rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header-clean h2 {
+            font-size: 1.3rem;
+            font-weight: 300;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+        }
+
+        .endorsements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+        }
+
+        .endorsement-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .endorsement-card.highlight-card {
+            grid-column: 1 / -1;
+            background-color: #fafafa;
+        }
+
+        .endorsement-card blockquote {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1rem;
+            color: #222222;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            border: none;
+            padding: 0;
+            background: transparent;
+        }
+
+        .endorsement-card cite {
+            display: block;
+            font-style: normal;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+        }
+
+        .endorsement-card cite strong {
+            display: block;
+            font-size: 0.85rem;
+            letter-spacing: 0.1rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .endorsement-card cite span {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-top: 0.2rem;
+        }
+
         footer {
             padding: 2.5rem 4rem;
             display: flex;
@@ -240,6 +317,12 @@
             }
             .studio-tactile-banner img {
                 height: 240px;
+            }
+            .endorsements-grid {
+                grid-template-columns: 1fr;
+            }
+            .endorsement-card.highlight-card {
+                grid-column: auto;
             }
             footer {
                 flex-direction: column;
@@ -322,6 +405,70 @@
                 <p>Ve své práci Malik citlivě vnímá, jak destruktivní dopad má politický populismus a mocenské hry úzkých elit na životy běžných lidí. Odmítá přistoupit na reduktivní logiku selektivní empatie a kolektivní viny, kterou tito političtí aktéři cíleně zneužívají k polarizaci společnosti. Umění podle něj nesmí tuto hru na „vybírání stran“ akceptovat; jeho rolí je naopak sdílený prostor bránit, rozšiřovat a učit nás v něm nacházet styčné body. Odpovědnost za konflikty je třeba vyžadovat od politických vůdců, nikoli ji účelově přenášet na tvůrce, kteří odkrývají neviditelné vrstvy společnosti a budují mosty. Pro Heshama Malika není žádná kultura ani společenská vrstva okrajová a právo na sdílený prostor nesmí být nikomu odepřeno.</p>
             </div>
         </article>
+
+        <!-- Curatorial & Academic Endorsements Section -->
+        <section class="endorsements-container">
+            <div class="section-header-clean">
+                <h2>Ohlasy a kurátorské posudky</h2>
+            </div>
+
+            <div class="endorsements-grid">
+                <!-- Quote 1: Sorbonne Paris -->
+                <article class="endorsement-card">
+                    <blockquote>
+                        „Tradice a modernost, kontinuita a expozice, nádherná díla, citlivost, to jsou hlavní prvky, které mě svedly. Doufám, že lidé budou mít možnost vidět jeho umění.“
+                    </blockquote>
+                    <cite>
+                        <strong>Prof. E. Fouache</strong>
+                        <span>Prorektor, Univerzita Sorbonna, Paříž, Francie</span>
+                    </cite>
+                </article>
+
+                <!-- Quote 2: South Korea Academic -->
+                <article class="endorsement-card">
+                    <blockquote>
+                        „Hesham je velmi jedinečný, působivý a kreativní umělec. Věřím, že jeho umělecký styl sleduje lidskou mysl až k jejímu původu v orientálním i západním životě. Svým pojetím umění je výzvou pro zdroje naší lidské mysli.“
+                    </blockquote>
+                    <cite>
+                        <strong>Prof. Jaeseok Choi, PhD.</strong>
+                        <span>Gyeongsang National University, Jižní Korea</span>
+                    </cite>
+                </article>
+
+                <!-- Quote 3: Artistic Analysis -->
+                <article class="endorsement-card">
+                    <blockquote>
+                        „Upřímně, jeho hlad po jednotě je stejný jako pocit míru, po kterém všichni toužíme. Soucitný až do morku kostí, maluje tak, aby překonal sám sebe. Jeho strohá a niterná paleta vás vtáhne do své cesty.“
+                    </blockquote>
+                    <cite>
+                        <strong>Dr. David Hewitt, PhD.</strong>
+                        <span>Docent a teoretik umění</span>
+                    </cite>
+                </article>
+
+                <!-- Quote 4: Montreal Art Director -->
+                <article class="endorsement-card">
+                    <blockquote>
+                        „Moderní současné umění umělce Heshama Malika je působivé. Rytmus, barvy, odstíny, situace a hra stínů. Všechny tyto prvky vytvářejí Heshamův svět umění vlastní metaforickou technikou.“
+                    </blockquote>
+                    <cite>
+                        <strong>Jeanine Laskar</strong>
+                        <span>Umělecká ředitelka a impresário, Montreal, Kanada</span>
+                    </cite>
+                </article>
+
+                <!-- Quote 5: Czech Educational & Community Project -->
+                <article class="endorsement-card highlight-card">
+                    <blockquote>
+                        „S Heshamem Malikem jsme navázali spolupráci v rámci našeho školního projektu Kameny zmizelých… Ze společné práce vzešla řada fiktivních příběhů, pro které našli žáci inspiraci právě v obrazech Hesham Malika. Vážíme si toho, že všechny příběhy žáků Hesham přečetl a vystavil spolu se svými obrazy.“
+                    </blockquote>
+                    <cite>
+                        <strong>Bc. Františka Vandasová</strong>
+                        <span>ZŠ TRNKA Dobříš (Projekt Kameny zmizelých)</span>
+                    </cite>
+                </article>
+            </div>
+        </section>
     </main>
 
     <footer>
