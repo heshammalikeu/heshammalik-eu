@@ -162,63 +162,81 @@
             margin-top: auto;
         }
 
-        /* Past Exhibitions List & Accordion */
-        .past-exhibition-item {
+        /* Expand Button for Full History */
+        .toggle-archive-btn {
+            display: block;
+            width: 100%;
+            padding: 1.5rem;
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            margin-bottom: 1.5rem;
-            transition: border-color 0.3s;
-        }
-
-        .past-exhibition-item:hover {
-            border-color: #a0a0a0;
-        }
-
-        .past-header {
-            padding: 1.8rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .past-title-box h3 {
-            font-size: 1.1rem;
-            font-weight: 400;
-            letter-spacing: 0.15rem;
-            text-transform: uppercase;
             color: var(--accent-color);
-            margin-bottom: 0.2rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s, border-color 0.3s;
+            margin-top: 2rem;
         }
 
-        .past-title-box .venue {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 300;
+        .toggle-archive-btn:hover {
+            background-color: #f5f5f5;
+            border-color: #999999;
         }
 
-        .past-toggle-icon {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            font-weight: 300;
-            transition: transform 0.3s;
-        }
-
-        .past-content {
+        /* Archive Year Block */
+        .archive-container {
             display: none;
-            padding: 0 2rem 2rem;
+            margin-top: 4rem;
+            padding-top: 2rem;
             border-top: 1px solid var(--border-color);
-            background-color: #fafafa;
         }
 
-        .past-content p {
-            font-size: 0.95rem;
+        .archive-year-block {
+            margin-bottom: 3.5rem;
+        }
+
+        .archive-year-title {
+            font-size: 1.6rem;
+            font-weight: 300;
+            letter-spacing: 0.2rem;
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .archive-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .archive-list li {
+            font-size: 1rem;
             color: #333333;
             font-weight: 300;
-            line-height: 1.8;
-            margin-top: 1.5rem;
-            margin-bottom: 0;
+            padding: 0.75rem 0;
+            border-bottom: 1px dashed #edeef0;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .archive-list li::before {
+            content: "—";
+            margin-right: 1rem;
+            color: var(--text-muted);
+        }
+
+        .archive-footer-note {
+            background-color: #fafafa;
+            border: 1px solid var(--border-color);
+            padding: 1.8rem;
+            text-align: center;
+            font-size: 0.9rem;
+            letter-spacing: 0.15rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 3rem;
         }
 
         footer {
@@ -243,11 +261,6 @@
             }
             .page-header h1 {
                 font-size: 1.8rem;
-            }
-            .past-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
             }
             footer {
                 flex-direction: column;
@@ -299,7 +312,7 @@
                     <div>
                         <div class="upcoming-date">Od března 2027</div>
                         <h3>„Life of a Box“</h3>
-                        <p>Hesham Malik ukazuje svůj inovativní přístup k umění a designu integrací obnovitelných zdrojů energie ve svém projektu udržitelnosti „Life of a Box“ na Karlově univerzitě, a představuje tak novou formu svého uměleckého vyjádření.</p>
+                        <p>Hesham Malik ukazuje svůj inovativní přístup k umění a designu integrací obnovitelných zdrojů energie ve svém projektu udržitelnosti „Life of a Box“ na Karlově univerzítě, a představuje tak novou formu svého uměleckého vyjádření.</p>
                     </div>
                     <div class="upcoming-location">
                         Univerzita Karlova &bull; Praha, Česká republika
@@ -319,65 +332,76 @@
                 </article>
             </div>
 
-            <!-- SECTION 2: PAST EXHIBITIONS ARCHIVE -->
-            <h2 class="section-title-clean">Proběhlé výstavy</h2>
+            <!-- SECTION 2: ARCHIVE ARCHITECTURE -->
+            <h2 class="section-title-clean">Historie výstav</h2>
 
-            <div class="past-list">
-                <!-- Past Show 1 -->
-                <article class="past-exhibition-item">
-                    <div class="past-header" onclick="togglePast(this)">
-                        <div class="past-title-box">
-                            <h3>Life of A Box — Brussels Expo</h3>
-                            <div class="venue">Brusel, Belgie &bull; Mezinárodní prezentace</div>
-                        </div>
-                        <div class="past-toggle-icon">+</div>
-                    </div>
-                    <div class="past-content">
-                        <p>Konceptuální prezentace zaměřená na environmentální udržitelnost a transformaci recyklovaných materiálů v umělecké objekty. Projekt podpořený řadou evropských institucí a veřejných orgánů.</p>
-                    </div>
-                </article>
+            <button class="toggle-archive-btn" onclick="toggleArchive()" id="archiveBtn">
+                &darr; Zobrazit všechny výstavy (1997–2026)
+            </button>
 
-                <!-- Past Show 2 -->
-                <article class="past-exhibition-item">
-                    <div class="past-header" onclick="togglePast(this)">
-                        <div class="past-title-box">
-                            <h3>Muzeum Jindřichohradecka</h3>
-                            <p class="venue">Jindřichův Hradec &bull; Samostatná výstava</p>
-                        </div>
-                        <div class="past-toggle-icon">+</div>
-                    </div>
-                    <div class="past-content">
-                        <p>Rozsáhlá monografická výstava představující průřez malířskou tvorbou Heshama Malika, zkoumající témata lidské etnografie, neuroaestetiky a mezikulturního dialogu.</p>
-                    </div>
-                </article>
+            <div class="archive-container" id="archiveContent">
+                
+                <!-- 2026 -->
+                <div class="archive-year-block">
+                    <h3 class="archive-year-title">2026</h3>
+                    <ul class="archive-list">
+                        <li>Brussels Expo – Europe’s Creative Industries – Life of A Box – Belgie</li>
+                        <li>Tiché doteky – Muzeum Jindřichohradecka</li>
+                        <li>Life of A Box – Městská knihovna v Praze</li>
+                        <li>Andělé a démoni – Muzeum církevního umění plzeňské diecéze</li>
+                        <li>Iridescent – Muzeum a galerie severního Plzeňska v Mariánské Týnici</li>
+                    </ul>
+                </div>
 
-                <!-- Past Show 3 -->
-                <article class="past-exhibition-item">
-                    <div class="past-header" onclick="togglePast(this)">
-                        <div class="past-title-box">
-                            <h3>Muzeum a galerie severního Plzeňska</h3>
-                            <div class="venue">Mariánská Týnice &bull; Muzejní expozice</div>
-                        </div>
-                        <div class="past-toggle-icon">+</div>
-                    </div>
-                    <div class="past-content">
-                        <p>Prezentace velkoformátových pláten v historických prostorách muzea, zaměřená na spojení lidských příběhů, duchovních tradic a vizuálního vyprávění.</p>
-                    </div>
-                </article>
+                <!-- 2025 -->
+                <div class="archive-year-block">
+                    <h3 class="archive-year-title">2025</h3>
+                    <ul class="archive-list">
+                        <li>Life of A Box – Museum of Papermaking v Polsku</li>
+                        <li>Od řeky k věčnosti – Muzeum v Horní Police</li>
+                        <li>Reminiscence – Městská galerie ve Vysokém Mýtě</li>
+                        <li>Birth Giver – Pevnost Josefov (Jaroměř)</li>
+                        <li>Aliferous – Muzeum Černošín / Galerie Carpe Diem</li>
+                        <li>18 – Jeruzalémská Synagoga</li>
+                        <li>Rumi – Orlické muzeum v Chocni</li>
+                        <li>Setkání vědy a umění – MGVO, Karlova Univerzita</li>
+                        <li>Anekdota – UFFO</li>
+                        <li>Portréty života – Regionální muzeum Kladrubska</li>
+                        <li>Cast – Městské muzeum Králíky</li>
+                    </ul>
+                </div>
 
-                <!-- Past Show 4 -->
-                <article class="past-exhibition-item">
-                    <div class="past-header" onclick="togglePast(this)">
-                        <div class="past-title-box">
-                            <h3>Muzeum papírenství v Duszniki-Zdrój</h3>
-                            <div class="venue">Polsko &bull; Zahajovací výstava Life of a Box</div>
-                        </div>
-                        <div class="past-toggle-icon">+</div>
-                    </div>
-                    <div class="past-content">
-                        <p>První oficiální muzejní výstava v rámci globální iniciativy Life of a Box, využívající darované krabice a papírové materiály z celého světa.</p>
-                    </div>
-                </article>
+                <!-- 2024 -->
+                <div class="archive-year-block">
+                    <h3 class="archive-year-title">2024</h3>
+                    <ul class="archive-list">
+                        <li>Židovská čtvrť – Zadní synagoga Třebíč</li>
+                        <li>Twain – Berkeley Commonplace – Kalifornie, USA</li>
+                        <li>Kemet – Muzeum Karlovy Vary</li>
+                        <li>Skrytá Tajemství Indie – Oblastní muzeum a galerie v Mostě</li>
+                        <li>Mizpah – Muzeum Vysočiny Havlíčkův Brod</li>
+                    </ul>
+                </div>
+
+                <!-- 2023 -->
+                <div class="archive-year-block">
+                    <h3 class="archive-year-title">2023</h3>
+                    <ul class="archive-list">
+                        <li>Incomplete – Městská galerie Zázvorka</li>
+                        <li>Nejisté vibrace – Muzeum Kroměřížska</li>
+                        <li>Gesto – Karlova Univerzita</li>
+                        <li>Rodičům Navzdory – Zámek Zruč nad Sázavou</li>
+                        <li>Moonbow – Městská galerie Zázvorka / Muzeum Nové Město nad Metují</li>
+                        <li>Amorista – Muzeum Červená věž, Litomyšl</li>
+                        <li>Kuumba – Městské muzeum Dvůr Králové nad Labem</li>
+                    </ul>
+                </div>
+
+                <!-- 2022 - 1997 NOTE -->
+                <div class="archive-footer-note">
+                    2022 – 1997 &bull; Kompletní historie výstav na vyžádání (Upon Request)
+                </div>
+
             </div>
 
         </section>
@@ -389,16 +413,16 @@
     </footer>
 
     <script>
-        function togglePast(header) {
-            const content = header.nextElementSibling;
-            const icon = header.querySelector('.past-toggle-icon');
+        function toggleArchive() {
+            const archive = document.getElementById('archiveContent');
+            const btn = document.getElementById('archiveBtn');
             
-            if (content.style.display === 'block') {
-                content.style.display = 'none';
-                icon.textContent = '+';
+            if (archive.style.display === 'block') {
+                archive.style.display = 'none';
+                btn.innerHTML = '&darr; Zobrazit všechny výstavy (1997–2026)';
             } else {
-                content.style.display = 'block';
-                icon.textContent = '−';
+                archive.style.display = 'block';
+                btn.innerHTML = '&uarr; Skrýt historii výstav';
             }
         }
     </script>
