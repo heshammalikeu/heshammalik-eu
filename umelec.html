@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesham Malik | Umělec</title>
+    <style>
+        :root {
+            --bg-color: #fcfcfc;
+            --card-bg: #ffffff;
+            --text-color: #111111;
+            --text-muted: #555555;
+            --accent-color: #000000;
+            --border-color: #e5e5e5;
+            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --font-serif: Georgia, 'Times New Roman', serif;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            background-color: rgba(252, 252, 252, 0.95);
+            backdrop-filter: blur(5px);
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            letter-spacing: 0.25rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 300;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.12rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .page-header {
+            padding: 5rem 2rem 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .page-header h1 {
+            font-size: 2.2rem;
+            font-weight: 300;
+            letter-spacing: 0.3rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .page-header .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            letter-spacing: 0.1rem;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+        }
+
+        .bio-section {
+            margin-bottom: 3rem;
+        }
+
+        .bio-section p {
+            font-size: 1.05rem;
+            color: #222222;
+            font-weight: 300;
+            margin-bottom: 1.8rem;
+            text-align: justify;
+        }
+
+        .bio-section h2 {
+            font-size: 1.4rem;
+            font-weight: 300;
+            letter-spacing: 0.15rem;
+            text-transform: uppercase;
+            margin: 3.5rem 0 1.5rem;
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        blockquote {
+            margin: 3rem 0;
+            padding: 2rem 2.5rem;
+            background-color: var(--card-bg);
+            border-left: 2px solid var(--accent-color);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.15rem;
+            color: #333333;
+            line-height: 1.8;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .highlight-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+        }
+
+        .highlight-box h3 {
+            font-size: 0.85rem;
+            letter-spacing: 0.15rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .highlight-box p {
+            font-size: 0.95rem;
+            color: var(--accent-color);
+            margin-bottom: 0;
+            font-weight: 400;
+            text-align: left;
+        }
+
+        footer {
+            padding: 2.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #777777;
+            border-top: 1px solid var(--border-color);
+            background-color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 1.5rem 2rem;
+            }
+            nav a {
+                margin: 0 0.75rem;
+            }
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            blockquote {
+                padding: 1.5rem;
+                margin: 2rem 0;
+            }
+            footer {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Hesham Malik</a>
+        <nav>
+            <a href="index.html">Domů</a>
+            <a href="umelec.html" class="active">Umělec</a>
+            <a href="umeni.html">Umění</a>
+            <a href="projekty.html">Projekty</a>
+            <a href="vystavy.html">Výstavy</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>HESHAM MALIK</h1>
+            <p class="subtitle">Anatomie sdíleného prostoru</p>
+        </section>
+
+        <article class="content-container">
+            <!-- Academic Credentials Box -->
+            <div class="highlights-grid">
+                <div class="highlight-box">
+                    <h3>Vzdělání</h3>
+                    <p>University of Waterloo<br>Parsons School of Design<br>MoMA New York</p>
+                </div>
+                <div class="highlight-box">
+                    <h3>Působení</h3>
+                    <p>100+ samostatných výstav celosvětově</p>
+                </div>
+                <div class="highlight-box">
+                    <h3>Ocenění</h3>
+                    <p>Art Tour International Master (2015)</p>
+                </div>
+            </div>
+
+            <div class="bio-section">
+                <p>Hesham Malik je mezinárodně uznávaný umělec a vizuální etnograf, který se specializuje na současné moderní umění. Ačkoli jeho formální vzdělání pochází z těch nejprestižnějších institucí – vystudoval University of Waterloo v Kanadě a specializoval se na umění a design na Parsons School of Design a v Museum of Modern Art (MoMA) v New Yorku – jeho skutečným ateliérem se stal sám svět.</p>
+
+                <p>S více než stovkou samostatných výstav a oceněními od institucí, jako je newyorská Art Tour International (která jej v roce 2015 zařadila mezi mistry současného umění), či uznáním od dubajské královské rodiny za přínos světovému trhu s uměním, si Hesham Malik vybudoval pozici respektovaného profesionála. Dodnes je celosvětově oceňován také za svou iniciativu v podpoře a vzdělávání dětí, u kterých probouzí smysl pro umělecké a kritické vyjádření.</p>
+
+                <p>Navzdory svému špičkovému akademickému zázemí Malik hluboce věří, že tím nejlepším učitelem je přímá zkušenost a neřízená empirie. Odmítá tvořit v izolaci; místo toho se noří do terénu. Jeho umění je bytostně senzorické a stojí na autentickém naslouchání a participativním sdílení času s lidmi z nejrůznějších kulturních enkláv. Otevřenost vůči odlišnostem mu umožnila míchat různé formy a vytvářet jedinečný vizuální jazyk.</p>
+
+                <p>Malikův zájem je bezprecedentní a vyžaduje neustálé vědomé opouštění vlastní kulturní komfortní zóny. Jeho tvorba provádí důkladnou anatomii sdíleného prostoru napříč neuvěřitelným spektrem lidské existence. Spojuje zdánlivě běžné a každodenní s marginalizovaným či vzdáleným: s analytickou pečlivostí naslouchá hlasům obyčejných lidí napříč českými městy či v odlehlých usedlostech na Islandu, aby následně se stejným respektem mapoval sociální periferie, jako je hnutí freeganů v New Yorku nebo komunity sexuálních pracovníků na Filipínách.</p>
+
+                <p>Tento průřez kulturami plynule přechází ke zkoumání ontologie původních indiánských komunit v USA a Kanadě či tradičních kmenů v Keni a noří se do spirituality asketických sekt v Indii či perských textů Rúmího. Veškerá tato etnografická zkušenost pak silně rezonuje v reflexi osudů perzekvovaných muslimských Ujgurů v Číně, nebo – ve spolupráci s institucemi, jako jsou židovská muzea – v odkrývání složitých vrstev a příběhů komunit, které čelily systematickému útlaku.</p>
+
+                blockquote>
+                    „Umění není nástrojem segregace, ale nezávislou platformou pro setkávání odlišných světů. Ten, kdo se domnívá, že je správné a přípustné zachycovat jen vybrané vrstvy společnosti a jiné vytěsňovat, se dobrovolně z tohoto sdíleného prostoru vyčleňuje.“
+                </blockquote>
+
+                <h2>Obhajoba sdíleného prostoru</h2>
+
+                <p>V současné době, která je často fragmentována povrchními politickými narativy, performativním aktivismem a tendencí k vylučování, zastává Malik v samotném jádru svého přístupu jasný postoj. Jakoukoli snahu kádrovat umění a diktovat, jakou komunitu či sociální vrstvu je právě „pohodlné“ zkoumat, vnímá jako absolutní popření podstaty umělecké svobody.</p>
+
+                <p>Ve své práci Malik citlivě vnímá, jak destruktivní dopad má politický populismus a mocenské hry úzkých elit na životy běžných lidí. Odmítá přistoupit na reduktivní logiku selektivní empatie a kolektivní viny, kterou tito političtí aktéři cíleně zneužívají k polarizaci společnosti. Umění podle něj nesmí tuto hru na „vybírání stran“ akceptovat; jeho rolí je naopak sdílený prostor bránit, rozšiřovat a učit nás v něm nacházet styčné body. Odpovědnost za konflikty je třeba vyžadovat od politických vůdců, nikoli ji účelově přenášet na tvůrce, kteří odkrývají neviditelné vrstvy společnosti a budují mosty. Pro Heshama Malika není žádná kultura ani společenská vrstva okrajová a právo na sdílený prostor nesmí být nikomu odepřeno.</p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; Hesham Malik. Všechna práva vyhrazena.</p>
+        <p>Prague &bull; Brussels &bull; Global</p>
+    </footer>
+
+</body>
+</html>
