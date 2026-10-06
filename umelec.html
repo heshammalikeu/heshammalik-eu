@@ -95,10 +95,6 @@
             padding: 4rem 2rem 6rem;
         }
 
-        .bio-section {
-            margin-bottom: 3rem;
-        }
-
         .bio-section p {
             font-size: 1.05rem;
             color: #222222;
@@ -118,18 +114,33 @@
             padding-bottom: 0.5rem;
         }
 
-        blockquote {
-            margin: 3rem 0;
-            padding: 2rem 2.5rem;
+        /* Statement Box: SLOVO AUTORA */
+        .artist-statement-box {
             background-color: var(--card-bg);
-            border-left: 2px solid var(--accent-color);
-            border-top: 1px solid var(--border-color);
-            border-right: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .artist-statement-box .statement-title {
+            font-size: 0.85rem;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .artist-statement-box blockquote {
+            margin: 0;
+            padding: 0;
+            border: none;
+            background: transparent;
             font-family: var(--font-serif);
             font-style: italic;
             font-size: 1.15rem;
-            color: #333333;
+            color: #111111;
             line-height: 1.8;
         }
 
@@ -186,9 +197,8 @@
             .page-header h1 {
                 font-size: 1.8rem;
             }
-            blockquote {
-                padding: 1.5rem;
-                margin: 2rem 0;
+            .artist-statement-box {
+                padding: 1.8rem;
             }
             footer {
                 flex-direction: column;
@@ -219,7 +229,7 @@
         </section>
 
         <article class="content-container">
-            <!-- Academic Credentials Box -->
+            <!-- Academic Credentials Grid -->
             <div class="highlights-grid">
                 <div class="highlight-box">
                     <h3>Vzdělání</h3>
@@ -235,6 +245,14 @@
                 </div>
             </div>
 
+            <!-- SLOVO AUTORA Box -->
+            <div class="artist-statement-box">
+                <div class="statement-title">SLOVO AUTORA</div>
+                <blockquote>
+                    „Věřím v to, že si lidé odnesou myšlenku sdílené lidskosti. Uvědomění si, že jsme si více podobní, než nejsme. A že tyto vazby a vzájemný respekt a pochopení jeden druhého jsou nejdůležitějšími prvky, které můžeme využít k vytvoření mírumilovnějšího a empatičtějšího světa, nyní i v budoucnosti.“
+                </blockquote>
+            </div>
+
             <div class="bio-section">
                 <p>Hesham Malik je mezinárodně uznávaný umělec a vizuální etnograf, který se specializuje na současné moderní umění. Ačkoli jeho formální vzdělání pochází z těch nejprestižnějších institucí – vystudoval University of Waterloo v Kanadě a specializoval se na umění a design na Parsons School of Design a v Museum of Modern Art (MoMA) v New Yorku – jeho skutečným ateliérem se stal sám svět.</p>
 
@@ -245,10 +263,6 @@
                 <p>Malikův zájem je bezprecedentní a vyžaduje neustálé vědomé opouštění vlastní kulturní komfortní zóny. Jeho tvorba provádí důkladnou anatomii sdíleného prostoru napříč neuvěřitelným spektrem lidské existence. Spojuje zdánlivě běžné a každodenní s marginalizovaným či vzdáleným: s analytickou pečlivostí naslouchá hlasům obyčejných lidí napříč českými městy či v odlehlých usedlostech na Islandu, aby následně se stejným respektem mapoval sociální periferie, jako je hnutí freeganů v New Yorku nebo komunity sexuálních pracovníků na Filipínách.</p>
 
                 <p>Tento průřez kulturami plynule přechází ke zkoumání ontologie původních indiánských komunit v USA a Kanadě či tradičních kmenů v Keni a noří se do spirituality asketických sekt v Indii či perských textů Rúmího. Veškerá tato etnografická zkušenost pak silně rezonuje v reflexi osudů perzekvovaných muslimských Ujgurů v Číně, nebo – ve spolupráci s institucemi, jako jsou židovská muzea – v odkrývání složitých vrstev a příběhů komunit, které čelily systematickému útlaku.</p>
-
-                blockquote>
-                    „Umění není nástrojem segregace, ale nezávislou platformou pro setkávání odlišných světů. Ten, kdo se domnívá, že je správné a přípustné zachycovat jen vybrané vrstvy společnosti a jiné vytěsňovat, se dobrovolně z tohoto sdíleného prostoru vyčleňuje.“
-                </blockquote>
 
                 <h2>Obhajoba sdíleného prostoru</h2>
 
