@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesham Malik | Umělecké Projekty</title>
+    <style>
+        :root {
+            --bg-color: #fcfcfc;
+            --card-bg: #ffffff;
+            --text-color: #111111;
+            --text-muted: #555555;
+            --accent-color: #000000;
+            --border-color: #e5e5e5;
+            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --font-serif: Georgia, 'Times New Roman', serif;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            background-color: rgba(252, 252, 252, 0.95);
+            backdrop-filter: blur(5px);
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            letter-spacing: 0.25rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 300;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.12rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .page-header {
+            padding: 5rem 2rem 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .page-header .category-label {
+            font-size: 0.9rem;
+            letter-spacing: 0.25rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        .page-header h1 {
+            font-size: 2.2rem;
+            font-weight: 300;
+            letter-spacing: 0.3rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+        }
+
+        /* 4-Project Navigation Jump Grid */
+        .projects-nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .projects-nav-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .project-nav-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem 1.5rem;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: border-color 0.3s, transform 0.2s, box-shadow 0.3s;
+        }
+
+        .project-nav-card:hover {
+            border-color: #999999;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+        }
+
+        .project-nav-card .num {
+            font-size: 0.8rem;
+            letter-spacing: 0.15rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .project-nav-card h2 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0.15rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .project-nav-card .action-link {
+            font-size: 0.75rem;
+            letter-spacing: 0.15rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--accent-color);
+            align-self: flex-start;
+            padding-bottom: 0.1rem;
+        }
+
+        /* Detailed Projects Section */
+        .project-detail-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem 6rem;
+        }
+
+        .project-block {
+            padding-top: 5rem;
+            margin-top: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5rem;
+        }
+
+        .project-block:last-child {
+            border-bottom: none;
+        }
+
+        .project-header {
+            margin-bottom: 2rem;
+        }
+
+        .project-header .project-number {
+            font-size: 0.85rem;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-header h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 0.25rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-header .project-subtitle {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            letter-spacing: 0.1rem;
+        }
+
+        .patronage-badge {
+            display: inline-block;
+            background-color: #f0f4f0;
+            border: 1px solid #d0e0d0;
+            color: #1b4d1b;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.05rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-body p {
+            font-size: 1.05rem;
+            color: #222222;
+            font-weight: 300;
+            margin-bottom: 1.8rem;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        .quote-box {
+            background-color: var(--card-bg);
+            border-left: 2px solid var(--accent-color);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 2rem;
+            margin: 2.5rem 0;
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.15rem;
+            color: #222222;
+            line-height: 1.8;
+        }
+
+        .partners-box {
+            background-color: #fafafa;
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .partners-box h3 {
+            font-size: 0.85rem;
+            letter-spacing: 0.18rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .partners-box p {
+            font-size: 0.95rem;
+            color: #444444;
+            line-height: 1.8;
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        footer {
+            padding: 2.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #777777;
+            border-top: 1px solid var(--border-color);
+            background-color: #ffffff;
+        }
+
+        @media (max-width: 900px) {
+            .projects-nav-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 1.5rem 2rem;
+            }
+            nav a {
+                margin: 0 0.75rem;
+            }
+            .projects-nav-grid {
+                grid-template-columns: 1fr;
+            }
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            .project-header h2 {
+                font-size: 1.6rem;
+            }
+            footer {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Hesham Malik</a>
+        <nav>
+            <a href="index.html">Domů</a>
+            <a href="umelec.html">Umělec</a>
+            <a href="umeni.html">Umění</a>
+            <a href="projekty.html" class="active">Projekty</a>
+            <a href="vystavy.html">Výstavy</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="category-label">galerie</div>
+            <h1>UMĚLECKÉ PROJEKTY</h1>
+        </section>
+
+        <!-- 4 Clickable Cards Navigation -->
+        <section class="projects-nav-container">
+            <div class="projects-nav-grid">
+                <a href="#life-of-a-box" class="project-nav-card">
+                    <div>
+                        <div class="num">01</div>
+                        <h2>LIFE OF A BOX</h2>
+                    </div>
+                    <span class="action-link">Přejít na projekt &darr;</span>
+                </a>
+
+                <a href="#words" class="project-nav-card">
+                    <div>
+                        <div class="num">02</div>
+                        <h2>W O R D S …</h2>
+                    </div>
+                    <span class="action-link">Přejít na projekt &darr;</span>
+                </a>
+
+                <a href="#svet-vody" class="project-nav-card">
+                    <div>
+                        <div class="num">03</div>
+                        <h2>SVĚT VODY</h2>
+                    </div>
+                    <span class="action-link">Přejít na projekt &darr;</span>
+                </a>
+
+                <a href="#hlas-zeme" class="project-nav-card">
+                    <div>
+                        <div class="num">04</div>
+                        <h2>HLAS ZEMĚ</h2>
+                    </div>
+                    <span class="action-link">Přejít na projekt &darr;</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Detailed Projects Section -->
+        <section class="project-detail-container">
+
+            <!-- PROJECT 1: LIFE OF A BOX -->
+            <article id="life-of-a-box" class="project-block">
+                <header class="project-header">
+                    <div class="project-number">PROJEKT 01</div>
+                    <h2>LIFE OF A BOX</h2>
+                </header>
+
+                <div class="patronage-badge">
+                    &bull; Projektu byla udělena záštita Ministerstva životního prostředí České republiky.
+                </div>
+
+                <div class="project-body">
+                    <p>Platforma Life of a Box slouží jako prostředek pro předávání poselství, demonstrování principů a inspiraci k transformaci. Zapojením se do této iniciativy zvyšujeme povědomí a poskytujeme vzdělání o environmentálních problémech.</p>
+
+                    <p>Recyklované materiály nabízejí bohatou inspiraci a kreativitu pro umělecké projekty, zejména pro ty, kteří chtějí propagovat ekologické uvědomění a udržitelnost. Začlenění recyklovaných materiálů do uměleckých projektů poskytuje vynikající příležitost integrovat environmentální vzdělávání do vaší výuky nebo praxe. Environmentální vzdělávání zahrnuje pochopení přírodního prostředí a lidských interakcí s ním, s cílem podporovat povědomí, znalosti, dovednosti, postoje a chování, které podporují ochranu životního prostředí a udržitelnost. Použitím recyklovaných materiálů v uměleckých projektech se můžeme vzdělávat a vzdělávat ostatní o řadě environmentálních témat a problémů, včetně nakládání s odpady, ochrany zdrojů, změny klimatu, biodiverzity a environmentální spravedlnosti. Nejdůležitější je, že zvyšujeme povědomí, které nás může inspirovat k tomu, abychom podnikli kroky a provedli pozitivní změny v našem osobním, sociálním a profesním životě, což prospěje jak planetě, tak společnosti jako celku.</p>
+
+                    <p>Life of a Box je globální iniciativa, kterou založil umělec Hesham Malik, a která vzdává hold organizacím a jednotlivcům s hlubokým zájmem o environmentální výzvy, jimž čelí náš svět. Tato iniciativa využívá recyklované materiály pro umělecké projekty a nabízí řadu výhod, včetně možnosti minimalizovat odpad a chránit cenné zdroje. Přetvářením předmětů, které by jinak skončily na skládkách nebo ve spalovnách, lze aktivně přispívat k ochraně přírodních zdrojů, snižování emisí skleníkových plynů a prevenci znečištění.</p>
+
+                    <p>Různá města a organizace po celém světě podporují Heshamův projekt darováním použité krabice. Hesham přeměňuje tyto krabice na umění a vystavuje je v muzeích po celém světě s cílem propagovat environmentální uvědomění a udržitelnost. První výstava Life of a Box se koná v Muzeu papírenství v Duszniki-Zdrój v Polsku.</p>
+
+                    <p>Life of a Box však čelí určitým překážkám a omezením. Mezi tyto výzvy patří hledání vhodných materiálů, které odpovídají našim cílům a požadavkům; značný čas a úsilí investované do identifikace organizací nebo jednotlivců, navazování kontaktů, shromažďování, organizace, vytváření a uchovávání uměleckých děl; a nakonec je vždy potřeba mít záložní plán pro jakýkoli nepředvídaný výsledek nebo neúspěch. Uprostřed těchto výzev slouží Life of a Box jako platforma pro předávání poselství, ukazování hodnot a motivaci ke změně. Zapojením se do této iniciativy zvyšujeme povědomí a poskytujeme vzdělání o environmentálních problémech a možných řešení.</p>
+
+                    <div class="partners-box">
+                        <h3>Zapojené instituce a partneři po celém světě</h3>
+                        <p>Národní muzeum Dánska, Evropské muzeum Schengenu, Muzeum Nobelovy ceny, Maltské národní muzeum umění, Národní muzeum dějin Ukrajiny, Národní muzeum Irska, Nuukské muzeum – Grónsko, Švýcarské muzeum – Švýcarsko, Národní muzeum Cotroceni – Rumunsko, Městské muzeum Reykjavíku – Island, Musée des Augustins – Toulouse (Francie), Muzeum papírového umění – Dánsko, Muzeum města Norimberk – Německo, Hawk Conservancy Trust – Hampshire (UK), Environmental Services Association – Buckingham (UK), Newyorská veřejná knihovna – USA, Německá národní knihovna – Frankfurt, Museum Brugge – Belgie, Muzeum Waitangi – Nový Zéland, Přírodovědné muzeum Univerzity v Curychu, Muzeum kultur v Basileji – Švýcarsko, Mohatta Palace Museum – Karáčí (Pákistán), Museum Kampa – Praha, Museum of Anthropology – Britská Kolumbie (Kanada), Město Senica – Slovensko, Ålandské ostrovy – Finsko, Lidé Ukrajiny, Elmira College – New York, University of Providence – USA, Fundación MAPFRE – Španělsko, Galerie Chimera – Irsko, Newyorská univerzita, Galerie hlavního města Prahy (GHMP), Masarykova univerzita, Česká zemědělská univerzita, Červený kříž, UNICEF, Belgická ambasáda, Národní galerie Praha, Haus des Papiers gGmbH – Berlín, Georgia Institute of Technology – Atlanta (USA), České vysoké učení technické (ČVUT) – Praha, TŪHURA Otago Museum – Nový Zéland, University of Waterloo – Kanada, Muzeum Kroměřížska – Kroměříž, AgoraPrep School – Toronto (Kanada), Carpe Diem Gallery – Goa (Indie), Art Wall Gallery – Praha, Dům zahraniční spolupráce – Praha a mnoho dalších.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 2: WORDS -->
+            <article id="words" class="project-block">
+                <header class="project-header">
+                    <div class="project-number">PROJEKT 02</div>
+                    <h2>W O R D S …</h2>
+                </header>
+
+                <div class="project-body">
+                    <div class="quote-box">
+                        „Hlavním cílem globální iniciativy ‚Words‘ je utkat tapiserii lidského myšlení prostřednictvím sběru ‚darovaných slov‘ ze všech koutů světa.“
+                    </div>
+
+                    <p>Umělec o toto usiluje zapojením přispěvatele i diváka do procesu objasňování toho, jak se jediné darované slovo proměňuje ve vizuální kompozici. Od mezinárodních lídrů a kulturních institucí až po studenty a aktivisty – umělec zve celý svět k darování jediného slova, které v sobě nese váhu, význam či vizi.</p>
+
+                    <p>Umělec usiluje o proměnu těchto různorodých lingvistických fragmentů v jednotný narativ. Shromažďováním slov darovaných z nejrůznějších světových míst vytváří umělec jedinečný ‚popis‘. Tento kolektivní text se pak stává životadárnou jiskrou a předlohou pro samotné malby.</p>
+
+                    <p>Síla tohoto projektu spočívá v jeho původu: každý koncept, který inspiruje umělecké dílo, je zakořeněn v jiné kultuře a jiné životní zkušenosti. Umělec opět překračuje hranice tradiční tvorby a vytváří spojení mezi hudebníkem v Grónsku, filozofem v Londýně a studentem v Afghánistánu. Je to proces, který dokazuje, že ačkoliv se naše slova mohou lišit, umění, které inspirují, je univerzálním jazykem.</p>
+
+                    <p>Tento projekt slouží jako živý zdroj globální empatie a transformační síla ve světě umění. Propojením hlasů od Baham až po Vietnam odhaluje nádhernou komplexnost naší sdílené reality. Je to pozvání vnímat svět nikoliv jako soubor oddělených entit, ale jako jedinou, pulzující kompozici zrozenou z moci jediného slova.</p>
+
+                    <div class="partners-box">
+                        <h3>Participující globální instituce</h3>
+                        <p>Yale University, Tate London, Muzeum umění Čínské univerzity, Iniciativa pro rovné spravedlnosti – Alabama (USA), Index on Censorship – Londýn, Svalbard Global Seed Vault, Národní muzeum Grónska, Ministerstvo kultury Kypru, Univerzita Sorbonna v Paříži, Greenpeace International – Nizozemsko, Národní galerie Skotska, Artists at Risk Connection, Calgary Arts Development, Institut Jane Goodall, Museum Voor Schone Kunsten, Státní akademie výtvarných umění Stuttgart, Slovenské národní muzeum, Outer Space – Austrálie a mnoho dalších.</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 3: SVĚT VODY -->
+            <article id="svet-vody" class="project-block">
+                <header class="project-header">
+                    <div class="project-number">PROJEKT 03</div>
+                    <h2>SVĚT VODY</h2>
+                    <div class="project-subtitle">Mytická cesta k odkazu egyptské civilizace</div>
+                </header>
+
+                <div class="project-body">
+                    <p>V rámci uměleckého projektu „Svět vody“ vypráví malíř Hesham Malik svým uměním egyptské mýty. Ohromující nástěnná malba – „mural“ zdobí interiér Malé vodní elektrárny Přepeře II na řece Jizeře u Turnova. Najdete ji v srdci Českého ráje, spolu s rybím přechodem, který chrání ryby, aby mohly volně proplouvat řekou Jizerou.</p>
+
+                    <p>Přípravy na malbu začaly již v roce 2018 a byla dokončena po 14 měsících od zahájení realizace díla. Nadčasové dílo Svět vody výtvarníka Heshama Malika zobrazuje téma vody jako obnovitelného zdroje energie v průběhu dějin. Malik zde zakomponoval téma vzestupu a pádu jedné civilizace, politiky, ale také krásy a síly. Jak je pro Malika typické, malba je pro něj vyprávěním příběhu, v tomto případě mýtů ze starého Egypta.</p>
+
+                    <p>Malbě se Hesham Malik věnoval téměř šest měsíců a výsledná práce je zatím jeho největší nástěnnou malbou v Evropě. I sám malíř uznává, že už samotná budova, ve které je jeho malba umístěna, je uměleckým dílem. Jeho oblíbenou částí jsou kruhová okna, která designoval ve stylu „vodního kola,“ která byla ve starověkém Egyptě používána kolem roku 400 před naším letopočtem a byla předchůdci a inspirací pro dnešní moderní turbíny.</p>
+
+                    <div class="quote-box">
+                        „Aby se na tuto mimořádnou malbu připravil, namaloval Malik 112 pláten a načrtl 427 nákresů, takže k dokončení jedné nástěnné malby potřeboval 539 uměleckých děl: Pokud byste měly všechny obrazy a náčrtky k dispozici a sestavily je k sobě, daly by dohromady stejně velké umělecké dílo, jako pokrývá nástěnná malba (165 m² / 10m). Tu vytvořil na všech zdech budovy, tzn. i na stropě.“
+                    </div>
+                </div>
+            </article>
+
+            <!-- PROJECT 4: HLAS ZEMĚ -->
+            <article id="hlas-zeme" class="project-block">
+                <header class="project-header">
+                    <div class="project-number">PROJEKT 04</div>
+                    <h2>HLAS ZEMĚ (VOICES OF THE LAND)</h2>
+                    <div class="project-subtitle">Propojování základních principů, ústních tradic a jazykového dědictví předávaného z generace na generaci</div>
+                </header>
+
+                <div class="project-body">
+                    <p>Hlavním cílem projektu, který se zaměřuje na původní indiánské komunity (First Nations), je uctít a zachovat starobylou linii moudrosti promyšleným sdílením integrálních fragmentů tohoto vědění a jazyka s globální komunitou. Umělec se snaží k tomuto tématu přistupovat s maximální péčí, úctou a kulturní citlivostí.</p>
+
+                    <p>Propojením klíčových konceptů, ústních tradic a jazykového dědictví předávaného napříč generacemi vytváří umělec jedinečný a nadčasový most mezi kmenovým věděním předků a moderním světem. Tato iniciativa není koncipována pouze jako výstava, nýbrž jako hluboký akt úcty, který nabízí vhled do myšlenkových směrů a filozofií udržujících komunity při životě od nepaměti.</p>
+
+                    <p>Síla tohoto projektu spočívá v jeho autentičnosti: každý koncept a jazyková nuance, jež dílo inspirují, jsou zakořeněny v hlubokém pochopení propojení se zemí, kosmem a komunitou. Umělec překračuje tradiční hranice a vytváří respektující prostor, v němž lze nedozírné bohatství vědění původních obyvatel sdílet s elegancí a integritou po celém světě.</p>
+
+                    <p>Tento projekt slouží jako živá pocta domorodému dědictví a transformační průzkum lidské historie. Je pozváním k nahlédnutí do hloubky jazyků a tradic prvních národů, prezentovaných s péčí, jedinečností a klasickou elegancí, jakou si plně zaslouží.</p>
+
+                    <div class="partners-box">
+                        <h3>Spolupracující instituce a organizace</h3>
+                        <p>Harvardova univerzita, Národní galerie v Kanadě, University of Wisconsin – Milwaukee, University of Auckland (Nový Zéland), University of Queensland Art Museum, Native Women’s Shelter of Montreal (Na’kuset), Burke Museum (Seattle), Endangered Languages Project, National University of Samoa, Swarthmore College, Trent University, Arizona State University, University of Alberta, University of Manitoba a řada dalších.</p>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Hesham Malik. Všechna práva vyhrazena.</p>
+        <p>Prague &bull; Brussels &bull; Global</p>
+    </footer>
+
+</body>
+</html>
