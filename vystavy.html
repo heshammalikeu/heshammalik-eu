@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesham Malik | Výstavy</title>
+    <style>
+        :root {
+            --bg-color: #fcfcfc;
+            --card-bg: #ffffff;
+            --text-color: #111111;
+            --text-muted: #555555;
+            --accent-color: #000000;
+            --border-color: #e5e5e5;
+            --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --font-serif: Georgia, 'Times New Roman', serif;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            background-color: rgba(252, 252, 252, 0.95);
+            backdrop-filter: blur(5px);
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            letter-spacing: 0.25rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 300;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.12rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .page-header {
+            padding: 5rem 2rem 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .page-header h1 {
+            font-size: 2.2rem;
+            font-weight: 300;
+            letter-spacing: 0.3rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+        }
+
+        .exhibitions-container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 4rem 2rem 6rem;
+        }
+
+        .section-title-clean {
+            font-size: 1.3rem;
+            font-weight: 300;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.75rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Upcoming Exhibitions Grid */
+        .upcoming-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 6rem;
+        }
+
+        .upcoming-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .upcoming-card:hover {
+            border-color: #999999;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.04);
+        }
+
+        .upcoming-date {
+            font-size: 0.8rem;
+            letter-spacing: 0.15rem;
+            text-transform: uppercase;
+            color: #1b4d1b;
+            background-color: #f0f4f0;
+            border: 1px solid #d0e0d0;
+            padding: 0.3rem 0.8rem;
+            display: inline-block;
+            align-self: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .upcoming-card h3 {
+            font-size: 1.4rem;
+            font-weight: 300;
+            letter-spacing: 0.15rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .upcoming-card p {
+            font-size: 0.95rem;
+            color: #333333;
+            font-weight: 300;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .upcoming-location {
+            font-size: 0.85rem;
+            letter-spacing: 0.1rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+            margin-top: auto;
+        }
+
+        /* Past Exhibitions List & Accordion */
+        .past-exhibition-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            margin-bottom: 1.5rem;
+            transition: border-color 0.3s;
+        }
+
+        .past-exhibition-item:hover {
+            border-color: #a0a0a0;
+        }
+
+        .past-header {
+            padding: 1.8rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .past-title-box h3 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0.15rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 0.2rem;
+        }
+
+        .past-title-box .venue {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .past-toggle-icon {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            transition: transform 0.3s;
+        }
+
+        .past-content {
+            display: none;
+            padding: 0 2rem 2rem;
+            border-top: 1px solid var(--border-color);
+            background-color: #fafafa;
+        }
+
+        .past-content p {
+            font-size: 0.95rem;
+            color: #333333;
+            font-weight: 300;
+            line-height: 1.8;
+            margin-top: 1.5rem;
+            margin-bottom: 0;
+        }
+
+        footer {
+            padding: 2.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #777777;
+            border-top: 1px solid var(--border-color);
+            background-color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 1.5rem 2rem;
+            }
+            nav a {
+                margin: 0 0.75rem;
+            }
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            .past-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            footer {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Hesham Malik</a>
+        <nav>
+            <a href="index.html">Domů</a>
+            <a href="umelec.html">Umělec</a>
+            <a href="umeni.html">Umění</a>
+            <a href="projekty.html">Projekty</a>
+            <a href="vystavy.html" class="active">Výstavy</a>
+            <a href="kontakt.html">Kontakt</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>VÝSTAVY</h1>
+        </section>
+
+        <section class="exhibitions-container">
+            
+            <!-- SECTION 1: UPCOMING / FUTURE EXHIBITIONS -->
+            <h2 class="section-title-clean">Příští výstavy</h2>
+
+            <div class="upcoming-grid">
+                <!-- Upcoming Show 1 -->
+                <article class="upcoming-card">
+                    <div>
+                        <div class="upcoming-date">Od prosince 2026</div>
+                        <h3>„Unknown“</h3>
+                        <p>„S každou novou generací mladých žen přichází vlna proměny, která odvážně redefinuje status quo. V kolaborativní sérii s názvem ‚Unknown‘ (Neznámé) zkoumají Galerie MABD, Vox Gallery a Hesham Malik bohatou mozaiku zážitků, emocí a perspektiv, kterými současné ženy přispívají k vyvíjejícímu se narativu ženskosti.“</p>
+                    </div>
+                    <div class="upcoming-location">
+                        Oulu, Finsko &bull; Evropské hlavní město kultury
+                    </div>
+                </article>
+
+                <!-- Upcoming Show 2 -->
+                <article class="upcoming-card">
+                    <div>
+                        <div class="upcoming-date">Od března 2027</div>
+                        <h3>„Life of a Box“</h3>
+                        <p>Hesham Malik ukazuje svůj inovativní přístup k umění a designu integrací obnovitelných zdrojů energie ve svém projektu udržitelnosti „Life of a Box“ na Karlově univerzitě, a představuje tak novou formu svého uměleckého vyjádření.</p>
+                    </div>
+                    <div class="upcoming-location">
+                        Univerzita Karlova &bull; Praha, Česká republika
+                    </div>
+                </article>
+
+                <!-- Upcoming Show 3 -->
+                <article class="upcoming-card">
+                    <div>
+                        <div class="upcoming-date">Od května 2027</div>
+                        <h3>„Matka Máří“</h3>
+                        <p>Sázavský klášter uvádí mimořádnou výstavu Heshama Malika „Matka Máří“. Jeho díla otevřeně vzdávají hold uctívanému lidskému mateřství Panny Marie.</p>
+                    </div>
+                    <div class="upcoming-location">
+                        Sázavský klášter &bull; Česká republika
+                    </div>
+                </article>
+            </div>
+
+            <!-- SECTION 2: PAST EXHIBITIONS ARCHIVE -->
+            <h2 class="section-title-clean">Proběhlé výstavy</h2>
+
+            <div class="past-list">
+                <!-- Past Show 1 -->
+                <article class="past-exhibition-item">
+                    <div class="past-header" onclick="togglePast(this)">
+                        <div class="past-title-box">
+                            <h3>Life of A Box — Brussels Expo</h3>
+                            <div class="venue">Brusel, Belgie &bull; Mezinárodní prezentace</div>
+                        </div>
+                        <div class="past-toggle-icon">+</div>
+                    </div>
+                    <div class="past-content">
+                        <p>Konceptuální prezentace zaměřená na environmentální udržitelnost a transformaci recyklovaných materiálů v umělecké objekty. Projekt podpořený řadou evropských institucí a veřejných orgánů.</p>
+                    </div>
+                </article>
+
+                <!-- Past Show 2 -->
+                <article class="past-exhibition-item">
+                    <div class="past-header" onclick="togglePast(this)">
+                        <div class="past-title-box">
+                            <h3>Muzeum Jindřichohradecka</h3>
+                            <p class="venue">Jindřichův Hradec &bull; Samostatná výstava</p>
+                        </div>
+                        <div class="past-toggle-icon">+</div>
+                    </div>
+                    <div class="past-content">
+                        <p>Rozsáhlá monografická výstava představující průřez malířskou tvorbou Heshama Malika, zkoumající témata lidské etnografie, neuroaestetiky a mezikulturního dialogu.</p>
+                    </div>
+                </article>
+
+                <!-- Past Show 3 -->
+                <article class="past-exhibition-item">
+                    <div class="past-header" onclick="togglePast(this)">
+                        <div class="past-title-box">
+                            <h3>Muzeum a galerie severního Plzeňska</h3>
+                            <div class="venue">Mariánská Týnice &bull; Muzejní expozice</div>
+                        </div>
+                        <div class="past-toggle-icon">+</div>
+                    </div>
+                    <div class="past-content">
+                        <p>Prezentace velkoformátových pláten v historických prostorách muzea, zaměřená na spojení lidských příběhů, duchovních tradic a vizuálního vyprávění.</p>
+                    </div>
+                </article>
+
+                <!-- Past Show 4 -->
+                <article class="past-exhibition-item">
+                    <div class="past-header" onclick="togglePast(this)">
+                        <div class="past-title-box">
+                            <h3>Muzeum papírenství v Duszniki-Zdrój</h3>
+                            <div class="venue">Polsko &bull; Zahajovací výstava Life of a Box</div>
+                        </div>
+                        <div class="past-toggle-icon">+</div>
+                    </div>
+                    <div class="past-content">
+                        <p>První oficiální muzejní výstava v rámci globální iniciativy Life of a Box, využívající darované krabice a papírové materiály z celého světa.</p>
+                    </div>
+                </article>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Hesham Malik. Všechna práva vyhrazena.</p>
+        <p>Prague &bull; Brussels &bull; Global</p>
+    </footer>
+
+    <script>
+        function togglePast(header) {
+            const content = header.nextElementSibling;
+            const icon = header.querySelector('.past-toggle-icon');
+            
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                icon.textContent = '+';
+            } else {
+                content.style.display = 'block';
+                icon.textContent = '−';
+            }
+        }
+    </script>
+
+</body>
+</html>
