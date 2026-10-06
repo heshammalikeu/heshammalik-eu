@@ -95,60 +95,11 @@
             padding: 4rem 2rem 6rem;
         }
 
-        .bio-section p {
-            font-size: 1.05rem;
-            color: #222222;
-            font-weight: 300;
-            margin-bottom: 1.8rem;
-            text-align: justify;
-        }
-
-        .bio-section h2 {
-            font-size: 1.4rem;
-            font-weight: 300;
-            letter-spacing: 0.15rem;
-            text-transform: uppercase;
-            margin: 3.5rem 0 1.5rem;
-            color: var(--accent-color);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
-        }
-
-        /* Statement Box: SLOVO AUTORA */
-        .artist-statement-box {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 2.5rem;
-            margin: 3rem 0;
-            position: relative;
-        }
-
-        .artist-statement-box .statement-title {
-            font-size: 0.85rem;
-            letter-spacing: 0.2rem;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-            font-weight: 400;
-        }
-
-        .artist-statement-box blockquote {
-            margin: 0;
-            padding: 0;
-            border: none;
-            background: transparent;
-            font-family: var(--font-serif);
-            font-style: italic;
-            font-size: 1.15rem;
-            color: #111111;
-            line-height: 1.8;
-        }
-
         .highlights-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
             gap: 1.5rem;
-            margin: 3rem 0;
+            margin-bottom: 3rem;
         }
 
         .highlight-box {
@@ -172,6 +123,93 @@
             margin-bottom: 0;
             font-weight: 400;
             text-align: left;
+        }
+
+        /* Statement Box: SLOVO AUTORA */
+        .artist-statement-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .artist-statement-box .statement-title {
+            font-size: 0.85rem;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .artist-statement-box blockquote {
+            margin: 0;
+            padding: 0;
+            border: none;
+            background: transparent;
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.15rem;
+            color: #111111;
+            line-height: 1.8;
+        }
+
+        /* Wide Panoramic Tactile Banner */
+        .studio-tactile-banner {
+            margin: 0 0 4rem 0;
+            width: 100%;
+        }
+
+        .studio-tactile-banner img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(105%);
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+
+        .studio-tactile-banner figcaption {
+            font-size: 0.75rem;
+            letter-spacing: 0.15rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            text-align: right;
+        }
+
+        .bio-section p {
+            font-size: 1.05rem;
+            color: #222222;
+            font-weight: 300;
+            margin-bottom: 1.8rem;
+            text-align: justify;
+        }
+
+        .bio-section h2 {
+            font-size: 1.4rem;
+            font-weight: 300;
+            letter-spacing: 0.15rem;
+            text-transform: uppercase;
+            margin: 3.5rem 0 1.5rem;
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .bio-section blockquote.inline-quote {
+            margin: 3rem 0;
+            padding: 2rem 2.5rem;
+            background-color: var(--card-bg);
+            border-left: 2px solid var(--accent-color);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.15rem;
+            color: #333333;
+            line-height: 1.8;
         }
 
         footer {
@@ -199,6 +237,9 @@
             }
             .artist-statement-box {
                 padding: 1.8rem;
+            }
+            .studio-tactile-banner img {
+                height: 240px;
             }
             footer {
                 flex-direction: column;
@@ -253,6 +294,12 @@
                 </blockquote>
             </div>
 
+            <!-- Wide Panoramic Tactile Banner -->
+            <figure class="studio-tactile-banner">
+                <img src="assets/images/studio-hands-canvas.jpg" alt="Hesham Malik - Ateliér a proces tvorby" loading="lazy">
+                <figcaption>Ateliér &bull; Proces tvorby a hmatová neuroaestetika</figcaption>
+            </figure>
+
             <div class="bio-section">
                 <p>Hesham Malik je mezinárodně uznávaný umělec a vizuální etnograf, který se specializuje na současné moderní umění. Ačkoli jeho formální vzdělání pochází z těch nejprestižnějších institucí – vystudoval University of Waterloo v Kanadě a specializoval se na umění a design na Parsons School of Design a v Museum of Modern Art (MoMA) v New Yorku – jeho skutečným ateliérem se stal sám svět.</p>
 
@@ -263,6 +310,10 @@
                 <p>Malikův zájem je bezprecedentní a vyžaduje neustálé vědomé opouštění vlastní kulturní komfortní zóny. Jeho tvorba provádí důkladnou anatomii sdíleného prostoru napříč neuvěřitelným spektrem lidské existence. Spojuje zdánlivě běžné a každodenní s marginalizovaným či vzdáleným: s analytickou pečlivostí naslouchá hlasům obyčejných lidí napříč českými městy či v odlehlých usedlostech na Islandu, aby následně se stejným respektem mapoval sociální periferie, jako je hnutí freeganů v New Yorku nebo komunity sexuálních pracovníků na Filipínách.</p>
 
                 <p>Tento průřez kulturami plynule přechází ke zkoumání ontologie původních indiánských komunit v USA a Kanadě či tradičních kmenů v Keni a noří se do spirituality asketických sekt v Indii či perských textů Rúmího. Veškerá tato etnografická zkušenost pak silně rezonuje v reflexi osudů perzekvovaných muslimských Ujgurů v Číně, nebo – ve spolupráci s institucemi, jako jsou židovská muzea – v odkrývání složitých vrstev a příběhů komunit, které čelily systematickému útlaku.</p>
+
+                <blockquote class="inline-quote">
+                    „Umění není nástrojem segregace, ale nezávislou platformou pro setkávání odlišných světů. Ten, kdo se domnívá, že je správné a přípustné zachycovat jen vybrané vrstvy společnosti a jiné vytěsňovat, se dobrovolně z tohoto sdíleného prostoru vyčleňuje.“
+                </blockquote>
 
                 <h2>Obhajoba sdíleného prostoru</h2>
 
