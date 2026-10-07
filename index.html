@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hesham Malik | Oficiální Web</title>
+    <title>Hesham Malik | Oficiální Prezentace</title>
     <style>
         :root {
             --bg-color: #fcfcfc;
@@ -13,6 +13,7 @@
             --accent-color: #000000;
             --border-color: #e5e5e5;
             --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --font-serif: Georgia, 'Times New Roman', serif;
         }
         
         * {
@@ -25,7 +26,7 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: var(--font-main);
-            line-height: 1.6;
+            line-height: 1.7;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -65,121 +66,130 @@
             color: var(--accent-color);
         }
 
-        .hero {
-            height: 55vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 2rem;
-            border-bottom: 1px solid var(--border-color);
-            background-color: #ffffff;
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 300;
-            letter-spacing: 0.35rem;
-            margin-bottom: 1.2rem;
-            color: var(--accent-color);
-        }
-
-        .hero p {
-            max-width: 650px;
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            font-weight: 300;
-        }
-
-        .section-container {
+        /* Hero Banner */
+        .hero-container {
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 5rem 2rem;
+            margin: 3rem auto 0;
+            padding: 0 2rem;
         }
 
-        .section-header {
-            margin-bottom: 3rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1rem;
+        .hero-image-box {
+            width: 100%;
+            height: 520px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            background-color: #f0f0f0;
         }
 
-        .section-header h2 {
-            font-size: 1.6rem;
+        .hero-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* Statement Box */
+        .statement-section {
+            max-width: 850px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .statement-section h1 {
+            font-size: 2.2rem;
             font-weight: 300;
-            letter-spacing: 0.2rem;
+            letter-spacing: 0.25rem;
             text-transform: uppercase;
+            margin-bottom: 1.5rem;
             color: var(--accent-color);
         }
 
-        .section-header a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.85rem;
-            letter-spacing: 0.1rem;
-            text-transform: uppercase;
-            transition: color 0.3s;
+        .statement-section p {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #333333;
+            line-height: 1.8;
+            margin-bottom: 2rem;
         }
 
-        .section-header a:hover {
-            color: var(--accent-color);
+        /* 4 Main Section Entry Cards */
+        .nav-nodes-container {
+            max-width: 1200px;
+            margin: 0 auto 6rem;
+            padding: 0 2rem;
         }
 
-        .projects-grid {
+        .nav-nodes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
         }
 
-        .project-card {
+        .node-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            padding: 2.5rem;
+            padding: 1rem;
+            text-decoration: none;
+            color: inherit;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            transition: border-color 0.3s, box-shadow 0.3s;
+            transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
         }
 
-        .project-card:hover {
-            border-color: #b0b0b0;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        .node-card:hover {
+            border-color: #111111;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
         }
 
-        .project-card h3 {
-            font-size: 1.3rem;
-            font-weight: 300;
-            letter-spacing: 0.15rem;
-            color: var(--accent-color);
+        .node-card-image {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
             margin-bottom: 1rem;
-            text-transform: uppercase;
+            background-color: #f0f0f0;
         }
 
-        .project-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 2rem;
-            font-weight: 300;
+        .node-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
         }
 
-        .btn-link {
-            display: inline-block;
-            color: var(--accent-color);
-            text-decoration: none;
-            font-size: 0.85rem;
+        .node-card:hover .node-card-image img {
+            transform: scale(1.05);
+        }
+
+        .node-card h3 {
+            font-size: 1rem;
+            font-weight: 400;
             letter-spacing: 0.15rem;
             text-transform: uppercase;
-            border-bottom: 1px solid var(--accent-color);
-            padding-bottom: 0.2rem;
-            align-self: flex-start;
-            transition: opacity 0.3s;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
         }
 
-        .btn-link:hover {
-            opacity: 0.6;
+        .node-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .node-card .node-link {
+            font-size: 0.75rem;
+            letter-spacing: 0.15rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--accent-color);
+            align-self: flex-start;
+            margin-top: auto;
         }
 
         footer {
@@ -193,7 +203,26 @@
             background-color: #ffffff;
         }
 
-        @media (max-width: 768px) {
+        footer a {
+            color: #777777;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #111111;
+        }
+
+        @media (max-width: 900px) {
+            .nav-nodes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-image-box {
+                height: 380px;
+            }
+        }
+
+        @media (max-width: 600px) {
             header {
                 flex-direction: column;
                 gap: 1.5rem;
@@ -202,8 +231,11 @@
             nav a {
                 margin: 0 0.75rem;
             }
-            .hero h1 {
-                font-size: 2rem;
+            .nav-nodes-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-image-box {
+                height: 250px;
             }
             footer {
                 flex-direction: column;
@@ -228,42 +260,69 @@
     </header>
 
     <main>
-        <section class="hero">
-            <h1>HESHAM MALIK</h1>
-            <p>Současné výtvarné umění, neuroaestetika a konceptuální tvorba.</p>
+        <!-- Hero Art Canvas -->
+        <section class="hero-container">
+            <div class="hero-image-box">
+                <img src="artwork-1.jpg" alt="Hesham Malik Artwork" loading="lazy">
+            </div>
         </section>
 
-        <section class="section-container">
-            <div class="section-header">
-                <h2>Vybrané Projekty</h2>
-                <a href="projekty.html">Všechny projekty &rarr;</a>
-            </div>
+        <!-- Curatorial Overview Statement -->
+        <section class="statement-section">
+            <h1>HESHAM MALIK</h1>
+            <p>„Umění je univerzální jazyk, který překračuje hranice a spojuje lidské zkušenosti z celého světa.“</p>
+        </section>
 
-            <div class="projects-grid">
-                <!-- Life of A Box Preview -->
-                <article class="project-card">
-                    <div>
-                        <h3>Life of A Box</h3>
-                        <p>Konceptuální projekt zkoumající emoce, lidské příběhy a izolaci prostřednictvím umělecké formy objektu. Poprvé prezentován v Bruselu.</p>
+        <!-- 4 Section Gateway Cards -->
+        <section class="nav-nodes-container">
+            <div class="nav-nodes-grid">
+                
+                <a href="umelec.html" class="node-card">
+                    <div class="node-card-image">
+                        <img src="artist-portrait.jpg" alt="Umělec" loading="lazy">
                     </div>
-                    <a href="projekty.html#life-of-a-box" class="btn-link">Zobrazit detail</a>
-                </article>
+                    <h3>UMĚLEC</h3>
+                    <p>Více než tři desetiletí tvorby, mezinárodní výstavy a filozofie tvoření.</p>
+                    <span class="node-link">Prozkoumat &rarr;</span>
+                </a>
 
-                <!-- WORDS Preview -->
-                <article class="project-card">
-                    <div>
-                        <h3>WORDS</h3>
-                        <p>Globální umělecký projekt propojující slova darovaná lidmi z celého světa s vizuální kompozicí, příběhy a lidskou empatií.</p>
+                <a href="umeni.html" class="node-card">
+                    <div class="node-card-image">
+                        <img src="artwork-2.jpg" alt="Umění Galerie" loading="lazy">
                     </div>
-                    <a href="projekty.html#words" class="btn-link">Zobrazit detail</a>
-                </article>
+                    <h3>UMĚNÍ</h3>
+                    <p>Vybrané malby, abstraktní narativy a vizuální kompozice.</p>
+                    <span class="node-link">Vstoupit do galerie &rarr;</span>
+                </a>
+
+                <a href="projekty.html" class="node-card">
+                    <div class="node-card-image">
+                        <img src="project-life-of-a-box.jpg" alt="Projekty" loading="lazy">
+                    </div>
+                    <h3>PROJEKTY</h3>
+                    <p>Globální iniciativy Life of a Box, Words, Svět Vody a Hlas Země.</p>
+                    <span class="node-link">Zobrazit projekty &rarr;</span>
+                </a>
+
+                <a href="vystavy.html" class="node-card">
+                    <div class="node-card-image">
+                        <img src="artwork-5.jpg" alt="Výstavy" loading="lazy">
+                    </div>
+                    <h3>VÝSTAVY</h3>
+                    <p>Příští výstavy a kurátorský registr více než 100 samostatných výstav.</p>
+
+                    <span class="node-link">Zobrazit registr &rarr;</span>
+                </a>
+
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; Hesham Malik. Všechna práva vyhrazena.</p>
-        <p>Prague &bull; Brussels &bull; Global</p>
+        <p>&copy; Hesham Malik. All rights reserved.</p>
+        <p>
+            <a href="https://www.instagram.com/heshammalikart" target="_blank">Instagram</a> &bull; Prague &bull; Brussels &bull; Global
+        </p>
     </footer>
 
 </body>
