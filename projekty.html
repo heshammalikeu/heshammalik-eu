@@ -56,6 +56,11 @@
             font-weight: 300;
         }
 
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
         nav a {
             color: var(--text-muted);
             text-decoration: none;
@@ -70,6 +75,45 @@
             color: var(--accent-color);
         }
 
+        /* Dropdown Navigation Menu */
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 2rem;
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            min-width: 220px;
+            padding: 0.8rem 0;
+            z-index: 1000;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            margin: 0;
+            padding: 0.6rem 1.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu a:hover {
+            color: var(--accent-color);
+            background-color: #f7f7f7;
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
         .page-header {
             padding: 5rem 2rem 3rem;
             max-width: 900px;
@@ -79,7 +123,7 @@
         }
 
         .page-header .category-label {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 0.25rem;
             text-transform: uppercase;
             color: var(--text-muted);
@@ -95,7 +139,7 @@
             color: var(--accent-color);
         }
 
-        /* 4-Project Navigation Jump Grid */
+        /* 4-Project Visual Navigation Grid */
         .projects-nav-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -111,35 +155,49 @@
         .project-nav-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            padding: 2rem 1.5rem;
+            padding: 1rem;
             text-decoration: none;
             color: inherit;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: border-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
         }
 
         .project-nav-card:hover {
-            border-color: #999999;
+            border-color: #111111;
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
         }
 
-        .project-nav-card .num {
-            font-size: 0.8rem;
-            letter-spacing: 0.15rem;
-            color: var(--text-muted);
+        .nav-card-image {
+            width: 100%;
+            height: 160px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
             margin-bottom: 1rem;
+            background-color: #f0f0f0;
+        }
+
+        .nav-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            transition: transform 0.4s ease;
+        }
+
+        .project-nav-card:hover .nav-card-image img {
+            transform: scale(1.05);
         }
 
         .project-nav-card h2 {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 400;
             letter-spacing: 0.15rem;
             text-transform: uppercase;
             color: var(--accent-color);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .project-nav-card .action-link {
@@ -174,14 +232,6 @@
             margin-bottom: 2rem;
         }
 
-        .project-header .project-number {
-            font-size: 0.85rem;
-            letter-spacing: 0.2rem;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 0.5rem;
-        }
-
         .project-header h2 {
             font-size: 2rem;
             font-weight: 300;
@@ -196,6 +246,24 @@
             font-weight: 300;
             color: var(--text-muted);
             letter-spacing: 0.1rem;
+        }
+
+        /* Banner Art inside Project Detail */
+        .project-hero-image {
+            width: 100%;
+            height: 380px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+            background-color: #f5f5f5;
+        }
+
+        .project-hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
         }
 
         .patronage-badge {
@@ -220,7 +288,7 @@
 
         .quote-box {
             background-color: var(--card-bg);
-            border-left: 2px solid var(--accent-color);
+            border-left: 3px solid var(--accent-color);
             border-top: 1px solid var(--border-color);
             border-right: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
@@ -283,6 +351,9 @@
             nav a {
                 margin: 0 0.75rem;
             }
+            .dropdown-menu {
+                left: 0;
+            }
             .projects-nav-grid {
                 grid-template-columns: 1fr;
             }
@@ -291,6 +362,9 @@
             }
             .project-header h2 {
                 font-size: 1.6rem;
+            }
+            .project-hero-image {
+                height: 240px;
             }
             footer {
                 flex-direction: column;
@@ -308,7 +382,18 @@
             <a href="index.html">Domů</a>
             <a href="umelec.html">Umělec</a>
             <a href="umeni.html">Umění</a>
-            <a href="projekty.html" class="active">Projekty</a>
+            
+            <!-- Hover Dropdown Menu -->
+            <div class="nav-dropdown">
+                <a href="projekty.html" class="active">Projekty</a>
+                <div class="dropdown-menu">
+                    <a href="#life-of-a-box">Life of a Box</a>
+                    <a href="#words">Words</a>
+                    <a href="#svet-vody">Svět Vody</a>
+                    <a href="#hlas-zeme">Hlas Země</a>
+                </div>
+            </div>
+
             <a href="vystavy.html">Výstavy</a>
             <a href="kontakt.html">Kontakt</a>
         </nav>
@@ -316,42 +401,42 @@
 
     <main>
         <section class="page-header">
-            <div class="category-label">galerie</div>
+            <div class="category-label">Iniciativy &bull; Výzkum &bull; Dialog</div>
             <h1>UMĚLECKÉ PROJEKTY</h1>
         </section>
 
-        <!-- 4 Clickable Cards Navigation -->
+        <!-- 4 Clickable Visual Navigation Cards -->
         <section class="projects-nav-container">
             <div class="projects-nav-grid">
                 <a href="#life-of-a-box" class="project-nav-card">
-                    <div>
-                        <div class="num">01</div>
-                        <h2>LIFE OF A BOX</h2>
+                    <div class="nav-card-image">
+                        <img src="artwork-7.jpg" alt="Life of a Box" loading="lazy">
                     </div>
+                    <h2>LIFE OF A BOX</h2>
                     <span class="action-link">Přejít na projekt &darr;</span>
                 </a>
 
                 <a href="#words" class="project-nav-card">
-                    <div>
-                        <div class="num">02</div>
-                        <h2>W O R D S …</h2>
+                    <div class="nav-card-image">
+                        <img src="artwork-1.jpg" alt="Words Initiative" loading="lazy">
                     </div>
+                    <h2>W O R D S …</h2>
                     <span class="action-link">Přejít na projekt &darr;</span>
                 </a>
 
                 <a href="#svet-vody" class="project-nav-card">
-                    <div>
-                        <div class="num">03</div>
-                        <h2>SVĚT VODY</h2>
+                    <div class="nav-card-image">
+                        <img src="artwork-5.jpg" alt="Svět Vody" loading="lazy">
                     </div>
+                    <h2>SVĚT VODY</h2>
                     <span class="action-link">Přejít na projekt &darr;</span>
                 </a>
 
                 <a href="#hlas-zeme" class="project-nav-card">
-                    <div>
-                        <div class="num">04</div>
-                        <h2>HLAS ZEMĚ</h2>
+                    <div class="nav-card-image">
+                        <img src="artwork-3.jpg" alt="Hlas Země" loading="lazy">
                     </div>
+                    <h2>HLAS ZEMĚ</h2>
                     <span class="action-link">Přejít na projekt &darr;</span>
                 </a>
             </div>
@@ -360,12 +445,15 @@
         <!-- Detailed Projects Section -->
         <section class="project-detail-container">
 
-            <!-- PROJECT 1: LIFE OF A BOX -->
+            <!-- PROJECT: LIFE OF A BOX -->
             <article id="life-of-a-box" class="project-block">
                 <header class="project-header">
-                    <div class="project-number">PROJEKT 01</div>
                     <h2>LIFE OF A BOX</h2>
                 </header>
+
+                <div class="project-hero-image">
+                    <img src="artwork-7.jpg" alt="Life of a Box Artwork" loading="lazy">
+                </div>
 
                 <div class="patronage-badge">
                     &bull; Projektu byla udělena záštita Ministerstva životního prostředí České republiky.
@@ -389,12 +477,15 @@
                 </div>
             </article>
 
-            <!-- PROJECT 2: WORDS -->
+            <!-- PROJECT: WORDS -->
             <article id="words" class="project-block">
                 <header class="project-header">
-                    <div class="project-number">PROJEKT 02</div>
                     <h2>W O R D S …</h2>
                 </header>
+
+                <div class="project-hero-image">
+                    <img src="artwork-1.jpg" alt="Words Initiative Artwork" loading="lazy">
+                </div>
 
                 <div class="project-body">
                     <div class="quote-box">
@@ -416,13 +507,16 @@
                 </div>
             </article>
 
-            <!-- PROJECT 3: SVĚT VODY -->
+            <!-- PROJECT: SVĚT VODY -->
             <article id="svet-vody" class="project-block">
                 <header class="project-header">
-                    <div class="project-number">PROJEKT 03</div>
                     <h2>SVĚT VODY</h2>
                     <div class="project-subtitle">Mytická cesta k odkazu egyptské civilizace</div>
                 </header>
+
+                <div class="project-hero-image">
+                    <img src="artwork-5.jpg" alt="Svět Vody Artwork" loading="lazy">
+                </div>
 
                 <div class="project-body">
                     <p>V rámci uměleckého projektu „Svět vody“ vypráví malíř Hesham Malik svým uměním egyptské mýty. Ohromující nástěnná malba – „mural“ zdobí interiér Malé vodní elektrárny Přepeře II na řece Jizeře u Turnova. Najdete ji v srdci Českého ráje, spolu s rybím přechodem, který chrání ryby, aby mohly volně proplouvat řekou Jizerou.</p>
@@ -437,13 +531,16 @@
                 </div>
             </article>
 
-            <!-- PROJECT 4: HLAS ZEMĚ -->
+            <!-- PROJECT: HLAS ZEMĚ -->
             <article id="hlas-zeme" class="project-block">
                 <header class="project-header">
-                    <div class="project-number">PROJEKT 04</div>
                     <h2>HLAS ZEMĚ (VOICES OF THE LAND)</h2>
                     <div class="project-subtitle">Propojování základních principů, ústních tradic a jazykového dědictví předávaného z generace na generaci</div>
                 </header>
+
+                <div class="project-hero-image">
+                    <img src="artwork-3.jpg" alt="Hlas Země Artwork" loading="lazy">
+                </div>
 
                 <div class="project-body">
                     <p>Hlavním cílem projektu, který se zaměřuje na původní indiánské komunity (First Nations), je uctít a zachovat starobylou linii moudrosti promyšleným sdílením integrálních fragmentů tohoto vědění a jazyka s globální komunitou. Umělec se snaží k tomuto tématu přistupovat s maximální péčí, úctou a kulturní citlivostí.</p>
@@ -465,8 +562,8 @@
     </main>
 
     <footer>
-        <p>&copy; Hesham Malik. Všechna práva vyhrazena.</p>
-        <p>Prague &bull; Brussels &bull; Global</p>
+        <p>&copy; Hesham Malik. All rights reserved.</p>
+        <p>Global Institutional Projects</p>
     </footer>
 
 </body>
