@@ -83,30 +83,58 @@
         }
 
         .contact-container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 4rem 2rem 6rem;
             text-align: center;
         }
 
-        /* Painting Frame */
+        /* Dual Painting & Studio Layout */
+        .contact-images-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .artwork-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 1.2rem;
+        }
+
         .artwork-frame {
             width: 100%;
-            max-width: 600px;
-            height: 400px;
-            margin: 0 auto 3rem;
+            height: 350px;
             background-color: #f0f0f0;
             border: 1px solid var(--border-color);
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin-bottom: 1rem;
         }
 
         .artwork-frame img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        .artwork-info {
+            text-align: center;
+        }
+
+        .artwork-title {
+            font-size: 0.95rem;
+            font-weight: 400;
+            letter-spacing: 0.15rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 0.2rem;
+        }
+
+        .artwork-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 300;
         }
 
         /* Email Display Box */
@@ -230,6 +258,9 @@
             .page-header h1 {
                 font-size: 1.8rem;
             }
+            .contact-images-grid {
+                grid-template-columns: 1fr;
+            }
             .email-link {
                 font-size: 1.2rem;
             }
@@ -265,9 +296,27 @@
 
         <section class="contact-container">
             
-            <!-- Featured Painting -->
-            <div class="artwork-frame">
-                <img src="assets/images/contact-artwork.jpg" alt="Hesham Malik - Contact Artwork" loading="lazy">
+            <!-- Featured Images: Contact Artwork & Studio View -->
+            <div class="contact-images-grid">
+                <div class="artwork-card">
+                    <div class="artwork-frame">
+                        <img src="contact-artwork.jpg" alt="Hesham Malik - Life of a Box" loading="lazy">
+                    </div>
+                    <div class="artwork-info">
+                        <h3 class="artwork-title">Life of a Box</h3>
+                        <p class="artwork-meta">Genius Olympiad, New York</p>
+                    </div>
+                </div>
+
+                <div class="artwork-card">
+                    <div class="artwork-frame">
+                        <img src="studio-hands-canvas.jpg" alt="Umělec Hesham Malik při práci v ateliéru" loading="lazy">
+                    </div>
+                    <div class="artwork-info">
+                        <h3 class="artwork-title">Ateliér</h3>
+                        <p class="artwork-meta">Umělec Hesham Malik při práci</p>
+                    </div>
+                </div>
             </div>
 
             <!-- Email Highlight Box -->
