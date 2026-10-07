@@ -105,7 +105,7 @@
 
         .section-headline h2 {
             font-size: 1.8rem;
-            font-weight: 700;
+            font-weight: 300;
             letter-spacing: 0.25rem;
             text-transform: uppercase;
             color: var(--accent-color);
@@ -113,7 +113,7 @@
         }
 
         .section-headline .subtitle {
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 400;
             letter-spacing: 0.2rem;
             text-transform: uppercase;
@@ -138,22 +138,22 @@
             border: 1px solid var(--border-color);
             padding: 1.2rem;
             cursor: pointer;
-            transition: border-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
         }
 
         .artwork-card:hover {
-            border-color: #999999;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.05);
+            border-color: #111111;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
         }
 
         .artwork-frame {
             width: 100%;
-            height: 320px;
-            background-color: #f0f0f0;
+            height: 340px;
+            background-color: #f5f5f5;
             border: 1px solid var(--border-color);
             overflow: hidden;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             position: relative;
         }
 
@@ -161,11 +161,12 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.4s ease;
+            object-position: top center; /* Focuses on top portion of vertical paintings */
+            transition: transform 0.5s ease;
         }
 
         .artwork-card:hover .artwork-frame img {
-            transform: scale(1.03);
+            transform: scale(1.04);
         }
 
         .artwork-info {
@@ -179,13 +180,14 @@
             letter-spacing: 0.15rem;
             text-transform: uppercase;
             color: var(--accent-color);
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.3rem;
         }
 
         .artwork-meta {
             font-size: 0.8rem;
             color: var(--text-muted);
             font-weight: 300;
+            letter-spacing: 0.05rem;
         }
 
         /* Lightbox Fullscreen Viewer */
@@ -196,7 +198,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 0, 0, 0.92);
             z-index: 1000;
             justify-content: center;
             align-items: center;
@@ -287,16 +289,16 @@
             <div class="intro-text">
                 <p>Výtvarný projev, kterým je Hesham Malik a jeho umění charakteristické, je svěží, s propracovaným vztahem k formě, designu a barevnosti. Téma Heshamovy tvorby se vrací k jednoduchosti a obyčejnému životu lidí – jeho analýza a vyjádření této „každodennosti“ je však jedinečné.</p>
                 
-                <p>Hesham se záměrně vystavuje domorodým kulturám a jejich prostředí a soustředí se na přímou interakci s lidmi z různých komunit. Mnoho z jeho filozofických a etnografických poznatků pochází ze zkušenosti s odlišnými kulturami. Překračování hranic kulturních oblastí je Malikovou vášní a celoživotní inspirací pro tvorbu. Zaměřuje se na kontrasts a drobné podobnosti našich životů jako smrtelných lidských bytostí.</p>
+                <p>Hesham se záměrně vystavuje domorodým kulturám a jejich prostředí a soustředí se na přímou interakci s lidmi z různých komunit. Mnoho z jeho filozofických a etnografických poznatků pochází ze zkušenosti s odlišnými kulturami. Překračování hranic kulturních oblastí je Malikovou vášní a celoživotní inspirací pro tvorbu. Zaměřuje se na kontrasty a drobné podobnosti našich životů jako smrtelných lidských bytostí.</p>
                 
                 <p>Hesham je vypravěčem a kritikem zároveň. Vyzývá diváka k hluboké introspekci a k dialogu.</p>
             </div>
         </section>
 
-        <!-- Bold Headline Section -->
+        <!-- Section Title -->
         <section class="section-headline">
             <h2>Umělecká tvorba</h2>
-            <div class="subtitle">OBRAZY</div>
+            <div class="subtitle">Vybraná muzejní díla</div>
         </section>
 
         <!-- Gallery Grid (3 per row) -->
@@ -411,8 +413,8 @@
     </div>
 
     <footer>
-        <p>&copy; Hesham Malik. Všechna práva vyhrazena.</p>
-        <p>Prague &bull; Brussels &bull; Global</p>
+        <p>&copy; Hesham Malik. All rights reserved.</p>
+        <p>Institutional Collection Archive</p>
     </footer>
 
     <script>
