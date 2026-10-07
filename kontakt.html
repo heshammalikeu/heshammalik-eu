@@ -83,156 +83,111 @@
         }
 
         .contact-container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 4rem 2rem 6rem;
-            text-align: center;
-        }
-
-        /* Dual Painting & Studio Layout */
-        .contact-images-grid {
+            padding: 5rem 2rem 7rem;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
         }
 
-        .artwork-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 1.2rem;
-        }
-
-        .artwork-frame {
+        /* Left Side: Studio Photo Frame */
+        .studio-frame {
             width: 100%;
-            height: 350px;
-            background-color: #f0f0f0;
-            border: 1px solid var(--border-color);
+            height: 520px;
             overflow: hidden;
-            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            background-color: #f0f0f0;
         }
 
-        .artwork-frame img {
+        .studio-frame img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
+            transition: transform 0.5s ease;
         }
 
-        .artwork-info {
-            text-align: center;
+        .studio-frame:hover img {
+            transform: scale(1.03);
         }
 
-        .artwork-title {
-            font-size: 0.95rem;
-            font-weight: 400;
-            letter-spacing: 0.15rem;
-            text-transform: uppercase;
-            color: var(--accent-color);
-            margin-bottom: 0.2rem;
+        /* Right Side: Contact Details */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        .artwork-meta {
-            font-size: 0.8rem;
-            color: var(--text-muted);
+        .contact-info h2 {
+            font-size: 1.4rem;
             font-weight: 300;
-        }
-
-        /* Email Display Box */
-        .email-box {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 2.5rem;
-            margin-bottom: 4rem;
-        }
-
-        .email-label {
-            font-size: 0.85rem;
             letter-spacing: 0.2rem;
             text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-        }
-
-        .email-link {
-            font-size: 1.6rem;
-            font-weight: 300;
-            letter-spacing: 0.15rem;
             color: var(--accent-color);
-            text-decoration: none;
-            border-bottom: 1px solid var(--accent-color);
-            padding-bottom: 0.2rem;
-            transition: opacity 0.3s;
-        }
-
-        .email-link:hover {
-            opacity: 0.6;
-        }
-
-        /* Institutional Contact Form */
-        .contact-form {
-            text-align: left;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 3rem;
-        }
-
-        .form-title {
-            font-size: 1.1rem;
-            font-weight: 300;
-            letter-spacing: 0.15rem;
-            text-transform: uppercase;
-            color: var(--accent-color);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 0.75rem;
         }
 
-        .form-group {
-            margin-bottom: 1.8rem;
+        .contact-info p {
+            font-size: 1rem;
+            color: #333333;
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 2rem;
         }
 
-        .form-group label {
-            display: block;
-            font-size: 0.8rem;
-            letter-spacing: 0.15rem;
+        .contact-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-section h3 {
+            font-size: 0.85rem;
+            letter-spacing: 0.18rem;
             text-transform: uppercase;
             color: var(--text-muted);
             margin-bottom: 0.5rem;
+            font-weight: 400;
         }
 
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.9rem;
+        .contact-link {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            letter-spacing: 0.05rem;
+            font-weight: 300;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .contact-link:hover {
+            border-color: var(--accent-color);
+        }
+
+        .press-box {
             background-color: #fafafa;
             border: 1px solid var(--border-color);
-            color: var(--accent-color);
-            font-family: var(--font-main);
-            font-size: 0.95rem;
-            transition: border-color 0.3s, background-color 0.3s;
+            padding: 2rem;
+            margin-top: 1rem;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #000000;
-            background-color: #ffffff;
-        }
-
-        .submit-btn {
-            background-color: var(--accent-color);
-            color: #ffffff;
-            border: none;
-            padding: 1rem 2.5rem;
+        .press-box h4 {
             font-size: 0.85rem;
-            letter-spacing: 0.2rem;
+            letter-spacing: 0.18rem;
             text-transform: uppercase;
-            cursor: pointer;
-            transition: opacity 0.3s;
+            color: var(--accent-color);
+            margin-bottom: 0.8rem;
+            font-weight: 400;
         }
 
-        .submit-btn:hover {
-            opacity: 0.8;
+        .press-box p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
+            line-height: 1.7;
         }
 
         footer {
@@ -246,7 +201,17 @@
             background-color: #ffffff;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            .studio-frame {
+                height: 380px;
+            }
+        }
+
+        @media (max-width: 600px) {
             header {
                 flex-direction: column;
                 gap: 1.5rem;
@@ -257,15 +222,6 @@
             }
             .page-header h1 {
                 font-size: 1.8rem;
-            }
-            .contact-images-grid {
-                grid-template-columns: 1fr;
-            }
-            .email-link {
-                font-size: 1.2rem;
-            }
-            .contact-form {
-                padding: 1.8rem;
             }
             footer {
                 flex-direction: column;
@@ -291,73 +247,43 @@
 
     <main>
         <section class="page-header">
-            <h1>NAPIŠTE MI E-MAIL</h1>
+            <h1>KONTAKT</h1>
         </section>
 
         <section class="contact-container">
             
-            <!-- Featured Images: Contact Artwork & Studio View -->
-            <div class="contact-images-grid">
-                <div class="artwork-card">
-                    <div class="artwork-frame">
-                        <img src="contact-artwork.jpg" alt="Hesham Malik - Life of a Box" loading="lazy">
-                    </div>
-                    <div class="artwork-info">
-                        <h3 class="artwork-title">Life of a Box</h3>
-                        <p class="artwork-meta">Genius Olympiad, New York</p>
-                    </div>
-                </div>
-
-                <div class="artwork-card">
-                    <div class="artwork-frame">
-                        <img src="studio-hands-canvas.jpg" alt="Umělec Hesham Malik při práci v ateliéru" loading="lazy">
-                    </div>
-                    <div class="artwork-info">
-                        <h3 class="artwork-title">Ateliér</h3>
-                        <p class="artwork-meta">Umělec Hesham Malik při práci</p>
-                    </div>
-                </div>
+            <!-- Left Column: Single Studio Hands Canvas Photo -->
+            <div class="studio-frame">
+                <img src="studio-hands-canvas.jpg" alt="Hesham Malik Studio Process" loading="lazy">
             </div>
 
-            <!-- Email Highlight Box -->
-            <div class="email-box">
-                <div class="email-label">Oficiální E-mail</div>
-                <a href="mailto:hm@heshammalik.eu" class="email-link">hm@heshammalik.eu</a>
+            <!-- Right Column: Institutional Contact Information -->
+            <div class="contact-info">
+                <h2>Ateliér &bull; Kurátorské Dotazy</h2>
+                <p>Pro záležitosti týkající se muzejních výstavek, akvizic, novinářských materiálů nebo participace v globálních projektech jako <em>Life of a Box</em> či <em>Words Initiative</em> využijte níže uvedené oficiální kontaktní kanály.</p>
+
+                <div class="contact-section">
+                    <h3>Oficiální e-mail</h3>
+                    <a href="mailto:info@heshammalik.com" class="contact-link">info@heshammalik.com</a>
+                </div>
+
+                <div class="contact-section">
+                    <h3>Oficiální webové stránky</h3>
+                    <a href="https://www.heshammalik.com" target="_blank" class="contact-link">www.heshammalik.com</a>
+                </div>
+
+                <div class="press-box">
+                    <h4>Kurátorský &amp; Tiskový Archiv</h4>
+                    <p>Kompletní biografie, soupis více než 100 samostatných výstavek a tiskové balíčky k projektům v plném rozlišení jsou k dispozici zástupcům galerií a muzeí na vyžádání.</p>
+                </div>
             </div>
-
-            <!-- Direct Contact Form -->
-            <form class="contact-form" action="https://formspree.io/f/xbjnqkyv" method="POST">
-                <div class="form-title">Přímý kontakt &bull; Ateliér</div>
-                
-                <div class="form-group">
-                    <label for="name">Jméno a příjmení / Instituce</label>
-                    <input type="text" id="name" name="name" required placeholder="Vaše jméno nebo název galerie">
-                </div>
-
-                <div class="form-group">
-                    <label for="email">E-mailová adresa</label>
-                    <input type="email" id="email" name="email" required placeholder="prijmeni@domain.cz">
-                </div>
-
-                <div class="form-group">
-                    <label for="subject">Předmět</label>
-                    <input type="text" id="subject" name="subject" required placeholder="Dotaz na dílo / Kurátorský záměr / Výstava">
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Zpráva</label>
-                    <textarea id="message" name="message" rows="6" required placeholder="Napište Vaši zprávu..."></textarea>
-                </div>
-
-                <button type="submit" class="submit-btn">Odeslat zprávu &rarr;</button>
-            </form>
 
         </section>
     </main>
 
     <footer>
-        <p>&copy; Hesham Malik. Všechna práva vyhrazena.</p>
-        <p>Prague &bull; Brussels &bull; Global</p>
+        <p>&copy; Hesham Malik. All rights reserved.</p>
+        <p>Prague &bull; Brussels &bull; Global Studio</p>
     </footer>
 
 </body>
