@@ -301,11 +301,89 @@
             line-height: 1.8;
         }
 
+        /* Project Testimonials Section inside Life of a Box */
+        .project-testimonials {
+            margin-top: 3.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .project-testimonials h3 {
+            font-size: 1.1rem;
+            font-weight: 300;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-left: 2px solid #ccc;
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: border-left-color 0.3s;
+        }
+
+        .testimonial-card:hover {
+            border-left-color: var(--accent-color);
+        }
+
+        .testimonial-card.highlight-card {
+            grid-column: 1 / -1;
+            background-color: #fafafa;
+        }
+
+        .testimonial-card blockquote {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 0.98rem;
+            color: #222222;
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+            border: none;
+            padding: 0;
+            background: transparent;
+        }
+
+        .testimonial-card cite {
+            display: block;
+            font-style: normal;
+            border-top: 1px solid var(--border-color);
+            padding-top: 0.8rem;
+        }
+
+        .testimonial-card cite strong {
+            display: block;
+            font-size: 0.85rem;
+            letter-spacing: 0.08rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+
+        .testimonial-card cite span {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-top: 0.2rem;
+        }
+
         .partners-box {
             background-color: #fafafa;
             border: 1px solid var(--border-color);
             padding: 2rem;
-            margin-top: 2.5rem;
+            margin-top: 3.5rem;
         }
 
         .partners-box h3 {
@@ -366,6 +444,12 @@
             .project-hero-image {
                 height: 240px;
             }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonial-card.highlight-card {
+                grid-column: auto;
+            }
             footer {
                 flex-direction: column;
                 gap: 1rem;
@@ -405,7 +489,7 @@
             <h1>UMĚLECKÉ PROJEKTY</h1>
         </section>
 
-        <!-- 4 Clickable Visual Navigation Cards (Box Photos) -->
+        <!-- 4 Clickable Visual Navigation Cards -->
         <section class="projects-nav-container">
             <div class="projects-nav-grid">
                 <a href="#life-of-a-box" class="project-nav-card">
@@ -442,7 +526,7 @@
             </div>
         </section>
 
-        <!-- Detailed Projects Section (Banner Photos) -->
+        <!-- Detailed Projects Section -->
         <section class="project-detail-container">
 
             <!-- PROJECT: LIFE OF A BOX -->
@@ -469,6 +553,90 @@
                     <p>Různá města a organizace po celém světě podporují Heshamův projekt darováním použité krabice. Hesham přeměňuje tyto krabice na umění a vystavuje je v muzeích po celém světě s cílem propagovat environmentální uvědomění a udržitelnost. První výstava Life of a Box se koná v Muzeu papírenství v Duszniki-Zdrój v Polsku.</p>
 
                     <p>Life of a Box však čelí určitým překážkám a omezením. Mezi tyto výzvy patří hledání vhodných materiálů, které odpovídají našim cílům a požadavkům; značný čas a úsilí investované do identifikace organizací nebo jednotlivců, navazování kontaktů, shromažďování, organizace, vytváření a uchovávání uměleckých děl; a nakonec je vždy potřeba mít záložní plán pro jakýkoli nepředvídaný výsledek nebo neúspěch. Uprostřed těchto výzev slouží Life of a Box jako platforma pro předávání poselství, ukazování hodnot a motivaci ke změně. Zapojením se do této iniciativy zvyšujeme povědomí a poskytujeme vzdělání o environmentálních problémech a možných řešení.</p>
+
+                    <!-- Endorsements / Testimonials Grid -->
+                    <div class="project-testimonials">
+                        <h3>Ohlasy světových muzeí a institucí</h3>
+                        
+                        <div class="testimonials-grid">
+                            <!-- 1. Nobel Prize Museum (Highlight) -->
+                            <article class="testimonial-card highlight-card">
+                                <blockquote>
+                                    „Muzeum Nobelovy ceny věří, že budoucnost je stále otevřená a můžeme ji utvářet prostřednictvím kritického myšlení, kreativity a vytrvalosti. Cílem našich snah v oblasti klimatu a životního prostředí je omezit náš negativní dopad a přispět k trvalému a udržitelnému rozvoji našich společností. Jsme hrdí, že podporujeme iniciativu Heshama Malika 'Life of a Box'.“
+                                </blockquote>
+                                <cite>
+                                    <strong>Muzeum Nobelovy ceny</strong>
+                                    <span>Stockholm, Švédsko</span>
+                                </cite>
+                            </article>
+
+                            <!-- 2. Nuremberg Municipal Museums -->
+                            <article class="testimonial-card">
+                                <blockquote>
+                                    „Papír spojuje – jako nositel myšlenek, obrazů a příběhů. Tento materiál hraje klíčovou roli v naší sbírce grafického umění s přibližně 100 000 díly na papíře. O to významnější je spolupráce s Muzeem papíru v rámci projektu 'Life of a Box'. Udržitelnost pro nás znamená vytváření nových spojení: mezi institucemi, zeměmi a lidmi. Toto malé gesto – předání krabice – představuje velké společné cíle.“
+                                </blockquote>
+                                <cite>
+                                    <strong>Městská muzea v Norimberku</strong>
+                                    <span>Německo</span>
+                                </cite>
+                            </article>
+
+                            <!-- 3. Paper and Watermark Museum, UNESCO -->
+                            <article class="testimonial-card">
+                                <blockquote>
+                                    „Jako světový lídr usilujeme o plný přínos k ochraně a obnově zdraví planety s cílem chránit a posilovat lidské zdraví. Zvýšení environmentální udržitelnosti našich provozů zvyšuje naši odolnost a jsme potěšeni, že jsme se zapojili do udržitelné iniciativy Heshama Malika 'Life of a Box'.“
+                                </blockquote>
+                                <cite>
+                                    <strong>Muzeum papíru a vodoznaků (UNESCO Creative City)</strong>
+                                    <span>Fabriano, Itálie</span>
+                                </cite>
+                            </article>
+
+                            <!-- 4. Cotroceni National Museum -->
+                            <article class="testimonial-card">
+                                <blockquote>
+                                    „Národní muzeum Cotroceni v Rumunsku není jen historickou a kulturní památkou. Prostřednictvím svých výstav a iniciativ i oddanosti udržitelnosti pokračuje v roli kulturní instituce, která nejen uchovává historii, ale také utváří odpovědnější budoucnost. Podporujeme různé iniciativy udržitelnosti, jako je Heshamův 'Life of a Box', které jsou zásadní pro zachování naší planety pro budoucí generace.“
+                                </blockquote>
+                                <cite>
+                                    <strong>Národní muzeum Cotroceni</strong>
+                                    <span>Rumunsko</span>
+                                </cite>
+                            </article>
+
+                            <!-- 5. Tūhura Otago Museum -->
+                            <article class="testimonial-card">
+                                <blockquote>
+                                    „Náš přístup k udržitelnosti je zakořeněn v principech Kaitiakitaka, Tohukataka a Whanaukataka. Naším posláním je zachovávat a učit se z pokladů minulosti i současnosti pro budoucnost. Působíme jako strážci dědictví a životního prostředí a využíváme naše místo v Aotearoa k edukaci a inspiraci ostatních. Náš přístup k udržitelnosti a vzdělávání staví na výzkumu a vědeckých poznatcích. Jsme hrdí na naši účast v iniciativě 'Life of a Box'.“
+                                </blockquote>
+                                <cite>
+                                    <strong>Muzeum Tūhura Otago</strong>
+                                    <span>Nový Zéland</span>
+                                </cite>
+                            </article>
+
+                            <!-- 6. Hawk Conservancy Trust -->
+                            <article class="testimonial-card">
+                                <blockquote>
+                                    „Hawk Conservancy Trust je charitativní organizace pro ochranu přírody a oceňované návštěvnické centrum v Hampshire ve Velké Británii s posláním chránit dravé ptáky a jejich přirozená prostředí. Dravci jsou klíčovým indikátorem zdraví životního prostředí. Pochopení toho, jak je nejlépe chránit, a partnerství s iniciativami udržitelnosti, jako je Heshamův 'Life of a Box', má zásadní význam pro zachování naší planety pro budoucí generace.“
+                                </blockquote>
+                                <cite>
+                                    <strong>The Hawk Conservancy Trust</strong>
+                                    <span>Spojené království</span>
+                                </cite>
+                            </article>
+
+                            <!-- 7. ArtLords -->
+                            <article class="testimonial-card">
+                                <blockquote>
+                                    „V ArtLords věříme, že každý zachráněný předmět v sobě nese příběh odolnosti a obnovy. Záchranou a novým využitím této krabice ctíme konečné zdroje naší planety a ukazujeme sílu umění inspirovat k udržitelné změně. Podporujeme iniciativu Heshama Malika 'Life of a Box', která přetváří jednoduché materiály v symboly naděje, kreativity a kolektivní odpovědnosti za zdravější svět.“
+                                </blockquote>
+                                <cite>
+                                    <strong>ArtLords</strong>
+                                    <span>„Gender Apartheid“ v Afghánistánu</span>
+                                </cite>
+                            </article>
+                        </div>
+                    </div>
 
                     <div class="partners-box">
                         <h3>Zapojené instituce a partneři po celém světě</h3>
