@@ -99,7 +99,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-bottom: 6rem;
+            margin-bottom: 4rem;
         }
 
         .upcoming-card {
@@ -178,64 +178,6 @@
             background-color: #fafafa;
         }
 
-        .toggle-archive-btn {
-            display: block;
-            width: 100%;
-            padding: 1.5rem;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            color: var(--accent-color);
-            font-size: 0.85rem;
-            letter-spacing: 0.2rem;
-            text-transform: uppercase;
-            cursor: pointer;
-            text-align: center;
-            transition: background-color 0.3s;
-            margin-top: 2rem;
-        }
-
-        .toggle-archive-btn:hover { background-color: #f5f5f5; }
-
-        .archive-container {
-            display: none;
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .archive-year-block { margin-bottom: 3.5rem; }
-
-        .archive-year-title {
-            font-size: 1.1rem;
-            font-weight: 300;
-            letter-spacing: 0.2rem;
-            text-transform: uppercase;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .ledger-table { display: flex; flex-direction: column; }
-
-        .ledger-row {
-            display: grid;
-            grid-template-columns: 2fr 3fr 2fr;
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border-color);
-            align-items: center;
-            font-size: 0.9rem;
-        }
-
-        .ledger-row.highlight {
-            background-color: #fafafa;
-            padding: 1rem;
-            border-left: 2px solid var(--accent-color);
-        }
-
-        .ledger-title { font-weight: 500; }
-        .ledger-venue { font-weight: 300; color: #333; }
-        .ledger-location { color: var(--text-muted); font-size: 0.82rem; text-align: right; }
-
         .archive-footer-box {
             background-color: #fafafa;
             border: 1px solid var(--border-color);
@@ -285,8 +227,6 @@
         @media (max-width: 768px) {
             header { flex-direction: column; gap: 1.5rem; padding: 1.5rem 2rem; }
             nav a { margin: 0 0.5rem; }
-            .ledger-row { grid-template-columns: 1fr; gap: 0.3rem; }
-            .ledger-location { text-align: left; }
             footer { flex-direction: column; gap: 1rem; text-align: center; }
         }
     </style>
@@ -375,14 +315,12 @@
                 </article>
             </div>
 
-            <!-- SECTION 2: EXHIBITION ARCHIVE -->
-            <h2 class="section-title-clean">Monografický registr a historie cyklů</h2>
-
-            <button class="toggle-archive-btn" onclick="toggleArchive()" id="archiveBtn">
-                &darr; Otevřít mezinárodní registr a muzejní archiv (2023–2026)
-            </button>
-
-            <div class="archive-container" id="archiveContent"></div>
+            <!-- RETROSPECTIVE ARCHIVE BOX -->
+            <div class="archive-footer-box">
+                <h4>RETROSPEKTIVNÍ INSTITUCIONÁLNÍ ARCHIV (1997 – 2022)</h4>
+                <p>Kompletní retrospektivní dokumentace, monografické katalogy a provenienční záznamy z evropských, severoamerických a asijských muzeálních prezentací jsou přístupné pro kurátorský výzkum a institucionální akvizice.</p>
+                <a href="kontakt.html" class="archive-request-btn">[ Požádat o přístup k archivu &rarr; ]</a>
+            </div>
         </section>
     </main>
 
@@ -392,88 +330,6 @@
     </footer>
 
     <script>
-        const curatorialArchive = [
-            {
-                groupTitle: "Mezinárodní & Klíčové Institucionální Projekty",
-                items: [
-                    { title: "Life of A Box", venue: "Brussels Expo – Europe’s Creative Industries", location: "Brusel, Belgie", highlight: true },
-                    { title: "Twain", venue: "Berkeley Commonplace", location: "Kalifornie, USA", highlight: true },
-                    { title: "Life of A Box", venue: "Museum of Papermaking", location: "Duszniki-Zdrój, Polsko", highlight: true },
-                    { title: "Setkání vědy a umění / Gesto", venue: "Karlova Univerzita", location: "Akademický výzkum", highlight: true },
-                    { title: "18 & Židovská čtvrť", venue: "Jeruzalémská Synagoga & Zadní synagoga", location: "Sakrální archiv", highlight: true }
-                ]
-            },
-            {
-                groupTitle: "Muzejní Výzkumné Okruhy (2025 – 2026)",
-                items: [
-                    { title: "Life of A Box & Tiché doteky", venue: "Městská knihovna v Praze & Muzeum Jindřichohradecka", location: "Muzeální archiv", highlight: false },
-                    { title: "Andělé a démoni & Iridescent", venue: "Muzeum plzeňské diecéze & Muzeum Mariánská Týnice", location: "Sakrální & Regionální sbírka", highlight: false },
-                    { title: "Od řeky k věčnosti & Reminiscence", venue: "Muzeum Horní Police & Městská galerie Vysoké Mýto", location: "Monografický cyklus", highlight: false },
-                    { title: "Birth Giver & Aliferous", venue: "Pevnost Josefov & Muzeum Černošín / Galerie Carpe Diem", location: "Prostorové instalace", highlight: false },
-                    { title: "Rumi, Anekdota, Cast", venue: "Orlické muzeum Choceň, Centrum UFFO Trutnov, Muzeum Králíky", location: "Tematické výstavy", highlight: false },
-                    { title: "Portréty života", venue: "Regionální muzeum Kladrubska", location: "Kladruby", highlight: false }
-                ]
-            },
-            {
-                groupTitle: "Historické & Tematické Monografie (2023 – 2024)",
-                items: [
-                    { title: "Kemet & Mizpah", venue: "Muzeum Karlovy Vary & Muzeum Vysočiny Havlíčkův Brod", location: "Historický výzkum", highlight: false },
-                    { title: "Skrytá Tajemství Indie", venue: "Oblastní muzeum a galerie v Mostě", location: "Most", highlight: false },
-                    { title: "Nejisté vibrace & Incomplete", venue: "Muzeum Kroměřížska & Městská galerie Zázvorka", location: "Monografický cyklus", highlight: false },
-                    { title: "Rodičům Navzdory & Moonbow", venue: "Zámek Zruč nad Sázavou & Galerie Zázvorka", location: "Galerijní okruh", highlight: false },
-                    { title: "Amorista & Kuumba", venue: "Muzeum Červená věž & Městské muzeum Dvůr Králové", location: "Litomyšl / Dvůr Králové", highlight: false }
-                ]
-            }
-        ];
-
-        function renderGroupedArchive() {
-            const container = document.getElementById('archiveContent');
-            let html = '';
-
-            curatorialArchive.forEach(group => {
-                html += `
-                    <div class="archive-year-block">
-                        <h3 class="archive-year-title">${group.groupTitle}</h3>
-                        <div class="ledger-table">
-                `;
-                group.items.forEach(row => {
-                    const highlightClass = row.highlight ? ' highlight' : '';
-                    html += `
-                        <div class="ledger-row${highlightClass}">
-                            <span class="ledger-title">${row.title}</span>
-                            <span class="ledger-venue">${row.venue}</span>
-                            <span class="ledger-location">${row.location}</span>
-                        </div>
-                    `;
-                });
-                html += `</div></div>`;
-            });
-
-            html += `
-                <div class="archive-footer-box">
-                    <h4>RETROSPEKTIVNÍ INSTITUCIONÁLNÍ ARCHIV (1997 – 2022)</h4>
-                    <p>Kompletní retrospektivní dokumentace, monografické katalogy a provenienční záznamy z evropských, severoamerických a asijských muzeálních prezentací jsou přístupné pro kurátorský výzkum a institucionální akvizice.</p>
-                    <a href="kontakt.html" class="archive-request-btn">[ Požádat o přístup k archivu &rarr; ]</a>
-                </div>
-            `;
-
-            container.innerHTML = html;
-        }
-
-        function toggleArchive() {
-            const archive = document.getElementById('archiveContent');
-            const btn = document.getElementById('archiveBtn');
-            
-            if (archive.style.display === 'block') {
-                archive.style.display = 'none';
-                btn.innerHTML = '&darr; Otevřít mezinárodní registr a muzejní archiv (2023–2026)';
-            } else {
-                renderGroupedArchive();
-                archive.style.display = 'block';
-                btn.innerHTML = '&uarr; Skrýt historii výstav';
-            }
-        }
-
         function toggleDetails(id, btnId) {
             const el = document.getElementById(id);
             const btn = document.getElementById(btnId);
