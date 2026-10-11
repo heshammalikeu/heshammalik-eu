@@ -16,14 +16,9 @@
             --accent-color: #000000;
             --border-color: #e5e5e5;
             --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            --font-serif: Georgia, 'Times New Roman', serif;
         }
         
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body {
             background-color: var(--bg-color);
@@ -52,7 +47,6 @@
             text-transform: uppercase;
             color: var(--accent-color);
             text-decoration: none;
-            font-weight: 400;
         }
 
         nav a {
@@ -83,7 +77,6 @@
             font-weight: 300;
             letter-spacing: 0.3rem;
             text-transform: uppercase;
-            color: var(--accent-color);
         }
 
         .exhibitions-container {
@@ -97,13 +90,11 @@
             font-weight: 300;
             letter-spacing: 0.2rem;
             text-transform: uppercase;
-            color: var(--accent-color);
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 0.75rem;
             margin-bottom: 3rem;
         }
 
-        /* Upcoming Exhibitions Grid */
         .upcoming-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -118,7 +109,6 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            position: relative;
             transition: border-color 0.3s, box-shadow 0.3s;
         }
 
@@ -136,7 +126,6 @@
             border: 1px solid #d0e0d0;
             padding: 0.3rem 0.8rem;
             display: inline-block;
-            align-self: flex-start;
             margin-bottom: 1.5rem;
         }
 
@@ -145,7 +134,6 @@
             font-weight: 400;
             letter-spacing: 0.15rem;
             text-transform: uppercase;
-            color: var(--accent-color);
             margin-bottom: 1rem;
         }
 
@@ -166,7 +154,6 @@
             margin-top: auto;
         }
 
-        /* Expandable Details Container */
         .card-expand-btn {
             display: inline-block;
             margin-top: 1rem;
@@ -179,22 +166,18 @@
             border-bottom: 1px solid var(--accent-color);
             padding-bottom: 2px;
             cursor: pointer;
-            text-align: left;
         }
 
         .card-expanded-content {
             display: none;
             margin-top: 1.5rem;
-            padding-top: 1.5rem;
+            padding: 1rem;
             border-top: 1px dashed var(--border-color);
             font-size: 0.88rem;
             color: #222222;
-            line-height: 1.7;
             background-color: #fafafa;
-            padding: 1rem;
         }
 
-        /* Toggle Archive Button */
         .toggle-archive-btn {
             display: block;
             width: 100%;
@@ -207,16 +190,12 @@
             text-transform: uppercase;
             cursor: pointer;
             text-align: center;
-            transition: background-color 0.3s, border-color 0.3s;
+            transition: background-color 0.3s;
             margin-top: 2rem;
         }
 
-        .toggle-archive-btn:hover {
-            background-color: #f5f5f5;
-            border-color: #111111;
-        }
+        .toggle-archive-btn:hover { background-color: #f5f5f5; }
 
-        /* Tabular Archive Container */
         .archive-container {
             display: none;
             margin-top: 4rem;
@@ -224,27 +203,19 @@
             border-top: 1px solid var(--border-color);
         }
 
-        .archive-year-block {
-            margin-bottom: 3.5rem;
-        }
+        .archive-year-block { margin-bottom: 3.5rem; }
 
         .archive-year-title {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 300;
             letter-spacing: 0.2rem;
             text-transform: uppercase;
-            color: var(--accent-color);
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 0.5rem;
             margin-bottom: 1.5rem;
         }
 
-        /* Structured Ledger Grid */
-        .ledger-table {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-        }
+        .ledger-table { display: flex; flex-direction: column; }
 
         .ledger-row {
             display: grid;
@@ -261,23 +232,9 @@
             border-left: 2px solid var(--accent-color);
         }
 
-        .ledger-title {
-            font-weight: 500;
-            color: var(--accent-color);
-            letter-spacing: 0.05rem;
-        }
-
-        .ledger-venue {
-            color: #333333;
-            font-weight: 300;
-        }
-
-        .ledger-location {
-            color: var(--text-muted);
-            font-size: 0.82rem;
-            text-align: right;
-            letter-spacing: 0.05rem;
-        }
+        .ledger-title { font-weight: 500; }
+        .ledger-venue { font-weight: 300; color: #333; }
+        .ledger-location { color: var(--text-muted); font-size: 0.82rem; text-align: right; }
 
         .archive-footer-box {
             background-color: #fafafa;
@@ -291,7 +248,6 @@
             font-size: 0.95rem;
             letter-spacing: 0.2rem;
             text-transform: uppercase;
-            color: var(--accent-color);
             margin-bottom: 0.8rem;
             font-weight: 400;
         }
@@ -302,7 +258,6 @@
             font-weight: 300;
             max-width: 650px;
             margin: 0 auto 1.5rem;
-            line-height: 1.7;
         }
 
         .archive-request-btn {
@@ -314,11 +269,6 @@
             font-size: 0.75rem;
             letter-spacing: 0.15rem;
             text-transform: uppercase;
-            transition: opacity 0.3s;
-        }
-
-        .archive-request-btn:hover {
-            opacity: 0.8;
         }
 
         footer {
@@ -327,36 +277,17 @@
             justify-content: space-between;
             align-items: center;
             font-size: 0.75rem;
-            letter-spacing: 0.05rem;
             color: #777777;
             border-top: 1px solid var(--border-color);
             background-color: #ffffff;
         }
 
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 1.5rem;
-                padding: 1.5rem 2rem;
-            }
-            nav a {
-                margin: 0 0.5rem;
-            }
-            .page-header h1 {
-                font-size: 1.6rem;
-            }
-            .ledger-row {
-                grid-template-columns: 1fr;
-                gap: 0.3rem;
-            }
-            .ledger-location {
-                text-align: left;
-            }
-            footer {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
+            header { flex-direction: column; gap: 1.5rem; padding: 1.5rem 2rem; }
+            nav a { margin: 0 0.5rem; }
+            .ledger-row { grid-template-columns: 1fr; gap: 0.3rem; }
+            .ledger-location { text-align: left; }
+            footer { flex-direction: column; gap: 1rem; text-align: center; }
         }
     </style>
 </head>
@@ -380,93 +311,67 @@
         </section>
 
         <section class="exhibitions-container">
-            
-            <!-- SECTION 1: UPCOMING EXHIBITIONS -->
             <h2 class="section-title-clean">Nadcházející prezentace &amp; Monografie</h2>
 
             <div class="upcoming-grid">
-                <!-- Upcoming Show 1: UNKNOWN -->
+                <!-- Upcoming 1 -->
                 <article class="upcoming-card">
                     <div>
                         <div class="upcoming-date">Od prosince 2026</div>
                         <h3>„Unknown“</h3>
-                        <p>Název „Unknown“ (Neznámé) ponechal umělec záměrně jako otevřenou otázku reagující na krizové situace, kterým čelí ženy po celém světě, a na nejistý směr jejich budoucnosti. Projekt vzniká ve spolupráci s předními mezinárodními lidskoprávními a podpůrnými organizacemi (včetně <em>Sex Work Donor Collaborative, Sexual Assault Crisis Center Armenia, Women &amp; Children’s Shelter of Barrie v Kanadě</em> či vzdělávacích iniciativ v USA).</p>
-                        
-                        <button class="card-expand-btn" onclick="toggleUnknownDetails()" id="unknownBtn">
-                            [ Číst více o koncepci UNKNOWN &rarr; ]
-                        </button>
-
+                        <p>Projekt vzniká ve spolupráci s předními mezinárodními lidskoprávními organizacemi (Sex Work Donor Collaborative, Sexual Assault Crisis Center Armenia, Women &amp; Children’s Shelter of Barrie v Kanadě).</p>
+                        <button class="card-expand-btn" onclick="toggleDetails('unknownDetails', 'unknownBtn')">[ Číst více o koncepci UNKNOWN &rarr; ]</button>
                         <div class="card-expanded-content" id="unknownDetails">
                             <strong>UNKNOWN: ČASOVÁ NEJISTOTA A ŽENSKÁ IDENTITA</strong><br><br>
-                            Název „Unknown“ (Neznámé) ponechal umělec záměrně jako otevřenou otázku reagující na krizové situace, kterým čelí ženy po celém světě, a na nejistý směr jejich budoucnosti. Série vznikla v dialogu s mezinárodními obránci lidských práv, právními odborníky a krizovými centry — včetně <em>Sex Work Donor Collaborative, Sexual Assault Crisis Center (Arménie), Women &amp; Children’s Shelter of Barrie (Kanada)</em> a vzdělávacích nadací v USA. Projekt zkoumá složité průsečíky zranitelnosti, odolnosti a systémových změn skrze strukturované materiální textury.
+                            Série vznikla v dialogu s mezinárodními obránci lidských práv a krizovými centry v Arménii, Kanadě a USA. Zkoumá zranitelnost, odolnost a systémové změny.
                         </div>
                     </div>
-                    <div class="upcoming-location">
-                        Oulu, Finsko &bull; Evropské hlavní město kultury
-                    </div>
+                    <div class="upcoming-location">Oulu, Finsko &bull; Evropské hlavní město kultury</div>
                 </article>
 
-                <!-- Upcoming Show 2: LIFE OF A BOX -->
+                <!-- Upcoming 2 -->
                 <article class="upcoming-card">
                     <div>
                         <div class="upcoming-date">Od března 2027</div>
                         <h3>„Life of a Box“</h3>
-                        <p>Výzkumný a umělecký projekt na pomezí udržitelnosti, designu a integrace obnovitelných zdrojů energie, realizovaný na Karlově univerzitě. Série představuje prostorové objekty vytvořené v návaznosti na dialog a spolupráci s globální sítí muzeí a vědeckých institucí — mimo jiné <em>Národním muzeem v Praze, Stadtmuseum Nürnberg, Musée des Augustins, Musea Brugge, National Museum of Ireland, Naturhistorisches Museum Zürich, National Museum of Denmark, Nuuk Art Museum v Grónsku</em> a <em>GENIUS Olympiad New York</em>.</p>
-                        
-                        <button class="card-expand-btn" onclick="toggleBoxDetails()" id="boxBtn">
-                            [ Číst více o koncepci LIFE OF A BOX &rarr; ]
-                        </button>
-
+                        <p>Výzkumný a umělecký projekt na Karlově univerzitě ve spolupráci s Národním muzeem v Praze, Stadtmuseum Nürnberg, Musée des Augustins, Musea Brugge, a GENIUS Olympiad New York.</p>
+                        <button class="card-expand-btn" onclick="toggleDetails('boxDetails', 'boxBtn')">[ Číst více o koncepci LIFE OF A BOX &rarr; ]</button>
                         <div class="card-expanded-content" id="boxDetails">
-                            <strong>LIFE OF A BOX: MATERIÁLNÍ UDRŽITELNOST A EKOLOGICKÝ ARCHIV</strong><br><br>
-                            Výzkumná iniciativa realizovaná na Karlově univerzitě se pohybuje na pomezí současného umění, konstrukčního designu a integrace obnovitelných zdrojů energie. Výstava představuje prostorové instalace a obnovené konstrukční objekty vytvořené v dialogu s globální sítí kulturních a vědeckých institucí — mimo jiné <em>Národním muzeem (ČR), Stadtmuseum Nürnberg (Německo), Musée des Augustins (Francie), Musea Brugge (Belgie), National Museum of Ireland, Naturhistorisches Museum Zürich (Švýcarsko), National Museum of Denmark, Nuuk Art Museum (Grónsko)</em> a <em>GENIUS Olympiad (New York)</em>.
+                            <strong>LIFE OF A BOX: EKOLOGICKÝ ARCHIV</strong><br><br>
+                            Prostorové instalace vytvořené v dialogu s globální sítí kulturních a vědeckých institucí.
                         </div>
                     </div>
-                    <div class="upcoming-location">
-                        Univerzita Karlova &bull; Výzkumný projekt
-                    </div>
+                    <div class="upcoming-location">Univerzita Karlova &bull; Výzkumný projekt</div>
                 </article>
 
-                <!-- Upcoming Show 3: MATKA -->
+                <!-- Upcoming 3 -->
                 <article class="upcoming-card">
                     <div>
                         <div class="upcoming-date">Od května 2027</div>
                         <h3>„Matka“</h3>
-                        <p>Monografická výstava inspirovaná vzácnou sázavskou freskou ze 14. století, která opouští tradiční náboženskou ikonografii a zachycuje vřelý, každodenní vztah mezi matkou a jejím malým synem.</p>
-                        
-                        <button class="card-expand-btn" onclick="toggleMatkaDetails()" id="matkaBtn">
-                            [ Číst více o koncepci MATKA &rarr; ]
-                        </button>
-
+                        <p>Monografická výstava inspirovaná sázavskou freskou ze 14. století, zachycující lidský vztah mezi matkou a synem.</p>
+                        <button class="card-expand-btn" onclick="toggleDetails('matkaDetails', 'matkaBtn')">[ Číst více o koncepci MATKA &rarr; ]</button>
                         <div class="card-expanded-content" id="matkaDetails">
-                            <strong>MATKA: MATEŘSTVÍ A LIDSKÁ KONTINUITA</strong><br><br>
-                            Na rozdíl od tradičních středověkých ikon, které zobrazují Pannu Marii staticky s nemluvnětem v náručí, se tato série maleb zaměřuje na živý a lidský rozměr mateřství. Přibližně pětiletý Ježíš zde kráčí po boku své matky jako obyčejné dítě. Projekt zdůrazňuje přístupnou, pečující a intimní rovinu mateřského pouta – příběh o blízkosti, vedení a sdíleném životním kroku, který přemosťuje staletí.
+                            <strong>MATKA: MATEŘSTVÍ A KONTINUITA</strong><br><br>
+                            Projekt zdůrazňuje pečující a intimní rovinu mateřského pouta.
                         </div>
                     </div>
-                    <div class="upcoming-location">
-                        Sázavský klášter &bull; Sakrální archiv
-                    </div>
+                    <div class="upcoming-location">Sázavský klášter &bull; Sakrální archiv</div>
                 </article>
 
-                <!-- Upcoming Show 4: MAKOM -->
+                <!-- Upcoming 4 -->
                 <article class="upcoming-card">
                     <div>
                         <div class="upcoming-date">Září – Prosinec 2027</div>
                         <h3>MAKOM (מָקוֹם)</h3>
-                        <p>Monografická výstava a mezinárodní výzkumný archiv mapující etické eseje a filozofické dialogy s představiteli více než 30 světových akademických, paměťových a kulturních institucí — mimo jiné <em>Sereď Holocaust Museum (Slovensko), Centre for Genocide Studies (Argentina), The Hebrew University of Jerusalem (Izrael), JCC Krakow (Polsko), NYU Skirball Dept. of Hebrew &amp; Judaic Studies, UJA Federation (Kanada), Magnes Collection (UC Berkeley), Columbia University, Jewish Theological Seminary of America</em> a řady dalších.</p>
-                        
-                        <button class="card-expand-btn" onclick="toggleMakomDetails()" id="makomBtn">
-                            [ Číst více o koncepci MAKOM &rarr; ]
-                        </button>
-
+                        <p>Monografický archiv mapující filozofické dialogy s více než 30 světovými akademickými institucemi (Hebrew University of Jerusalem, NYU Skirball, Magnes Collection UC Berkeley).</p>
+                        <button class="card-expand-btn" onclick="toggleDetails('makomDetails', 'makomBtn')">[ Číst více o koncepci MAKOM &rarr; ]</button>
                         <div class="card-expanded-content" id="makomDetails">
-                            <strong>MAKOM (מָקוֹם): ARCHITEKTURA SÍDLA A PAMĚTI</strong><br><br>
-                            Název vychází z hebrejského kořene s významem „stát a vytrvat“. Makom označuje více než jen fyzické místo — definuje prostor paměti, přítomnosti a lidské kontinuity. V této zásadní monografické výstavě Hesham Malik přetváří osobní reflexie, etické eseje a globální dialogy získané od mezinárodních akademických a kulturních osobností — včetně <em>Sereď Holocaust Museum (Slovensko), Centre for Genocide Studies (Argentina), The Hebrew University of Jerusalem (Izrael), JCC Krakow (Polsko), NYU Skirball Dept. of Hebrew &amp; Judaic Studies, UJA Federation (Kanada), Magnes Collection na UC Berkeley (USA), Columbia University a Jewish Theological Seminary of America</em> — do těžkých, vícevrstvých maleb a objektů. Každé dílo funguje jako živý Makom — fyzické útočiště uchovávající váhu sdílené lidské myšlenky.
+                            <strong>MAKOM: ARCHITEKTURA SÍDLA A PAMĚTI</strong><br><br>
+                            Fyzické útočiště uchovávající váhu sdílené lidské myšlenky.
                         </div>
                     </div>
-                    <div class="upcoming-location">
-                        Jewish Museum &bull; Září – Prosinec 2027
-                    </div>
+                    <div class="upcoming-location">Jewish Museum &bull; Září – Prosinec 2027</div>
                 </article>
             </div>
 
@@ -478,117 +383,8 @@
             </button>
 
             <div class="archive-container" id="archiveContent">
-                
-                <!-- MEZINÁRODNÍ & KLÍČOVÉ INSTITUCIONÁLNÍ UZLY -->
-                <div class="archive-year-block">
-                    <h3 class="archive-year-title">Mezinárodní &amp; Klíčové Institucionální Projekty</h3>
-                    <div class="ledger-table">
-                        <div class="ledger-row highlight">
-                            <span class="ledger-title">Life of A Box</span>
-                            <span class="ledger-venue">Brussels Expo – Europe’s Creative Industries</span>
-                            <span class="ledger-location">Brusel, Belgie</span>
-                        </div>
-                        <div class="ledger-row highlight">
-                            <span class="ledger-title">Twain</span>
-                            <span class="ledger-venue">Berkeley Commonplace</span>
-                            <span class="ledger-location">Kalifornie, USA</span>
-                        </div>
-                        <div class="ledger-row highlight">
-                            <span class="ledger-title">Life of A Box</span>
-                            <span class="ledger-venue">Museum of Papermaking</span>
-                            <span class="ledger-location">Duszniki-Zdrój, Polsko</span>
-                        </div>
-                        <div class="ledger-row highlight">
-                            <span class="ledger-title">Setkání vědy a umění / Gesto</span>
-                            <span class="ledger-venue">Karlova Univerzita</span>
-                            <span class="ledger-location">Akademický výzkum</span>
-                        </div>
-                        <div class="ledger-row highlight">
-                            <span class="ledger-title">18 &amp; Židovská čtvrť</span>
-                            <span class="ledger-venue">Jeruzalémská Synagoga &amp; Zadní synagoga</span>
-                            <span class="ledger-location">Sakrální archiv</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- REGIONÁLNÍ MUZEJNÍ & GALERIJNÍ CYKLY (2025–2026) -->
-                <div class="archive-year-block">
-                    <h3 class="archive-year-title">Muzejní Výzkumné Okruhy (2025 – 2026)</h3>
-                    <div class="ledger-table">
-                        <div class="ledger-row">
-                            <span class="ledger-title">Life of A Box &amp; Tiché doteky</span>
-                            <span class="ledger-venue">Městská knihovna v Praze &amp; Muzeum Jindřichohradecka</span>
-                            <span class="ledger-location">Muzeální archiv</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Andělé a démoni &amp; Iridescent</span>
-                            <span class="ledger-venue">Muzeum plzeňské diecéze &amp; Muzeum Mariánská Týnice</span>
-                            <span class="ledger-location">Sakrální &amp; Regionální sbírka</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Od řeky k věčnosti &amp; Reminiscence</span>
-                            <span class="ledger-venue">Muzeum Horní Police &amp; Městská galerie Vysoké Mýto</span>
-                            <span class="ledger-location">Monografický cyklus</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Birth Giver &amp; Aliferous</span>
-                            <span class="ledger-venue">Pevnost Josefov &amp; Muzeum Černošín / Galerie Carpe Diem</span>
-                            <span class="ledger-location">Prostorové instalace</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Rumi, Anekdota, Cast</span>
-                            <span class="ledger-venue">Orlické muzeum Choceň, Centrum UFFO Trutnov, Muzeum Králíky</span>
-                            <span class="ledger-location">Tematické výstavy</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Portréty života</span>
-                            <span class="ledger-venue">Regionální muzeum Kladrubska</span>
-                            <span class="ledger-location">Kladruby</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- HISTORICKÉ & FILOZOFICKÉ RETROSPEKTIVY (2023–2024) -->
-                <div class="archive-year-block">
-                    <h3 class="archive-year-title">Historické &amp; Tematické Monografie (2023 – 2024)</h3>
-                    <div class="ledger-table">
-                        <div class="ledger-row">
-                            <span class="ledger-title">Kemet &amp; Mizpah</span>
-                            <span class="ledger-venue">Muzeum Karlovy Vary &amp; Muzeum Vysočiny Havlíčkův Brod</span>
-                            <span class="ledger-location">Historický výzkum</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Skrytá Tajemství Indie</span>
-                            <span class="ledger-venue">Oblastní muzeum a galerie v Mostě</span>
-                            <span class="ledger-location">Most</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Nejisté vibrace &amp; Incomplete</span>
-                            <span class="ledger-venue">Muzeum Kroměřížska &amp; Městská galerie Zázvorka</span>
-                            <span class="ledger-location">Monografický cyklus</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Rodičům Navzdory &amp; Moonbow</span>
-                            <span class="ledger-venue">Zámek Zruč nad Sázavou &amp; Galerie Zázvorka</span>
-                            <span class="ledger-location">Galerijní okruh</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Amorista &amp; Kuumba</span>
-                            <span class="ledger-venue">Muzeum Červená věž &amp; Městské muzeum Dvůr Králové</span>
-                            <span class="ledger-location">Litomyšl / Dvůr Králové</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 1997-2022 CURATORIAL BOX -->
-                <div class="archive-footer-box">
-                    <h4>RETROSPEKTIVNÍ INSTITUCIONÁLNÍ ARCHIV (1997 – 2022)</h4>
-                    <p>Kompletní retrospektivní dokumentace, monografické katalogy a provenienční záznamy z evropských, severoamerických a asijských muzeálních prezentací jsou přístupné pro kurátorský výzkum a institucionální akvizice.</p>
-                    <a href="kontakt.html" class="archive-request-btn">[ Požádat o přístup k archivu &rarr; ]</a>
-                </div>
-
+                <!-- Dynamic Grouped Ledger rendered via JavaScript -->
             </div>
-
         </section>
     </main>
 
@@ -598,6 +394,76 @@
     </footer>
 
     <script>
+        // CURATORIAL GROUPED DATA STRUCTURE
+        const curatorialArchive = [
+            {
+                groupTitle: "Mezinárodní & Klíčové Institucionální Projekty",
+                items: [
+                    { title: "Life of A Box", venue: "Brussels Expo – Europe’s Creative Industries", location: "Brusel, Belgie", highlight: true },
+                    { title: "Twain", venue: "Berkeley Commonplace", location: "Kalifornie, USA", highlight: true },
+                    { title: "Life of A Box", venue: "Museum of Papermaking", location: "Duszniki-Zdrój, Polsko", highlight: true },
+                    { title: "Setkání vědy a umění / Gesto", venue: "Karlova Univerzita", location: "Akademický výzkum", highlight: true },
+                    { title: "18 & Židovská čtvrť", venue: "Jeruzalémská Synagoga & Zadní synagoga", location: "Sakrální archiv", highlight: true }
+                ]
+            },
+            {
+                groupTitle: "Muzejní Výzkumné Okruhy (2025 – 2026)",
+                items: [
+                    { title: "Life of A Box & Tiché doteky", venue: "Městská knihovna v Praze & Muzeum Jindřichohradecka", location: "Muzeální archiv", highlight: false },
+                    { title: "Andělé a démoni & Iridescent", venue: "Muzeum plzeňské diecéze & Muzeum Mariánská Týnice", location: "Sakrální & Regionální sbírka", highlight: false },
+                    { title: "Od řeky k věčnosti & Reminiscence", venue: "Muzeum Horní Police & Městská galerie Vysoké Mýto", location: "Monografický cyklus", highlight: false },
+                    { title: "Birth Giver & Aliferous", venue: "Pevnost Josefov & Muzeum Černošín / Galerie Carpe Diem", location: "Prostorové instalace", highlight: false },
+                    { title: "Rumi, Anekdota, Cast", venue: "Orlické muzeum Choceň, Centrum UFFO Trutnov, Muzeum Králíky", location: "Tematické výstavy", highlight: false },
+                    { title: "Portréty života", venue: "Regionální muzeum Kladrubska", location: "Kladruby", highlight: false }
+                ]
+            },
+            {
+                groupTitle: "Historické & Tematické Monografie (2023 – 2024)",
+                items: [
+                    { title: "Kemet & Mizpah", venue: "Muzeum Karlovy Vary & Muzeum Vysočiny Havlíčkův Brod", location: "Historický výzkum", highlight: false },
+                    { title: "Skrytá Tajemství Indie", venue: "Oblastní muzeum a galerie v Mostě", location: "Most", highlight: false },
+                    { title: "Nejisté vibrace & Incomplete", venue: "Muzeum Kroměřížska & Městská galerie Zázvorka", location: "Monografický cyklus", highlight: false },
+                    { title: "Rodičům Navzdory & Moonbow", venue: "Zámek Zruč nad Sázavou & Galerie Zázvorka", location: "Galerijní okruh", highlight: false },
+                    { title: "Amorista & Kuumba", venue: "Muzeum Červená věž & Městské muzeum Dvůr Králové", location: "Litomyšl / Dvůr Králové", highlight: false }
+                ]
+            }
+        ];
+
+        function renderGroupedArchive() {
+            const container = document.getElementById('archiveContent');
+            let html = '';
+
+            curatorialArchive.forEach(group => {
+                html += `
+                    <div class="archive-year-block">
+                        <h3 class="archive-year-title">${group.groupTitle}</h3>
+                        <div class="ledger-table">
+                `;
+                group.items.forEach(row => {
+                    const highlightClass = row.highlight ? ' highlight' : '';
+                    html += `
+                        <div class="ledger-row${highlightClass}">
+                            <span class="ledger-title">${row.title}</span>
+                            <span class="ledger-venue">${row.venue}</span>
+                            <span class="ledger-location">${row.location}</span>
+                        </div>
+                    `;
+                });
+                html += `</div></div>`;
+            });
+
+            // Modern Museum Grade Archive Box
+            html += `
+                <div class="archive-footer-box">
+                    <h4>RETROSPEKTIVNÍ INSTITUCIONÁLNÍ ARCHIV (1997 – 2022)</h4>
+                    <p>Kompletní retrospektivní dokumentace, monografické katalogy a provenienční záznamy z evropských, severoamerických a asijských muzeálních prezentací jsou přístupné pro kurátorský výzkum a institucionální akvizice.</p>
+                    <a href="kontakt.html" class="archive-request-btn">[ Požádat o přístup k archivu &rarr; ]</a>
+                </div>
+            `;
+
+            container.innerHTML = html;
+        }
+
         function toggleArchive() {
             const archive = document.getElementById('archiveContent');
             const btn = document.getElementById('archiveBtn');
@@ -606,63 +472,25 @@
                 archive.style.display = 'none';
                 btn.innerHTML = '&darr; Otevřít mezinárodní registr a muzejní archiv (2023–2026)';
             } else {
+                if (archive.children.length === 0) {
+                    renderGroupedArchive();
+                }
                 archive.style.display = 'block';
                 btn.innerHTML = '&uarr; Skrýt historii výstav';
             }
         }
 
-        function toggleMakomDetails() {
-            const details = document.getElementById('makomDetails');
-            const btn = document.getElementById('makomBtn');
-
-            if (details.style.display === 'block') {
-                details.style.display = 'none';
-                btn.innerHTML = '[ Číst více o koncepci MAKOM &rarr; ]';
+        function toggleDetails(id, btnId) {
+            const el = document.getElementById(id);
+            const btn = document.getElementById(btnId);
+            if (el.style.display === 'block') {
+                el.style.display = 'none';
+                btn.innerText = '[ Číst více o koncepci → ]';
             } else {
-                details.style.display = 'block';
-                btn.innerHTML = '[ Skrýt koncepci MAKOM &uarr; ]';
-            }
-        }
-
-        function toggleMatkaDetails() {
-            const details = document.getElementById('matkaDetails');
-            const btn = document.getElementById('matkaBtn');
-
-            if (details.style.display === 'block') {
-                details.style.display = 'none';
-                btn.innerHTML = '[ Číst více o koncepci MATKA &rarr; ]';
-            } else {
-                details.style.display = 'block';
-                btn.innerHTML = '[ Skrýt koncepci MATKA &uarr; ]';
-            }
-        }
-
-        function toggleUnknownDetails() {
-            const details = document.getElementById('unknownDetails');
-            const btn = document.getElementById('unknownBtn');
-
-            if (details.style.display === 'block') {
-                details.style.display = 'none';
-                btn.innerHTML = '[ Číst více o koncepci UNKNOWN &rarr; ]';
-            } else {
-                details.style.display = 'block';
-                btn.innerHTML = '[ Skrýt koncepci UNKNOWN &uarr; ]';
-            }
-        }
-
-        function toggleBoxDetails() {
-            const details = document.getElementById('boxDetails');
-            const btn = document.getElementById('boxBtn');
-
-            if (details.style.display === 'block') {
-                details.style.display = 'none';
-                btn.innerHTML = '[ Číst více o koncepci LIFE OF A BOX &rarr; ]';
-            } else {
-                details.style.display = 'block';
-                btn.innerHTML = '[ Skrýt koncepci LIFE OF A BOX &uarr; ]';
+                el.style.display = 'block';
+                btn.innerText = '[ Skrýt koncepci ↑ ]';
             }
         }
     </script>
-
 </body>
 </html>
