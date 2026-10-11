@@ -229,9 +229,10 @@
         }
 
         .archive-year-title {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 300;
             letter-spacing: 0.2rem;
+            text-transform: uppercase;
             color: var(--accent-color);
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 0.5rem;
@@ -381,7 +382,7 @@
         <section class="exhibitions-container">
             
             <!-- SECTION 1: UPCOMING EXHIBITIONS -->
-            <h2 class="section-title-clean">Nadcházející prezentace & Monografie</h2>
+            <h2 class="section-title-clean">Nadcházející prezentace &amp; Monografie</h2>
 
             <div class="upcoming-grid">
                 <!-- Upcoming Show 1: UNKNOWN -->
@@ -470,185 +471,118 @@
             </div>
 
             <!-- SECTION 2: EXHIBITION ARCHIVE -->
-            <h2 class="section-title-clean">Historie registru</h2>
+            <h2 class="section-title-clean">Monografický registr a historie cyklů</h2>
 
             <button class="toggle-archive-btn" onclick="toggleArchive()" id="archiveBtn">
-                &darr; Zobrazit kompletní registr výstav (2023–2026)
+                &darr; Otevřít mezinárodní registr a muzejní archiv (2023–2026)
             </button>
 
             <div class="archive-container" id="archiveContent">
                 
-                <!-- 2026 -->
+                <!-- MEZINÁRODNÍ & KLÍČOVÉ INSTITUCIONÁLNÍ UZLY -->
                 <div class="archive-year-block">
-                    <h3 class="archive-year-title">2026</h3>
+                    <h3 class="archive-year-title">Mezinárodní &amp; Klíčové Institucionální Projekty</h3>
                     <div class="ledger-table">
                         <div class="ledger-row highlight">
                             <span class="ledger-title">Life of A Box</span>
                             <span class="ledger-venue">Brussels Expo – Europe’s Creative Industries</span>
                             <span class="ledger-location">Brusel, Belgie</span>
                         </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Tiché doteky</span>
-                            <span class="ledger-venue">Muzeum Jindřichohradecka</span>
-                            <span class="ledger-location">Mezinárodní výstava</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Life of A Box</span>
-                            <span class="ledger-venue">Městská knihovna v Praze</span>
-                            <span class="ledger-location">Praha, ČR</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Andělé a démoni</span>
-                            <span class="ledger-venue">Muzeum církevního umění plzeňské diecéze</span>
-                            <span class="ledger-location">Plzeň, ČR</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Iridescent</span>
-                            <span class="ledger-venue">Muzeum a galerie severního Plzeňska v Mariánské Týnici</span>
-                            <span class="ledger-location">Mariánská Týnice, ČR</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2025 -->
-                <div class="archive-year-block">
-                    <h3 class="archive-year-title">2025</h3>
-                    <div class="ledger-table">
-                        <div class="ledger-row highlight">
-                            <span class="ledger-title">Life of A Box</span>
-                            <span class="ledger-venue">Museum of Papermaking</span>
-                            <span class="ledger-location">Duszniki-Zdrój, Polsko</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">18</span>
-                            <span class="ledger-venue">Jeruzalémská Synagoga</span>
-                            <span class="ledger-location">Praha, ČR</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Setkání vědy a umění</span>
-                            <span class="ledger-venue">MGVO, Karlova Univerzita</span>
-                            <span class="ledger-location">Praha, ČR</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Od řeky k věčnosti</span>
-                            <span class="ledger-venue">Muzeum v Horní Police</span>
-                            <span class="ledger-location">Horní Police, ČR</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Reminiscence</span>
-                            <span class="ledger-venue">Městská galerie ve Vysokém Mýtě</span>
-                            <span class="ledger-location">Vysoké Mýto, ČR</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Birth Giver</span>
-                            <span class="ledger-venue">Pevnost Josefov</span>
-                            <span class="ledger-location">Jaroměř, ČR</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Aliferous</span>
-                            <span class="ledger-venue">Muzeum Černošín / Galerie Carpe Diem</span>
-                            <span class="ledger-location">Černošín, ČR</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Rumi</span>
-                            <span class="ledger-venue">Orlické muzeum v Chocni</span>
-                            <span class="ledger-location">Choceň, ČR</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Anekdota</span>
-                            <span class="ledger-venue">Společenské centrum UFFO</span>
-                            <span class="ledger-location">Trutnov, ČR</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Portréty života</span>
-                            <span class="ledger-venue">Regionální muzeum Kladrubska</span>
-                            <span class="ledger-location">Kladruby, ČR</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Cast</span>
-                            <span class="ledger-venue">Městské muzeum Králíky</span>
-                            <span class="ledger-location">Králíky, ČR</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2024 -->
-                <div class="archive-year-block">
-                    <h3 class="archive-year-title">2024</h3>
-                    <div class="ledger-table">
                         <div class="ledger-row highlight">
                             <span class="ledger-title">Twain</span>
                             <span class="ledger-venue">Berkeley Commonplace</span>
                             <span class="ledger-location">Kalifornie, USA</span>
                         </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Židovská čtvrť</span>
-                            <span class="ledger-venue">Zadní synagoga Třebíč</span>
-                            <span class="ledger-location">Třebíč, ČR</span>
+                        <div class="ledger-row highlight">
+                            <span class="ledger-title">Life of A Box</span>
+                            <span class="ledger-venue">Museum of Papermaking</span>
+                            <span class="ledger-location">Duszniki-Zdrój, Polsko</span>
                         </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Kemet</span>
-                            <span class="ledger-venue">Muzeum Karlovy Vary</span>
-                            <span class="ledger-location">Karlovy Vary, ČR</span>
+                        <div class="ledger-row highlight">
+                            <span class="ledger-title">Setkání vědy a umění / Gesto</span>
+                            <span class="ledger-venue">Karlova Univerzita</span>
+                            <span class="ledger-location">Akademický výzkum</span>
                         </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Skrytá Tajemství Indie</span>
-                            <span class="ledger-venue">Oblastní muzeum a galerie v Mostě</span>
-                            <span class="ledger-location">Most, ČR</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Mizpah</span>
-                            <span class="ledger-venue">Muzeum Vysočiny Havlíčkův Brod</span>
-                            <span class="ledger-location">Havlíčkův Brod, ČR</span>
+                        <div class="ledger-row highlight">
+                            <span class="ledger-title">18 &amp; Židovská čtvrť</span>
+                            <span class="ledger-venue">Jeruzalémská Synagoga &amp; Zadní synagoga</span>
+                            <span class="ledger-location">Sakrální archiv</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2023 -->
+                <!-- REGIONÁLNÍ MUZEJNÍ & GALERIJNÍ CYKLY (2025–2026) -->
                 <div class="archive-year-block">
-                    <h3 class="archive-year-title">2023</h3>
+                    <h3 class="archive-year-title">Muzejní Výzkumné Okruhy (2025 – 2026)</h3>
                     <div class="ledger-table">
                         <div class="ledger-row">
-                            <span class="ledger-title">Incomplete</span>
-                            <span class="ledger-venue">Městská galerie Zázvorka</span>
-                            <span class="ledger-location">Nové Město n. M., ČR</span>
+                            <span class="ledger-title">Life of A Box &amp; Tiché doteky</span>
+                            <span class="ledger-venue">Městská knihovna v Praze &amp; Muzeum Jindřichohradecka</span>
+                            <span class="ledger-location">Muzeální archiv</span>
                         </div>
                         <div class="ledger-row">
-                            <span class="ledger-title">Nejisté vibrace</span>
-                            <span class="ledger-venue">Muzeum Kroměřížska</span>
-                            <span class="ledger-location">Kroměříž, ČR</span>
+                            <span class="ledger-title">Andělé a démoni &amp; Iridescent</span>
+                            <span class="ledger-venue">Muzeum plzeňské diecéze &amp; Muzeum Mariánská Týnice</span>
+                            <span class="ledger-location">Sakrální &amp; Regionální sbírka</span>
                         </div>
                         <div class="ledger-row">
-                            <span class="ledger-title">Gesto</span>
-                            <span class="ledger-venue">Karlova Univerzita</span>
-                            <span class="ledger-location">Praha, ČR</span>
+                            <span class="ledger-title">Od řeky k věčnosti &amp; Reminiscence</span>
+                            <span class="ledger-venue">Muzeum Horní Police &amp; Městská galerie Vysoké Mýto</span>
+                            <span class="ledger-location">Monografický cyklus</span>
                         </div>
                         <div class="ledger-row">
-                            <span class="ledger-title">Rodičům Navzdory</span>
-                            <span class="ledger-venue">Zámek Zruč nad Sázavou</span>
-                            <span class="ledger-location">Zruč n. S., ČR</span>
+                            <span class="ledger-title">Birth Giver &amp; Aliferous</span>
+                            <span class="ledger-venue">Pevnost Josefov &amp; Muzeum Černošín / Galerie Carpe Diem</span>
+                            <span class="ledger-location">Prostorové instalace</span>
                         </div>
                         <div class="ledger-row">
-                            <span class="ledger-title">Moonbow</span>
-                            <span class="ledger-venue">Městská galerie Zázvorka / Muzeum</span>
-                            <span class="ledger-location">Nové Město n. M., ČR</span>
+                            <span class="ledger-title">Rumi, Anekdota, Cast</span>
+                            <span class="ledger-venue">Orlické muzeum Choceň, Centrum UFFO Trutnov, Muzeum Králíky</span>
+                            <span class="ledger-location">Tematické výstavy</span>
                         </div>
                         <div class="ledger-row">
-                            <span class="ledger-title">Amorista</span>
-                            <span class="ledger-venue">Muzeum Červená věž</span>
-                            <span class="ledger-location">Litomyšl, ČR</span>
+                            <span class="ledger-title">Portréty života</span>
+                            <span class="ledger-venue">Regionální muzeum Kladrubska</span>
+                            <span class="ledger-location">Kladruby</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HISTORICKÉ & FILOZOFICKÉ RETROSPEKTIVY (2023–2024) -->
+                <div class="archive-year-block">
+                    <h3 class="archive-year-title">Historické &amp; Tematické Monografie (2023 – 2024)</h3>
+                    <div class="ledger-table">
+                        <div class="ledger-row">
+                            <span class="ledger-title">Kemet &amp; Mizpah</span>
+                            <span class="ledger-venue">Muzeum Karlovy Vary &amp; Muzeum Vysočiny Havlíčkův Brod</span>
+                            <span class="ledger-location">Historický výzkum</span>
                         </div>
                         <div class="ledger-row">
-                            <span class="ledger-title">Kuumba</span>
-                            <span class="ledger-venue">Městské muzeum Dvůr Králové nad Labem</span>
-                            <span class="ledger-location">Dvůr Králové, ČR</span>
+                            <span class="ledger-title">Skrytá Tajemství Indie</span>
+                            <span class="ledger-venue">Oblastní muzeum a galerie v Mostě</span>
+                            <span class="ledger-location">Most</span>
+                        </div>
+                        <div class="ledger-row">
+                            <span class="ledger-title">Nejisté vibrace &amp; Incomplete</span>
+                            <span class="ledger-venue">Muzeum Kroměřížska &amp; Městská galerie Zázvorka</span>
+                            <span class="ledger-location">Monografický cyklus</span>
+                        </div>
+                        <div class="ledger-row">
+                            <span class="ledger-title">Rodičům Navzdory &amp; Moonbow</span>
+                            <span class="ledger-venue">Zámek Zruč nad Sázavou &amp; Galerie Zázvorka</span>
+                            <span class="ledger-location">Galerijní okruh</span>
+                        </div>
+                        <div class="ledger-row">
+                            <span class="ledger-title">Amorista &amp; Kuumba</span>
+                            <span class="ledger-venue">Muzeum Červená věž &amp; Městské muzeum Dvůr Králové</span>
+                            <span class="ledger-location">Litomyšl / Dvůr Králové</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- 1997-2022 CURATORIAL BOX -->
                 <div class="archive-footer-box">
-                    <h4>Kompletní monografický archiv (1997 – 2022)</h4>
+                    <h4>Kompletní monografický archiv (1997 – 2026)</h4>
                     <p>Podrobná retrospektivní dokumentace zahrnující více než 100 samostatných výstav v muzeích a galeriích napříč Evropou, Severní Amerikou a Asií je k dispozici pro kurátory a instituce.</p>
                     <a href="kontakt.html" class="archive-request-btn">Vyžádat kurátorský archiv &rarr;</a>
                 </div>
@@ -670,7 +604,7 @@
             
             if (archive.style.display === 'block') {
                 archive.style.display = 'none';
-                btn.innerHTML = '&darr; Zobrazit kompletní registr výstav (2023–2026)';
+                btn.innerHTML = '&darr; Otevřít mezinárodní registr a muzejní archiv (2023–2026)';
             } else {
                 archive.style.display = 'block';
                 btn.innerHTML = '&uarr; Skrýt historii výstav';
