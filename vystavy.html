@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hesham Malik | Registr Výstav &amp; Institucionální Archiv</title>
-    <meta name="description" content="Oficiální registr a archiv samostatných muzeálních a galerijních výstav Heshama Malika v Severní Americe, Evropě, Skandinávii a na Blízkém východě.">
+    <title>Hesham Malik | Výstavy &amp; Muzejní Archiv</title>
+    <meta name="description" content="Oficiální registr a archiv samostatných muzeálních a galerijních výstav Heshama Malika.">
     <link rel="canonical" href="https://heshammalik.eu/vystavy.html" />
 
     <style>
@@ -73,9 +73,9 @@
         }
 
         .page-header h1 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 300;
-            letter-spacing: 0.3rem;
+            letter-spacing: 0.35rem;
             text-transform: uppercase;
         }
 
@@ -86,7 +86,7 @@
         }
 
         .section-title-clean {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 300;
             letter-spacing: 0.2rem;
             text-transform: uppercase;
@@ -206,7 +206,7 @@
         .archive-year-block { margin-bottom: 3.5rem; }
 
         .archive-year-title {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 300;
             letter-spacing: 0.2rem;
             text-transform: uppercase;
@@ -245,7 +245,7 @@
         }
 
         .archive-footer-box h4 {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             letter-spacing: 0.2rem;
             text-transform: uppercase;
             margin-bottom: 0.8rem;
@@ -253,7 +253,7 @@
         }
 
         .archive-footer-box p {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             color: var(--text-muted);
             font-weight: 300;
             max-width: 650px;
@@ -300,14 +300,14 @@
             <a href="umelec.html">Biografie</a>
             <a href="umeni.html">Dílo</a>
             <a href="projekty.html">Iniciativy</a>
-            <a href="vystavy.html" class="active">Registr Výstav</a>
+            <a href="vystavy.html" class="active">Výstavy</a>
             <a href="kontakt.html">Kontakt</a>
         </nav>
     </header>
 
     <main>
         <section class="page-header">
-            <h1>INSTITUCIONÁLNÍ REGISTR VÝSTAV</h1>
+            <h1>VÝSTAVY</h1>
         </section>
 
         <section class="exhibitions-container">
@@ -320,7 +320,7 @@
                         <div class="upcoming-date">Od prosince 2026</div>
                         <h3>„Unknown“</h3>
                         <p>Projekt vzniká ve spolupráci s předními mezinárodními lidskoprávními organizacemi (Sex Work Donor Collaborative, Sexual Assault Crisis Center Armenia, Women &amp; Children’s Shelter of Barrie v Kanadě).</p>
-                        <button class="card-expand-btn" onclick="toggleDetails('unknownDetails', 'unknownBtn')">[ Číst více o koncepci UNKNOWN &rarr; ]</button>
+                        <button class="card-expand-btn" onclick="toggleDetails('unknownDetails', 'unknownBtn')" id="unknownBtn">[ Číst více o koncepci UNKNOWN &rarr; ]</button>
                         <div class="card-expanded-content" id="unknownDetails">
                             <strong>UNKNOWN: ČASOVÁ NEJISTOTA A ŽENSKÁ IDENTITA</strong><br><br>
                             Série vznikla v dialogu s mezinárodními obránci lidských práv a krizovými centry v Arménii, Kanadě a USA. Zkoumá zranitelnost, odolnost a systémové změny.
@@ -334,8 +334,8 @@
                     <div>
                         <div class="upcoming-date">Od března 2027</div>
                         <h3>„Life of a Box“</h3>
-                        <p>Výzkumný a umělecký projekt na Karlově univerzitě ve spolupráci s Národním muzeem v Praze, Stadtmuseum Nürnberg, Musée des Augustins, Musea Brugge, a GENIUS Olympiad New York.</p>
-                        <button class="card-expand-btn" onclick="toggleDetails('boxDetails', 'boxBtn')">[ Číst více o koncepci LIFE OF A BOX &rarr; ]</button>
+                        <p>Výzkumný a umělecký projekt na Karlově univerzitě ve spolupráci s Národním muzeem v Praze, Stadtmuseum Nürnberg, Musée des Augustins, Musea Brugge a GENIUS Olympiad New York.</p>
+                        <button class="card-expand-btn" onclick="toggleDetails('boxDetails', 'boxBtn')" id="boxBtn">[ Číst více o koncepci LIFE OF A BOX &rarr; ]</button>
                         <div class="card-expanded-content" id="boxDetails">
                             <strong>LIFE OF A BOX: EKOLOGICKÝ ARCHIV</strong><br><br>
                             Prostorové instalace vytvořené v dialogu s globální sítí kulturních a vědeckých institucí.
@@ -350,7 +350,7 @@
                         <div class="upcoming-date">Od května 2027</div>
                         <h3>„Matka“</h3>
                         <p>Monografická výstava inspirovaná sázavskou freskou ze 14. století, zachycující lidský vztah mezi matkou a synem.</p>
-                        <button class="card-expand-btn" onclick="toggleDetails('matkaDetails', 'matkaBtn')">[ Číst více o koncepci MATKA &rarr; ]</button>
+                        <button class="card-expand-btn" onclick="toggleDetails('matkaDetails', 'matkaBtn')" id="matkaBtn">[ Číst více o koncepci MATKA &rarr; ]</button>
                         <div class="card-expanded-content" id="matkaDetails">
                             <strong>MATKA: MATEŘSTVÍ A KONTINUITA</strong><br><br>
                             Projekt zdůrazňuje pečující a intimní rovinu mateřského pouta.
@@ -365,7 +365,7 @@
                         <div class="upcoming-date">Září – Prosinec 2027</div>
                         <h3>MAKOM (מָקוֹם)</h3>
                         <p>Monografický archiv mapující filozofické dialogy s více než 30 světovými akademickými institucemi (Hebrew University of Jerusalem, NYU Skirball, Magnes Collection UC Berkeley).</p>
-                        <button class="card-expand-btn" onclick="toggleDetails('makomDetails', 'makomBtn')">[ Číst více o koncepci MAKOM &rarr; ]</button>
+                        <button class="card-expand-btn" onclick="toggleDetails('makomDetails', 'makomBtn')" id="makomBtn">[ Číst více o koncepci MAKOM &rarr; ]</button>
                         <div class="card-expanded-content" id="makomDetails">
                             <strong>MAKOM: ARCHITEKTURA SÍDLA A PAMĚTI</strong><br><br>
                             Fyzické útočiště uchovávající váhu sdílené lidské myšlenky.
@@ -382,9 +382,7 @@
                 &darr; Otevřít mezinárodní registr a muzejní archiv (2023–2026)
             </button>
 
-            <div class="archive-container" id="archiveContent">
-                <!-- Dynamic Grouped Ledger rendered via JavaScript -->
-            </div>
+            <div class="archive-container" id="archiveContent"></div>
         </section>
     </main>
 
@@ -394,7 +392,6 @@
     </footer>
 
     <script>
-        // CURATORIAL GROUPED DATA STRUCTURE
         const curatorialArchive = [
             {
                 groupTitle: "Mezinárodní & Klíčové Institucionální Projekty",
@@ -452,7 +449,6 @@
                 html += `</div></div>`;
             });
 
-            // Modern Museum Grade Archive Box
             html += `
                 <div class="archive-footer-box">
                     <h4>RETROSPEKTIVNÍ INSTITUCIONÁLNÍ ARCHIV (1997 – 2022)</h4>
@@ -472,9 +468,7 @@
                 archive.style.display = 'none';
                 btn.innerHTML = '&darr; Otevřít mezinárodní registr a muzejní archiv (2023–2026)';
             } else {
-                if (archive.children.length === 0) {
-                    renderGroupedArchive();
-                }
+                renderGroupedArchive();
                 archive.style.display = 'block';
                 btn.innerHTML = '&uarr; Skrýt historii výstav';
             }
