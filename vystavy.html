@@ -408,12 +408,21 @@
                     </div>
                 </article>
 
-                <!-- Upcoming Show 3 -->
+                <!-- Upcoming Show 3: Matka -->
                 <article class="upcoming-card">
                     <div>
                         <div class="upcoming-date">Od května 2027</div>
-                        <h3>„Matka Máří“</h3>
-                        <p>Mimořádná monografická výstava vzdávající hold uctívanému lidskému mateřství a duchovní kontinuity v historických prostorách Sázavského kláštera.</p>
+                        <h3>„Matka“</h3>
+                        <p>Monografická výstava inspirovaná vzácnou sázavskou freskou ze 14. století, která opouští tradiční náboženskou ikonografii a zachycuje vřelý, každodenní vztah mezi matkou a jejím malým synem.</p>
+                        
+                        <button class="card-expand-btn" onclick="toggleMatkaDetails()" id="matkaBtn">
+                            [ Číst více o koncepci MATKA &rarr; ]
+                        </button>
+
+                        <div class="card-expanded-content" id="matkaDetails">
+                            <strong>MATKA: MOTHERHOOD &amp; HUMAN CONTINUITY</strong><br><br>
+                            Na rozdíl od tradičních středověkých ikon, které zobrazují Pannu Marii staticky s nemluvnětem v náručí, se tato série fresek a maleb zaměřuje na živý a lidský rozměr mateřství. Přibližně pětiletý Ježíš zde kráčí po boku své matky jako obyčejné dítě. Projekt zdůrazňuje přístupnou, pečující a intimní rovinu mateřského pouta – příběh o blízkosti, vedení a sdíleném životním kroku, který přemosťuje staletí.
+                        </div>
                     </div>
                     <div class="upcoming-location">
                         Sázavský klášter &bull; Sakrální archiv
@@ -660,6 +669,19 @@
             } else {
                 details.style.display = 'block';
                 btn.innerHTML = '[ Skrýt koncepci MAKOM &uarr; ]';
+            }
+        }
+
+        function toggleMatkaDetails() {
+            const details = document.getElementById('matkaDetails');
+            const btn = document.getElementById('matkaBtn');
+
+            if (details.style.display === 'block') {
+                details.style.display = 'none';
+                btn.innerHTML = '[ Číst více o koncepci MATKA &rarr; ]';
+            } else {
+                details.style.display = 'block';
+                btn.innerHTML = '[ Skrýt koncepci MATKA &uarr; ]';
             }
         }
     </script>
