@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hesham Malik | Výstavy</title>
+    <title>Hesham Malik | Registr Výstav & Institucionální Archiv</title>
+    <meta name="description" content="Oficiální registr a archiv samostatných muzeálních a galerijních výstav Heshama Malika v Severní Americe, Evropě, Skandinávii a na Blízkém východě.">
+    <link rel="canonical" href="https://heshammalik.eu/vystavy.html" />
+
     <style>
         :root {
             --bg-color: #fcfcfc;
@@ -44,26 +47,27 @@
         }
 
         .logo {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             letter-spacing: 0.25rem;
             text-transform: uppercase;
             color: var(--accent-color);
             text-decoration: none;
-            font-weight: 300;
+            font-weight: 400;
         }
 
         nav a {
             color: var(--text-muted);
             text-decoration: none;
             margin-left: 2rem;
-            font-size: 0.85rem;
-            letter-spacing: 0.12rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.15rem;
             text-transform: uppercase;
             transition: color 0.3s;
         }
 
         nav a:hover, nav a.active {
             color: var(--accent-color);
+            font-weight: 600;
         }
 
         .page-header {
@@ -75,7 +79,7 @@
         }
 
         .page-header h1 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 300;
             letter-spacing: 0.3rem;
             text-transform: uppercase;
@@ -89,7 +93,7 @@
         }
 
         .section-title-clean {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 300;
             letter-spacing: 0.2rem;
             text-transform: uppercase;
@@ -124,7 +128,7 @@
         }
 
         .upcoming-date {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             letter-spacing: 0.15rem;
             text-transform: uppercase;
             color: #1b4d1b;
@@ -137,8 +141,8 @@
         }
 
         .upcoming-card h3 {
-            font-size: 1.4rem;
-            font-weight: 300;
+            font-size: 1.3rem;
+            font-weight: 400;
             letter-spacing: 0.15rem;
             text-transform: uppercase;
             color: var(--accent-color);
@@ -146,7 +150,7 @@
         }
 
         .upcoming-card p {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #333333;
             font-weight: 300;
             line-height: 1.7;
@@ -154,12 +158,40 @@
         }
 
         .upcoming-location {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             letter-spacing: 0.1rem;
             color: var(--text-muted);
             border-top: 1px solid var(--border-color);
             padding-top: 1rem;
             margin-top: auto;
+        }
+
+        /* Expandable Details Container */
+        .card-expand-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.15rem;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            background: none;
+            border: none;
+            border-bottom: 1px solid var(--accent-color);
+            padding-bottom: 2px;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .card-expanded-content {
+            display: none;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed var(--border-color);
+            font-size: 0.88rem;
+            color: #222222;
+            line-height: 1.7;
+            background-color: #fafafa;
+            padding: 1rem;
         }
 
         /* Toggle Archive Button */
@@ -170,7 +202,7 @@
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             color: var(--accent-color);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             letter-spacing: 0.2rem;
             text-transform: uppercase;
             cursor: pointer;
@@ -197,7 +229,7 @@
         }
 
         .archive-year-title {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 300;
             letter-spacing: 0.2rem;
             color: var(--accent-color);
@@ -219,7 +251,7 @@
             padding: 1rem 0;
             border-bottom: 1px solid var(--border-color);
             align-items: center;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .ledger-row.highlight {
@@ -241,7 +273,7 @@
 
         .ledger-location {
             color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             text-align: right;
             letter-spacing: 0.05rem;
         }
@@ -255,7 +287,7 @@
         }
 
         .archive-footer-box h4 {
-            font-size: 1rem;
+            font-size: 0.95rem;
             letter-spacing: 0.2rem;
             text-transform: uppercase;
             color: var(--accent-color);
@@ -264,7 +296,7 @@
         }
 
         .archive-footer-box p {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: var(--text-muted);
             font-weight: 300;
             max-width: 650px;
@@ -278,7 +310,7 @@
             color: #ffffff;
             text-decoration: none;
             padding: 0.8rem 2rem;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             letter-spacing: 0.15rem;
             text-transform: uppercase;
             transition: opacity 0.3s;
@@ -293,7 +325,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.05rem;
             color: #777777;
             border-top: 1px solid var(--border-color);
             background-color: #ffffff;
@@ -306,10 +339,10 @@
                 padding: 1.5rem 2rem;
             }
             nav a {
-                margin: 0 0.75rem;
+                margin: 0 0.5rem;
             }
             .page-header h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
             .ledger-row {
                 grid-template-columns: 1fr;
@@ -332,23 +365,23 @@
         <a href="index.html" class="logo">Hesham Malik</a>
         <nav>
             <a href="index.html">Domů</a>
-            <a href="umelec.html">Umělec</a>
-            <a href="umeni.html">Umění</a>
-            <a href="projekty.html">Projekty</a>
-            <a href="vystavy.html" class="active">Výstavy</a>
+            <a href="umelec.html">Biografie</a>
+            <a href="umeni.html">Dílo</a>
+            <a href="projekty.html">Iniciativy</a>
+            <a href="vystavy.html" class="active">Registr Výstav</a>
             <a href="kontakt.html">Kontakt</a>
         </nav>
     </header>
 
     <main>
         <section class="page-header">
-            <h1>VÝSTAVY</h1>
+            <h1>INSTITUCIONÁLNÍ REGISTR VÝSTAV</h1>
         </section>
 
         <section class="exhibitions-container">
             
             <!-- SECTION 1: UPCOMING EXHIBITIONS -->
-            <h2 class="section-title-clean">Příští výstavy</h2>
+            <h2 class="section-title-clean">Nadcházející prezentace & Monografie</h2>
 
             <div class="upcoming-grid">
                 <!-- Upcoming Show 1 -->
@@ -356,7 +389,7 @@
                     <div>
                         <div class="upcoming-date">Od prosince 2026</div>
                         <h3>„Unknown“</h3>
-                        <p>„S každou novou generací mladých žen přichází vlna proměny, která odvážně redefinuje status quo. V kolaborativní sérii s názvem ‚Unknown‘ (Neznámé) zkoumají Galerie MABD, Vox Gallery a Hesham Malik bohatou mozaiku zážitků, emocí a perspektiv, kterými současné ženy přispívají k vyvíjejícímu se narativu ženskosti.“</p>
+                        <p>V kolaborativní sérii zkoumají Galerie MABD, Vox Gallery a Hesham Malik bohatou mozaiku zážitků, emocí a perspektiv, kterými současné ženy přispívají k vyvíjejícímu se narativu ženskosti.</p>
                     </div>
                     <div class="upcoming-location">
                         Oulu, Finsko &bull; Evropské hlavní město kultury
@@ -368,10 +401,10 @@
                     <div>
                         <div class="upcoming-date">Od března 2027</div>
                         <h3>„Life of a Box“</h3>
-                        <p>Hesham Malik ukazuje svůj inovativní přístup k umění a designu integrací obnovitelných zdrojů energie ve svém projektu udržitelnosti „Life of a Box“ na Karlově univerzítě, a představuje tak novou formu svého uměleckého vyjádření.</p>
+                        <p>Inovativní přístup k umění a designu integrací obnovitelných zdrojů energie ve výzkumném projektu udržitelnosti na Karlově univerzitě.</p>
                     </div>
                     <div class="upcoming-location">
-                        Univerzita Karlova &bull; Praha, Česká republika
+                        Univerzita Karlova &bull; Výzkumný projekt
                     </div>
                 </article>
 
@@ -380,28 +413,37 @@
                     <div>
                         <div class="upcoming-date">Od května 2027</div>
                         <h3>„Matka Máří“</h3>
-                        <p>Sázavský klášter uvádí mimořádnou výstavu Heshama Malika „Matka Máří“. Jeho díla otevřeně vzdávají hold uctívanému lidskému mateřství Panny Marie.</p>
+                        <p>Mimořádná monografická výstava vzdávající hold uctívanému lidskému mateřství a duchovní kontinuity v historických prostorách Sázavského kláštera.</p>
                     </div>
                     <div class="upcoming-location">
-                        Sázavský klášter &bull; Česká republika
+                        Sázavský klášter &bull; Sakrální archiv
                     </div>
                 </article>
 
-                <!-- Upcoming Show 4: Zehut -->
+                <!-- Upcoming Show 4: MAKOM -->
                 <article class="upcoming-card">
                     <div>
-                        <div class="upcoming-date">Od září 2027</div>
-                        <h3>„Zehut“</h3>
-                        <p>Výstava představuje obrazy Heshama Malika inspirované narativy a osobními příběhy globálních židovských komunit, které návštěvníkům nabízejí prostor k reflexi a hlubšímu porozumění.</p>
+                        <div class="upcoming-date">Září – Prosinec 2027</div>
+                        <h3>MAKOM (מָקוֹם)</h3>
+                        <p>Monografická výstava a mezinárodní výzkumný archiv mapující etické eseje a filozofické dialogy s představiteli více než 30 světových akademických a kulturních institucí.</p>
+                        
+                        <button class="card-expand-btn" onclick="toggleMakomDetails()" id="makomBtn">
+                            [ Číst více o koncepci MAKOM &rarr; ]
+                        </button>
+
+                        <div class="card-expanded-content" id="makomDetails">
+                            <strong>MAKOM (מָקוֹם): THE ARCHITECTURE OF RESIDENCE &amp; MEMORY</strong><br><br>
+                            Derived from the Hebrew root meaning "to stand and endure," Makom signifies more than a physical location—it defines a sacred container of memory, presence, and human continuity. In this major monographic exhibition, Hesham Malik translates personal reflections, ethical essays, and global dialogues gathered from international academic and cultural leaders into heavy, multi-layered paintings/sculptures. Each art piece acts as an active Makom—a physical sanctuary holding the weight of shared human thought.
+                        </div>
                     </div>
                     <div class="upcoming-location">
-                        Příští výstava &bull; Z září 2027
+                        Muzeální prezentace &bull; Září – Prosinec 2027
                     </div>
                 </article>
             </div>
 
             <!-- SECTION 2: EXHIBITION ARCHIVE -->
-            <h2 class="section-title-clean">Historie výstav</h2>
+            <h2 class="section-title-clean">Historie registru</h2>
 
             <button class="toggle-archive-btn" onclick="toggleArchive()" id="archiveBtn">
                 &darr; Zobrazit kompletní registr výstav (2023–2026)
@@ -421,7 +463,7 @@
                         <div class="ledger-row">
                             <span class="ledger-title">Tiché doteky</span>
                             <span class="ledger-venue">Muzeum Jindřichohradecka</span>
-                            <span class="ledger-location">Jindřichův Hradec, ČR</span>
+                            <span class="ledger-location">Mezinárodní výstava</span>
                         </div>
                         <div class="ledger-row">
                             <span class="ledger-title">Life of A Box</span>
@@ -579,8 +621,8 @@
 
                 <!-- 1997-2022 CURATORIAL BOX -->
                 <div class="archive-footer-box">
-                    <h4>Kompletní historie výstav (1997 – 2022)</h4>
-                    <p>Podrobná retrospektivní dokumentace zahrnující více než 100 samostatných výstav v muzeích a galeriích napříč Evropou, Severní Amerikou a Asií je k dispozici pro kurátory a sběratele.</p>
+                    <h4>Kompletní monografický archiv (1997 – 2022)</h4>
+                    <p>Podrobná retrospektivní dokumentace zahrnující více než 100 samostatných výstav v muzeích a galeriích napříč Evropou, Severní Amerikou a Asií je k dispozici pro kurátory a instituce.</p>
                     <a href="kontakt.html" class="archive-request-btn">Vyžádat kurátorský archiv &rarr;</a>
                 </div>
 
@@ -590,8 +632,8 @@
     </main>
 
     <footer>
-        <p>&copy; Hesham Malik. All rights reserved.</p>
-        <p>Institutional Exhibition Archive</p>
+        <p>&copy; Hesham Malik Studio. Všechna práva vyhrazena.</p>
+        <p>International Institutional Exhibition Archive</p>
     </footer>
 
     <script>
@@ -605,6 +647,19 @@
             } else {
                 archive.style.display = 'block';
                 btn.innerHTML = '&uarr; Skrýt historii výstav';
+            }
+        }
+
+        function toggleMakomDetails() {
+            const details = document.getElementById('makomDetails');
+            const btn = document.getElementById('makomBtn');
+
+            if (details.style.display === 'block') {
+                details.style.display = 'none';
+                btn.innerHTML = '[ Číst více o koncepci MAKOM &rarr; ]';
+            } else {
+                details.style.display = 'block';
+                btn.innerHTML = '[ Skrýt koncepci MAKOM &uarr; ]';
             }
         }
     </script>
