@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hesham Malik | Kontakt</title>
+    <title>Hesham Malik | Kurátorské Dotazy a Kontakt</title>
+    <meta name="description" content="Oficiální kontaktní portál pro muzejní kurátory, galerijní akvizice, akademické instituce a novinářské dotazy Heshama Malika.">
+    <link rel="canonical" href="https://heshammalik.eu/kontakt.html" />
     <style>
         :root {
             --bg-color: #fcfcfc;
@@ -185,6 +187,16 @@
             background-color: #ffffff;
         }
 
+        footer a {
+            color: #777777;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #111111;
+        }
+
         @media (max-width: 900px) {
             .contact-container {
                 grid-template-columns: 1fr;
@@ -195,7 +207,6 @@
             }
         }
 
-        /* Mobile Adjustments */
         @media (max-width: 600px) {
             header {
                 flex-direction: column;
@@ -263,15 +274,32 @@
             }
         }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Hesham Malik",
+      "url": "https://heshammalik.eu",
+      "workLocation": {
+        "@type": "Place",
+        "name": "Prague / Brussels"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hm@heshammalik.eu",
+        "contactType": "curatorial inquiry"
+      }
+    }
+    </script>
 </head>
 <body>
 
     <header>
         <a href="index.html" class="logo">Hesham Malik</a>
         <nav>
-            <a href="index.html">Domů</a>
+            <a href="index.html">Úvod</a>
             <a href="umelec.html">Umělec</a>
-            <a href="umeni.html">Umění</a>
+            <a href="umeni.html">Dílo</a>
             <a href="projekty.html">Projekty</a>
             <a href="vystavy.html">Výstavy</a>
             <a href="kontakt.html" class="active">Kontakt</a>
@@ -287,13 +315,13 @@
             
             <!-- Left Column: Single Studio Hands Canvas Photo -->
             <div class="studio-frame">
-                <img src="studio-hands-canvas.jpg" alt="Hesham Malik Studio Process" loading="lazy">
+                <img src="studio-hands-canvas.jpg" alt="Ateliérový proces Heshama Malika" loading="lazy">
             </div>
 
             <!-- Right Column: Institutional Contact Information -->
             <div class="contact-info">
                 <h2>Ateliér &bull; Kurátorské Dotazy</h2>
-                <p>Pro záležitosti týkající se muzejních výstavek, akvizic, novinářských materiálů nebo participace v globálních projektech jako <em>Life of a Box</em> či <em>Words Initiative</em> využijte níže uvedené oficiální kontaktní kanály.</p>
+                <p>Pro záležitosti týkající se muzejních výstav, akvizic, novinářských materiálů nebo participace v globálních projektech jako <em>Life of a Box</em> či <em>Words Initiative</em> využijte níže uvedené oficiální kontaktní kanály.</p>
 
                 <div class="contact-section">
                     <h3>Oficiální e-mail</h3>
@@ -305,8 +333,10 @@
     </main>
 
     <footer>
-        <p>&copy; Hesham Malik. All rights reserved.</p>
-        <p>Prague &bull; Brussels &bull; Global Studio</p>
+        <p>&copy; Hesham Malik. Všechna práva vyhrazena.</p>
+        <p>
+            <a href="https://www.instagram.com/heshammalik/" target="_blank" rel="noopener noreferrer">Instagram</a> &bull; Evropský kurátorský a výstavní portál
+        </p>
     </footer>
 
 </body>
