@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hesham Malik | Výstavy &amp; Muzejní Archiv</title>
-    <meta name="description" content="Oficiální registr a archiv samostatných muzeálních a galerijních výstav Heshama Malika.">
+    <title>Hesham Malik | Výstavy &amp; Muzejní Registr</title>
+    <meta name="description" content="Oficiální registr a archiv samostatných muzejních a galerijních výstav Heshama Malika. Přehled nadcházejících expozic a retrospektivní archiv.">
     <link rel="canonical" href="https://heshammalik.eu/vystavy.html" />
 
     <style>
@@ -43,11 +43,12 @@
         }
 
         .logo {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             letter-spacing: 0.25rem;
             text-transform: uppercase;
             color: var(--accent-color);
             text-decoration: none;
+            font-weight: 300;
         }
 
         nav {
@@ -59,15 +60,14 @@
             color: var(--text-muted);
             text-decoration: none;
             margin-left: 2rem;
-            font-size: 0.8rem;
-            letter-spacing: 0.15rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.12rem;
             text-transform: uppercase;
             transition: color 0.3s;
         }
 
         nav a:hover, nav a.active {
             color: var(--accent-color);
-            font-weight: 600;
         }
 
         .page-header {
@@ -282,13 +282,22 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             color: #777777;
             border-top: 1px solid var(--border-color);
             background-color: #ffffff;
         }
 
-        /* Responsive Breakpoints & Mobile Optimization */
+        footer a {
+            color: #777777;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #111111;
+        }
+
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -297,7 +306,7 @@
             }
 
             .logo {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
                 letter-spacing: 0.18rem;
             }
 
@@ -369,16 +378,28 @@
             }
         }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ExhibitionEvent",
+      "name": "Hesham Malik – Výstavní Registr",
+      "location": {
+        "@type": "Place",
+        "name": "Evropské muzejní a galerijní okruhy"
+      },
+      "url": "https://heshammalik.eu/vystavy.html"
+    }
+    </script>
 </head>
 <body>
 
     <header>
         <a href="index.html" class="logo">Hesham Malik</a>
         <nav>
-            <a href="index.html">Domů</a>
-            <a href="umelec.html">Biografie</a>
+            <a href="index.html">Úvod</a>
+            <a href="umelec.html">Umělec</a>
             <a href="umeni.html">Dílo</a>
-            <a href="projekty.html">Iniciativy</a>
+            <a href="projekty.html">Projekty</a>
             <a href="vystavy.html" class="active">Výstavy</a>
             <a href="kontakt.html">Kontakt</a>
         </nav>
@@ -577,7 +598,9 @@
 
     <footer>
         <p>&copy; Hesham Malik Studio. Všechna práva vyhrazena.</p>
-        <p>International Institutional Exhibition Archive</p>
+        <p>
+            <a href="https://www.instagram.com/heshammalik/" target="_blank" rel="noopener noreferrer">Instagram</a> &bull; Evropský kurátorský a výstavní portál
+        </p>
     </footer>
 
     <script>
