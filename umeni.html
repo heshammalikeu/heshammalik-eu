@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hesham Malik | Umění</title>
+    <title>Hesham Malik | Katalogizované Dílo a Muzejní Sbírky</title>
+    <meta name="description" content="Oficiální registr a sbírkový katalog malířských cyklů Heshama Malika. Dokumentace děl v muzeích, galeriích a veřejných institucích v České republice i v zahraničí.">
     <style>
         :root {
             --bg-color: #fcfcfc;
@@ -103,7 +104,6 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Section Title: Umělecká tvorba & OBRAZY */
         .section-headline {
             text-align: center;
             padding: 4rem 2rem 2rem;
@@ -132,7 +132,6 @@
             padding: 1rem 2rem 6rem;
         }
 
-        /* 3 Paintings per row grid */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -196,7 +195,6 @@
             letter-spacing: 0.05rem;
         }
 
-        /* Lightbox Fullscreen Viewer */
         .lightbox-modal {
             display: none;
             position: fixed;
@@ -246,13 +244,22 @@
             background-color: #ffffff;
         }
 
+        footer a {
+            color: #777777;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #111111;
+        }
+
         @media (max-width: 900px) {
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        /* Mobile Responsive Adjustments */
         @media (max-width: 600px) {
             header {
                 flex-direction: column;
@@ -290,7 +297,7 @@
             .intro-text {
                 font-size: 0.98rem;
                 line-height: 1.6;
-                text-align: left; /* Prevents uneven word gaps on mobile */
+                text-align: left;
             }
 
             .intro-text p {
@@ -347,15 +354,24 @@
             }
         }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageGallery",
+      "name": "Hesham Malik – Katalogizované Dílo",
+      "description": "Vybraná muzejní a institucionální díla Heshama Malika",
+      "url": "https://heshammalik.eu/umeni.html"
+    }
+    </script>
 </head>
 <body>
 
     <header>
         <a href="index.html" class="logo">Hesham Malik</a>
         <nav>
-            <a href="index.html">Domů</a>
+            <a href="index.html">Úvod</a>
             <a href="umelec.html">Umělec</a>
-            <a href="umeni.html" class="active">Umění</a>
+            <a href="umeni.html" class="active">Dílo</a>
             <a href="projekty.html">Projekty</a>
             <a href="vystavy.html">Výstavy</a>
             <a href="kontakt.html">Kontakt</a>
@@ -364,20 +380,20 @@
 
     <main>
         <section class="page-header">
-            <h1>UMĚNÍ</h1>
+            <h1>DÍLO</h1>
             <div class="intro-text">
-                <p>Výtvarný projev, kterým je Hesham Malik a jeho umění charakteristické, je svěží, s propracovaným vztahem k formě, designu a barevnosti. Téma Heshamovy tvorby se vrací k jednoduchosti a obyčejnému životu lidí – jeho analýza a vyjádření této „každodennosti“ je však jedinečné.</p>
+                <p>Výtvarný jazyk Heshama Malika se vyznačuje propracovanou strukturací formy, materiálovou vrstevnatostí a analytickým přístupem ke kompozici. Těžištěm jeho tvorby je reflexe lidské zkušenosti a sociální morfologie v kontextu každodenního života – téma, které autor zpracovává s výjimečnou formální rigorózností.</p>
                 
-                <p>Hesham se záměrně vystavuje domorodým kulturám a jejich prostředí a soustředí se na přímou interakci s lidmi z různých komunit. Mnoho z jeho filozofických a etnografických poznatků pochází ze zkušenosti s odlišnými kulturami. Překračování hranic kulturních oblastí je Malikovou vášní a celoživotní inspirací pro tvorbu. Zaměřuje se na kontrasts a drobné podobnosti našich životů jako smrtelných lidských bytostí.</p>
+                <p>Metodologicky vychází Malik z přímé terénní interakce s odlišnými komunitními a kulturními okruhy. Překračování geografických a koncepčních hranic představuje stabilní základy jeho etnografického výzkumu. Zkoumá vizuální kontrasty i strukturální analogie lidské existence napříč kulturními enklávami.</p>
                 
-                <p>Hesham je vypravěčem a kritikem zároveň. Vyzývá diváka k hluboké introspekci a k dialogu.</p>
+                <p>Malikovo dílo funguje jako analytický záznam i kritická platforma, vyzývající k hlubokému teoretickému dialogu a introspekci.</p>
             </div>
         </section>
 
         <!-- Section Title -->
         <section class="section-headline">
-            <h2>Umělecká tvorba</h2>
-            <div class="subtitle">Vybraná muzejní díla</div>
+            <h2>Katalogizovaná tvorba</h2>
+            <div class="subtitle">Vybraná muzejní a institucionální díla</div>
         </section>
 
         <!-- Gallery Grid (3 per row) -->
@@ -427,7 +443,7 @@
                     </div>
                 </article>
 
-                <!-- Artwork 5 (Centered vertically and horizontally) -->
+                <!-- Artwork 5 -->
                 <article class="artwork-card" onclick="openLightbox(this)">
                     <div class="artwork-frame">
                         <img src="artwork-5.jpg" alt="Hesham Malik - Life of a Box" loading="lazy" style="object-position: center center;">
@@ -438,7 +454,7 @@
                     </div>
                 </article>
 
-                <!-- Artwork 6 (Moved to extreme left to reveal face) -->
+                <!-- Artwork 6 -->
                 <article class="artwork-card" onclick="openLightbox(this)">
                     <div class="artwork-frame">
                         <img src="artwork-6.jpg" alt="Hesham Malik - Polahme" loading="lazy" style="object-position: left center;">
@@ -493,7 +509,7 @@
                     </div>
                 </article>
 
-                <!-- Artwork 11 (Centered vertically and horizontally) -->
+                <!-- Artwork 11 -->
                 <article class="artwork-card" onclick="openLightbox(this)">
                     <div class="artwork-frame">
                         <img src="artwork-11.jpg" alt="Hesham Malik - Trance" loading="lazy" style="object-position: center center;">
@@ -525,8 +541,10 @@
     </div>
 
     <footer>
-        <p>&copy; Hesham Malik. All rights reserved.</p>
-        <p>Institutional Collection Archive</p>
+        <p>&copy; Hesham Malik. Všechna práva vyhrazena.</p>
+        <p>
+            <a href="https://www.instagram.com/heshammalik/" target="_blank" rel="noopener noreferrer">Instagram</a> &bull; Evropský kurátorský a výstavní portál
+        </p>
     </footer>
 
     <script>
