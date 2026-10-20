@@ -16,6 +16,7 @@
             --accent-color: #000000;
             --border-color: #e5e5e5;
             --font-main: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --font-serif: Georgia, 'Times New Roman', serif;
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -184,63 +185,105 @@
             background-color: #fafafa;
         }
 
-        .toggle-archive-btn {
-            display: block;
-            width: 100%;
-            padding: 1.5rem;
+        /* World-Class Curation & Institutional Network Styles */
+        .curated-section {
+            margin-bottom: 5rem;
+        }
+
+        .network-intro-box {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            color: var(--accent-color);
-            font-size: 0.85rem;
-            letter-spacing: 0.2rem;
-            text-transform: uppercase;
-            cursor: pointer;
-            text-align: center;
-            transition: background-color 0.3s;
-            margin-top: 2rem;
-        }
-
-        .toggle-archive-btn:hover { background-color: #f5f5f5; }
-
-        .archive-container {
-            display: none;
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .archive-year-block { margin-bottom: 3.5rem; }
-
-        .archive-year-title {
-            font-size: 1.1rem;
-            font-weight: 300;
-            letter-spacing: 0.2rem;
-            text-transform: uppercase;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .ledger-table { display: flex; flex-direction: column; }
-
-        .ledger-row {
-            display: grid;
-            grid-template-columns: 2fr 3fr 2fr;
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border-color);
-            align-items: center;
-            font-size: 0.9rem;
-        }
-
-        .ledger-row.highlight {
-            background-color: #fafafa;
-            padding: 1rem;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
             border-left: 2px solid var(--accent-color);
         }
 
-        .ledger-title { font-weight: 500; }
-        .ledger-venue { font-weight: 300; color: #333; }
-        .ledger-location { color: var(--text-muted); font-size: 0.82rem; text-align: right; }
+        .network-intro-box h3 {
+            font-size: 0.85rem;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+            font-weight: 400;
+        }
+
+        .network-intro-box p {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #222222;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .global-pills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 4rem;
+        }
+
+        .global-pill {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.75rem 1.25rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.1rem;
+            color: #222222;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .global-pill:hover {
+            border-color: var(--accent-color);
+            background-color: #fafafa;
+        }
+
+        /* Museum Ledger Styles */
+        .museum-ledger {
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .museum-row {
+            display: grid;
+            grid-template-columns: 2fr 3fr 1.5fr;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--border-color);
+            align-items: center;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+
+        .museum-row:hover {
+            background-color: #fafafa;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
+        .museum-name {
+            font-weight: 500;
+            letter-spacing: 0.05rem;
+        }
+
+        .museum-location {
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .museum-project {
+            font-size: 0.82rem;
+            letter-spacing: 0.1rem;
+            text-transform: uppercase;
+            color: #333333;
+            text-align: right;
+            background-color: #f5f5f5;
+            padding: 0.3rem 0.6rem;
+            border-radius: 2px;
+            display: inline-block;
+            justify-self: end;
+        }
 
         .archive-footer-box {
             background-color: #fafafa;
@@ -356,13 +399,14 @@
                 font-size: 1.15rem;
             }
 
-            .ledger-row {
+            .museum-row {
                 grid-template-columns: 1fr;
                 gap: 0.3rem;
-                padding: 0.8rem 0;
+                padding: 1rem 0;
             }
 
-            .ledger-location {
+            .museum-project {
+                justify-self: start;
                 text-align: left;
             }
 
@@ -370,7 +414,7 @@
                 padding: 1.5rem 1rem;
             }
 
-            footer {
+            .footer {
                 flex-direction: column;
                 gap: 0.75rem;
                 padding: 2rem 1.25rem;
@@ -475,113 +519,106 @@
                 </article>
             </div>
 
-            <!-- SECTION 2: EXHIBITION ARCHIVE -->
-            <h2 class="section-title-clean">Monografický registr a historie cyklů</h2>
-
-            <button class="toggle-archive-btn" onclick="toggleArchive()" id="archiveBtn">
-                &darr; Otevřít mezinárodní registr a muzejní archiv (2023–2026)
-            </button>
-
-            <div class="archive-container" id="archiveContent">
+            <!-- CURATED SECTION: GLOBAL REFERENCE NETWORK -->
+            <div class="curated-section">
+                <h2 class="section-title-clean">Mezinárodní referenční síť</h2>
                 
-                <!-- MEZINÁRODNÍ & KLÍČOVÉ INSTITUCIONÁLNÍ UZLY -->
-                <div class="archive-year-block">
-                    <h3 class="archive-year-title">Mezinárodní &amp; Klíčové Institucionální Projekty</h3>
-                    <div class="ledger-table">
-                        <div class="ledger-row highlight">
-                            <span class="ledger-title">Life of A Box</span>
-                            <span class="ledger-venue">Brussels Expo – Europe’s Creative Industries</span>
-                            <span class="ledger-location">Brusel, Belgie</span>
-                        </div>
-                        <div class="ledger-row highlight">
-                            <span class="ledger-title">Twain</span>
-                            <span class="ledger-venue">Berkeley Commonplace</span>
-                            <span class="ledger-location">Kalifornie, USA</span>
-                        </div>
-                        <div class="ledger-row highlight">
-                            <span class="ledger-title">Life of A Box</span>
-                            <span class="ledger-venue">Museum of Papermaking</span>
-                            <span class="ledger-location">Duszniki-Zdrój, Polsko</span>
-                        </div>
-                        <div class="ledger-row highlight">
-                            <span class="ledger-title">Setkání vědy a umění / Gesto</span>
-                            <span class="ledger-venue">Karlova Univerzita</span>
-                            <span class="ledger-location">Akademický výzkum</span>
-                        </div>
-                        <div class="ledger-row highlight">
-                            <span class="ledger-title">18 &amp; Židovská čtvrť</span>
-                            <span class="ledger-venue">Jeruzalémská Synagoga &amp; Zadní synagoga</span>
-                            <span class="ledger-location">Sakrální archiv</span>
-                        </div>
-                    </div>
+                <div class="network-intro-box">
+                    <h3>Mezinárodní kontext a rezonanční pole</h3>
+                    <p>„Instituce, akademické uzly a muzejní okruhy rezonující v širším kontextu mezinárodního výzkumu a tvůrčí praxe Heshama Malika.“</p>
                 </div>
 
-                <!-- REGIONÁLNÍ MUZEJNÍ & GALERIJNÍ CYKLY (2025–2026) -->
-                <div class="archive-year-block">
-                    <h3 class="archive-year-title">Muzejní Výzkumné Okruhy (2025 – 2026)</h3>
-                    <div class="ledger-table">
-                        <div class="ledger-row">
-                            <span class="ledger-title">Life of A Box &amp; Tiché doteky</span>
-                            <span class="ledger-venue">Městská knihovna v Praze &amp; Muzeum Jindřichohradecka</span>
-                            <span class="ledger-location">Muzeální archiv</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Andělé a démoni &amp; Iridescent</span>
-                            <span class="ledger-venue">Muzeum plzeňské diecéze &amp; Muzeum Mariánská Týnice</span>
-                            <span class="ledger-location">Sakrální &amp; Regionální sbírka</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Od řeky k věčnosti &amp; Reminiscence</span>
-                            <span class="ledger-venue">Muzeum Horní Police &amp; Městská galerie Vysoké Mýto</span>
-                            <span class="ledger-location">Monografický cyklus</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Birth Giver &amp; Aliferous</span>
-                            <span class="ledger-venue">Pevnost Josefov &amp; Muzeum Černošín / Galerie Carpe Diem</span>
-                            <span class="ledger-location">Prostorové instalace</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Rumi, Anekdota, Cast</span>
-                            <span class="ledger-venue">Orlické muzeum Choceň, Centrum UFFO Trutnov, Muzeum Králíky</span>
-                            <span class="ledger-location">Tematické výstavy</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Portréty života</span>
-                            <span class="ledger-venue">Regionální muzeum Kladrubska</span>
-                            <span class="ledger-location">Kladruby</span>
-                        </div>
-                    </div>
+                <div class="global-pills-grid">
+                    <span class="global-pill">Harvard University</span>
+                    <span class="global-pill">University of Oxford</span>
+                    <span class="global-pill">University of Cambridge</span>
+                    <span class="global-pill">Sorbonne University</span>
+                    <span class="global-pill">Massachusetts Institute of Technology (MIT)</span>
+                    <span class="global-pill">Stanford University</span>
+                    <span class="global-pill">Columbia University</span>
+                    <span class="global-pill">Tate London</span>
+                    <span class="global-pill">National Gallery of Canada</span>
+                    <span class="global-pill">Nobel Prize Museum</span>
+                    <span class="global-pill">National Museum of Ireland</span>
+                    <span class="global-pill">Univerzita Karlova</span>
+                    <span class="global-pill">Národní muzeum v Praze</span>
                 </div>
+            </div>
 
-                <!-- HISTORICKÉ & FILOZOFICKÉ RETROSPEKTIVY (2023–2024) -->
-                <div class="archive-year-block">
-                    <h3 class="archive-year-title">Historické &amp; Tematické Monografie (2023 – 2024)</h3>
-                    <div class="ledger-table">
-                        <div class="ledger-row">
-                            <span class="ledger-title">Kemet &amp; Mizpah</span>
-                            <span class="ledger-venue">Muzeum Karlovy Vary &amp; Muzeum Vysočiny Havlíčkův Brod</span>
-                            <span class="ledger-location">Historický výzkum</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Skrytá Tajemství Indie</span>
-                            <span class="ledger-venue">Oblastní muzeum a galerie v Mostě</span>
-                            <span class="ledger-location">Most</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Nejisté vibrace &amp; Incomplete</span>
-                            <span class="ledger-venue">Muzeum Kroměřížska &amp; Městská galerie Zázvorka</span>
-                            <span class="ledger-location">Monografický cyklus</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Rodičům Navzdory &amp; Moonbow</span>
-                            <span class="ledger-venue">Zámek Zruč nad Sázavou &amp; Galerie Zázvorka</span>
-                            <span class="ledger-location">Galerijní okruh</span>
-                        </div>
-                        <div class="ledger-row">
-                            <span class="ledger-title">Amorista &amp; Kuumba</span>
-                            <span class="ledger-venue">Muzeum Červená věž &amp; Městské muzeum Dvůr Králové</span>
-                            <span class="ledger-location">Litomyšl / Dvůr Králové</span>
-                        </div>
+            <!-- CURATED SECTION: SOLO MUSEUM EXHIBITIONS -->
+            <div class="curated-section">
+                <h2 class="section-title-clean">Samostatné muzejní výstavy &amp; institucionální projekty</h2>
+                
+                <div class="museum-ledger">
+                    <div class="museum-row">
+                        <span class="museum-name">Brussels Expo</span>
+                        <span class="museum-location">Brusel, Belgie</span>
+                        <span class="museum-project">Life of a Box</span>
+                    </div>
+                    <div class="museum-row">
+                        <span class="museum-name">Berkeley Commonplace</span>
+                        <span class="museum-location">Kalifornie, USA</span>
+                        <span class="museum-project">Twain</span>
+                    </div>
+                    <div class="museum-row">
+                        <span class="museum-name">Muzeum papírenství</span>
+                        <span class="museum-location">Duszniki-Zdrój, Polsko</span>
+                        <span class="museum-project">Life of a Box</span>
+                    </div>
+                    <div class="museum-row">
+                        <span class="museum-name">Carpe Diem Gallery</span>
+                        <span class="museum-location">Goa, Indie</span>
+                        <span class="museum-project">Série samostatných projektů</span>
+                    </div>
+                    <div class="museum-row">
+                        <span class="museum-name">Seneca College</span>
+                        <span class="museum-location">Toronto, Kanada</span>
+                        <span class="museum-project">I am</span>
+                    </div>
+                    <div class="museum-row">
+                        <span class="museum-name">Západočeské muzeum v Plzni</span>
+                        <span class="museum-location">Plzeň, Česká republika</span>
+                        <span class="museum-project">Andělé a démoni</span>
+                    </div>
+                    <div class="museum-row">
+                        <span class="museum-name">Muzeum Karlovy Vary</span>
+                        <span class="museum-location">Karlovy Vary, Česká republika</span>
+                        <span class="museum-project">Kemet</span>
+                    </div>
+                    <div class="museum-row">
+                        <span class="museum-name">Muzeum Kroměřížska</span>
+                        <span class="museum-location">Kroměříž, Česká republika</span>
+                        <span class="museum-project">Nejisté vibrace</span>
+                    </div>
+                    <div class="museum-row">
+                        <span class="museum-name">Muzeum Mariánská Týnice</span>
+                        <span class="museum-location">Mariánská Týnice, Česká republika</span>
+                        <span class="museum-project">Iridescent</span>
+                    </div>
+                    <div class="museum-row">
+                        <span class="museum-name">Muzeum Jindřichův Hradec</span>
+                        <span class="museum-location">Jindřichův Hradec, Česká republika</span>
+                        <span class="museum-project">Silent Encounters</span>
+                    </div>
+                    <div class="museum-row">
+                        <span class="museum-name">Regionální muzeum v Jílovém u Prahy</span>
+                        <span class="museum-location">Jílové u Prahy, Česká republika</span>
+                        <span class="museum-project">Zlato / Já Jsem</span>
+                    </div>
+                    <div class="museum-row">
+                        <span class="museum-name">Pevnost Dobrošov</span>
+                        <span class="museum-location">Náchodsko, Česká republika</span>
+                        <span class="museum-project">Make Art not War</span>
+                    </div>
+                    <div class="museum-row">
+                        <span class="museum-name">Hrad Seeberg</span>
+                        <span class="museum-location">Františkovy Lázně, Česká republika</span>
+                        <span class="museum-project">Cave art</span>
+                    </div>
+                    <div class="museum-row">
+                        <span class="museum-name">Židovské muzeum</span>
+                        <span class="museum-location">Česká republika</span>
+                        <span class="museum-project">Makom – připravovaná expozice</span>
                     </div>
                 </div>
 
@@ -591,8 +628,8 @@
                     <p>Kompletní retrospektivní dokumentace, monografické katalogy a provenienční záznamy z evropských, severoamerických a asijských muzeálních prezentací jsou přístupné pro kurátorský výzkum a institucionální akvizice.</p>
                     <a href="kontakt.html" class="archive-request-btn">[ Požádat o přístup k archivu &rarr; ]</a>
                 </div>
-
             </div>
+
         </section>
     </main>
 
@@ -604,19 +641,6 @@
     </footer>
 
     <script>
-        function toggleArchive() {
-            const archive = document.getElementById('archiveContent');
-            const btn = document.getElementById('archiveBtn');
-            
-            if (archive.style.display === 'block') {
-                archive.style.display = 'none';
-                btn.innerHTML = '&darr; Otevřít mezinárodní registr a muzejní archiv (2023–2026)';
-            } else {
-                archive.style.display = 'block';
-                btn.innerHTML = '&uarr; Skrýt historii výstav';
-            }
-        }
-
         function toggleDetails(id, btnId) {
             const el = document.getElementById(id);
             const btn = document.getElementById(btnId);
