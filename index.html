@@ -5,9 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hesham Malik | Kurátorský &amp; Výstavní Portál</title>
     <meta name="description" content="Oficiální evropská kurátorská platforma malíře Heshama Malika. Přehled výstav, výzkumné projekty a mezinárodní institucionální registr.">
+    
+    <!-- Canonical Tag to resolve fetch/indexing ambiguities -->
+    <link rel="canonical" href="https://www.heshammalik.eu/">
 
     <!-- Umami Analytics Tracking Script -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="00d6e65e-a073-4e75-a1fe-ef29809fdb25"></script>
+
+    <!-- Schema.org Entity Linking (Connects ecosystem on backend without public exposure) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Hesham Malik European Portal",
+      "url": "https://www.heshammalik.eu/",
+      "sameAs": [
+        "https://www.heshammalik.com",
+        "https://www.heshammalik.org"
+      ]
+    }
+    </script>
 
     <style>
         :root {
@@ -337,7 +354,6 @@
 
                 <a href="umeni.html" class="node-card">
                     <div class="node-card-image">
-                        <!-- Adjusted object-position to pull the painting downwards (e.g. center 40%) -->
                         <img src="hesham-malik-umeni.jpg" alt="Galerie děl" loading="lazy" style="object-position: center 40%;">
                     </div>
                     <h3>DÍLO</h3>
